@@ -1,0 +1,368 @@
+@import "_global";
+
+body {
+  background: $color-gray-400;
+}
+#blogPost-hero {
+  .hero-desc {
+    padding: 0.75rem 0;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .hero-siteName {
+      padding-bottom: 0.5rem;
+    }
+    .hero-desc {
+      padding: 0;
+    }
+  }
+}
+
+//////////
+///
+///
+
+#blogPost-post {
+  display: flex;
+  flex-direction: column;
+
+  .post-info {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    width: 915px;
+    padding-top: 5rem;
+    margin-inline: 7.25rem;
+  }
+  .post-authorImg {
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .post-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .post-authorName {
+    font: $font-montserrat-18-semibold;
+  }
+  .post-readingTime,
+  .post-date {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    white-space: nowrap;
+    font: $font-b14-light;
+    .info-img {
+    }
+  }
+  .post-date {
+    margin-left: auto;
+    align-self: flex-end;
+  }
+
+  .post-tags {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .article-section-container {
+    width: 1050px;
+  }
+  .article-section {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    width: 100%;
+
+    font: $font-b18-regular;
+
+    &:last-child {
+      padding-bottom: 12.5rem;
+    }
+    &.gray {
+      background: $color-gray-500;
+    }
+    &.summary {
+      background: $color-orange;
+      color: $color-white;
+      section {
+        padding-top: 5.25rem;
+
+        > *:first-child {
+          margin-top: 0;
+        }
+      }
+      h2 {
+        position: relative;
+
+        font-weight: 600;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: -1.5rem;
+
+          width: 3.75rem;
+          height: 5px;
+
+          background: $color-green-700;
+          border-top-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+      }
+      p {
+        font: $font-b18-medium;
+      }
+      .sources {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        margin-top: 5.5rem;
+        padding-top: 2rem;
+        border-top: 1px solid $color-white;
+        .sources-title {
+          font: $font-b24-medium;
+        }
+      }
+      .sources-list {
+        font: $font-b18-light;
+
+        margin: 0;
+        li {
+          list-style-type: none;
+        }
+      }
+    }
+    p:not(:first-child) {
+      margin-top: 2.37rem;
+    }
+
+    h2 {
+      margin-bottom: 1.5rem;
+      font: $font-b24-medium;
+    }
+    .light {
+      font: $font-b18-light;
+    }
+    strong {
+      font-weight: 600;
+    }
+    ol {
+      display: flex;
+      flex-direction: column;
+      gap: 2.75rem;
+
+      margin-top: 2.75rem;
+      margin-left: 4rem;
+
+      > li {
+        position: relative;
+
+        &::before {
+          content: counters(list-item, ".") ".";
+          position: absolute;
+          left: -4rem;
+          top: -0.2rem;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 2.5rem;
+          height: 2.5rem;
+
+          border-radius: 50%;
+          background: $color-dark;
+          color: $color-white;
+        }
+      }
+    }
+    ul {
+      margin-left: 3em;
+      > li {
+        list-style-type: disc;
+
+        &::marker {
+          font-size: 0.8em;
+        }
+      }
+    }
+
+    section {
+      display: block;
+      margin-left: 7.25rem;
+      margin-bottom: 4rem;
+      padding-top: 4rem;
+
+      &:not(:first-child) {
+        border-top: 1px solid $color-gray-500;
+      }
+
+      &.gray-section {
+        background: $color-gray-500;
+        margin-inline: 0;
+        padding: 3.12rem 2.94rem 3.12rem 7.25rem;
+
+        & + section {
+          border-top: 0;
+        }
+      }
+
+      &.bottom-moved-img {
+        position: relative;
+        overflow: visible;
+
+        padding-bottom: 8rem;
+
+        img {
+          position: absolute;
+          bottom: -4.25rem;
+
+          width: 10.5rem;
+          height: 10.5rem;
+        }
+      }
+    }
+
+    .green-bar {
+      padding-left: 1rem;
+      border-left: 1.25rem solid $color-green-700;
+    }
+    .white-bg {
+      padding: 1.5rem;
+      margin-right: 1.9rem;
+      background: $color-white;
+
+      + .white-bg {
+        margin-top: 4rem;
+      }
+    }
+    .quote-big {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      padding: 1.5rem 2.5rem;
+      font: $font-b24-semibold;
+      &::before {
+        content: url("/assets/icons/quote-big.svg");
+      }
+    }
+    .header-big {
+      font-weight: 600;
+      margin-bottom: 4rem;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    & {
+      padding: 4.25rem 0.75rem;
+
+      gap: 2rem;
+
+      .post-info {
+        display: flex;
+        gap: 1rem;
+
+        white-space: nowrap;
+      }
+      .post-authorImg {
+        width: 3rem;
+        height: 3rem;
+      }
+      .post-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .post-authorName {
+      }
+      .post-readingTime,
+      .post-date {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        white-space: nowrap;
+        font: $font-mobile-b14-light;
+        .info-img {
+        }
+      }
+      .post-date {
+        display: none;
+      }
+      .post-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        font: $font-mobile-b16-regular;
+
+        section:not(:last-child) {
+          padding-bottom: 2rem;
+          border-bottom: 1px solid $color-gray-500;
+        }
+
+        h2 {
+          margin-bottom: 1.5rem;
+          font: $font-b24-medium;
+        }
+        .light {
+          font: $font-mobile-b16-light;
+        }
+        strong {
+          font-weight: 600;
+        }
+        ol {
+          display: flex;
+          flex-direction: column;
+          gap: 2.75rem;
+
+          margin-top: 2.8rem;
+          margin-left: 4rem;
+
+          > li {
+            position: relative;
+
+            &::before {
+              content: counters(list-item, ".") ".";
+              position: absolute;
+              left: -4rem;
+              top: 0rem;
+
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 2.5rem;
+              height: 2.5rem;
+              z-index: -1;
+
+              border-radius: 50%;
+              background: $color-dark;
+              color: $color-white;
+            }
+          }
+        }
+        ul {
+          margin-left: 3em;
+          > li {
+            list-style-type: disc;
+
+            &::marker {
+              font-size: 0.8em;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@import "_global";
+////////// PROJECTS - CASE STUDY //////////
+///
+///
+#projects-caseStudy {
+  background: $color-gray-500;
+
+  .leafs-container {
+    padding-top: 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #projects-caseStudy {
+    .orderLastOnMobile {
+      order: 3;
+    }
+  }
+}
+
+////////// PROJECTS - OUR PROJECTS //////////
+///
+///
+#projects-ourProjects {
+  .ourProjects-top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .ourProjects-title {
+    font: $font-b18-regular;
+  }
+  .leafs-container {
+    padding-top: 3.75rem;
+  }
+}

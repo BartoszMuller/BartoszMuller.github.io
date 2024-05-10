@@ -1,0 +1,244 @@
+@import "_global";
+
+#aboutUs-design {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  min-height: 100vh;
+  background: $color-gray-500;
+
+  .design-img {
+    position: relative;
+    flex-basis: 50%;
+    min-height: 400px;
+    height: auto;
+    flex-grow: 1;
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .design-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    flex-basis: 50%;
+    flex-grow: 1;
+
+    min-width: 450px;
+    padding: 13.5rem 4rem;
+
+    color: $color-gray-900;
+
+    > * {
+      max-width: 600px;
+    }
+  }
+  .design-title {
+    font: $font-h4-medium;
+    margin-bottom: 0.5rem;
+  }
+  .design-subtitle {
+    font: $font-h5-italic;
+    margin-bottom: 2.75rem;
+  }
+  .design-desc {
+    margin-bottom: 3.25rem;
+    font: $font-b17-regular;
+  }
+  .design-subdesc {
+    font: $font-b17-light;
+  }
+
+  @media only screen and (max-width: 767px) {
+    & {
+      .design-img {
+        width: 100%;
+        min-height: 500px;
+      }
+      .design-content {
+        flex-basis: 100%;
+        min-width: unset;
+        padding: 2.5rem 0.75rem;
+      }
+      .design-title {
+        font: $font-mobile-b24-medium;
+        margin-bottom: 2rem;
+      }
+      .design-subtitle {
+        font: $font-mobile-b19-italic;
+        margin-bottom: 2rem;
+      }
+      .design-desc {
+        margin-bottom: 3.25rem;
+        font: $font-mobile-b17-regular;
+      }
+      .design-subdesc {
+        font: $font-mobile-b17-regular;
+      }
+    }
+  }
+}
+
+#aboutUs-structure {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  min-height: 100svh;
+
+  background: $color-green-700;
+  .structure-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    flex-grow: 1;
+    flex-basis: 45%;
+    padding: 5.75rem 7rem;
+  }
+  .structure-title {
+    display: flex;
+
+    width: max-content;
+    height: 50%;
+    min-height: 30vh;
+
+    border-bottom: 1px solid $color-dark;
+
+    font: $font-h4-medium;
+  }
+  .structure-desc {
+    max-width: 775px;
+    font: $font-b17-regular;
+  }
+  .structure-img {
+    align-self: center;
+    padding: 4.5rem;
+    width: 55%;
+    height: 100%;
+    min-width: 550px;
+  }
+
+  @media only screen and (max-width: 767px) {
+    & {
+      flex-direction: column;
+
+      min-height: unset;
+      height: 100svh;
+      max-height: 800px;
+
+      .structure-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+
+        width: 100%;
+        padding: 3rem 0.75rem 2.4rem;
+      }
+      .structure-title {
+        display: flex;
+
+        width: max-content;
+        flex-grow: 1;
+        height: 100%;
+        max-height: 50vh;
+
+        border-bottom: 1px solid $color-dark;
+
+        font: $font-h4-medium;
+      }
+      .structure-desc {
+        max-width: 775px;
+        font: $font-mobile-b18-regular;
+      }
+      .structure-img {
+        display: none;
+      }
+    }
+  }
+}
+
+#aboutUs-founders {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  min-height: 100vh;
+
+  .founders-title {
+    width: 100%;
+    font: $font-h4-medium;
+    padding: 4.4rem 7.25rem 2rem;
+    align-self: flex-end;
+  }
+  .founders-images {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+  }
+  .founder-img {
+    width: 50%;
+    flex-grow: 1;
+    aspect-ratio: 1.35;
+    object-fit: cover;
+  }
+  .founders-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+
+    width: 100%;
+    padding: 4rem;
+    margin: auto;
+
+    text-align: center;
+  }
+  .founders-names {
+    font: $font-h5-medium;
+  }
+  .founders-readMore {
+    font: $font-b16-medium;
+    transition: color ease 0.5s;
+
+    &:hover {
+      color: $color-orange;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    & {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      min-height: 100vh;
+
+      .founders-title {
+        width: 100%;
+        font: $font-mobile-b24-medium;
+        padding: 2.4rem 0.75rem 1.15rem;
+      }
+      .founder-img {
+        width: 100%;
+      }
+      .founders-info {
+        padding: 1.5rem 3rem 3.75rem;
+      }
+      .founders-names {
+        font: $font-mobile-b20-medium;
+      }
+      .founders-readMore {
+        font: $font-mobile-b16-medium;
+      }
+    }
+  }
+}

@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      OTREE | Agencja UX & Ecommerce > UX Design-Konwersja-Wdrożenia
+    </title>
+
+    <link href="/styles/home.style.min.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gruppo&family=Montserrat:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <section id="home-hero" class="hero-section">
+        <img
+          class="hero-background"
+          src="/assets/images/hero-bg.png"
+          alt="hero background"
+        />
+        <header class="hero-header">
+          <a href="/" class="logo"
+            ><img src="/assets/logos/logo-otree.svg" alt="Otree logo"
+          /></a>
+          <nav class="hero-nav">
+            <ul class="nav-items hideOnMobile">
+              <li class="nav-item">
+                <a href="/realizacje.html"
+                  ><span class="hover-line">Realizaje</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="/oferta.html"
+                  ><span class="hover-line">Oferta</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="/o-nas.html"><span class="hover-line">O nas</span></a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="primaryButton">Zapytaj o projekt</a>
+              </li>
+            </ul>
+
+            <svg
+              id="menu-button"
+              class="menu-icon"
+              viewBox="0 0 21 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="rec1"
+                d="M0 3C0 1.34315 1.34315 0 3 0H21V0C21 1.65685 19.6569 3 18 3H0V3Z"
+                fill="white"
+              />
+              <path
+                class="rec2"
+                d="M0 9C0 7.34315 1.34315 6 3 6H21V6C21 7.65685 19.6569 9 18 9H0V9Z"
+                fill="white"
+              />
+              <path
+                class="rec3"
+                d="M0 15C0 13.3431 1.34315 12 3 12H21V12C21 13.6569 19.6569 15 18 15H0V15Z"
+                fill="white"
+              />
+              <path
+                class="line1"
+                d="M2.00195 7.79688L18.9994 7.50018"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <path
+                class="line2"
+                d="M2 7.64648H19"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+
+            <div id="menu-nav" class="menu-nav">
+              <ul class="menu-nav-items">
+                <li class="menu-nav-item showOnMobile">
+                  <a href="/blog.html">Realizacje</a>
+                </li>
+                <li class="menu-nav-item showOnMobile">
+                  <a href="/kariera.html">Oferta</a>
+                </li>
+                <li class="menu-nav-item showOnMobile">
+                  <a href="">O nas</a>
+                </li>
+                <li class="menu-nav-item">
+                  <a href="/blog.html">Blog</a>
+                </li>
+                <li class="menu-nav-item">
+                  <a href="/kariera.html">Kariera</a>
+                </li>
+                <li class="menu-nav-item">
+                  <a href="">Kontakt</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+        <main class="hero-content section-container">
+          <h1 class="hero-title">
+            Data Driven Design <br />
+            in Technology
+          </h1>
+          <p class="hero-desc">
+            Jesteśmy firmą projektowo-wdrożeniową, tworzymy skuteczne użyteczne
+            i funkcjonalne rozwiązania digitalowe.<br class="hideOnMobile" />
+            Jesteśmy
+            <u class="circle-selected-green"
+              ><span>ekspertami w sektorach B2B i B2C.</span></u
+            >
+          </p>
+          <div class="hero-trustedUs hideOnMobile">
+            Zaufali nam:
+            <ul class="hero-trustedUs-list">
+              <li><a href="#">Volkswagen</a></li>
+              <li><a href="#">ATLAS</a></li>
+              <li><a href="#">Cyber_Folks</a></li>
+              <li><a href="#">SIG</a></li>
+            </ul>
+          </div>
+          <div class="hero-logos hideOnMobile">
+            <a href="#"
+              ><img
+                class="corner-logo"
+                src="/assets/logos/corner.svg"
+                alt="corner logo"
+            /></a>
+            <a href="#"
+              ><img
+                class="clutch-logo"
+                src="/assets/logos/clutch.svg"
+                alt="clutch logo"
+            /></a>
+          </div>
+        </main>
+
+        <div class="hero-bottom">
+          <a href="#home-caseStudy" class="scroll-down-button hideOnMobile">
+            <p class="hideOnMobile">Przewiń w dół</p>
+            <img class="hideOnMobile" src="/assets/icons/mouse-icon.svg" />
+          </a>
+          <a href="#home-caseStudy" class="showOnMobile">
+            <img src="/assets/icons/scroll-down-button.svg" />
+          </a>
+        </div>
+        <div class="hero-animations hideOnMobile">
+          <object
+            class="draw-svg1"
+            data="/assets/vectors/hero-line-animated.svg"
+            type="image/svg+xml"
+          ></object>
+          <svg
+            class="draw-line-leaf"
+            preserveAspectRatio="none"
+            viewBox="0 0 319 424"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="short-line"
+              d="M219 380H184.813H63C35.3858 380 13 357.614 13 330V293"
+              stroke="#E3E5E2"
+            />
+            <path
+              class="long-line"
+              d="M319 1L302.404 1L269 1C241.386 1 219 23.3858 219 51L219 424"
+              stroke="#E3E5E2"
+            />
+            <path
+              class="leaf"
+              d="M2.01562 266C9.3915 266.54 14.9267 272.967 14.3663 280.342L13.2959 294.428C5.96529 293.933 0.437035 287.568 0.973366 280.24L2.01562 266Z"
+              fill="url(#paint0_linear_1640_7816)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_1640_7816"
+                x1="8.69868"
+                y1="266.489"
+                x2="6.6837"
+                y2="294.019"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#3AFF5A" />
+                <stop offset="1" stop-color="#4FC0FF" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </section>
+
+      <section id="home-caseStudy" class="leafs-section-container">
+        <div class="background-lines hideOnMobile">
+          <div class="line-1"></div>
+        </div>
+        <h2 class="caseStudy-title">
+          <u class="circle-selected-gray">Kreatywność i wiedza</u>
+          <span
+            >branżowa<br />
+            w jednym projekcie</span
+          >
+        </h2>
+        <div class="leafs-container">
+          <div class="leaf-item case1 companyLeaf">
+            <img
+              class="leaf-img"
+              src="/assets/images/davines-site-mobile.jpg"
+              alt="Davines mobile site"
+            />
+
+            <div class="leaf-content">
+              <h3 class="leaf-title">Davines</h3>
+              <div class="leaf-tags tags-list">
+                <a href="#" class="tag-button">Wdrożenie</a>
+                <a href="#" class="tag-button">B2B</a>
+                <a href="#" class="tag-button">Branża Beauty</a>
+              </div>
+              <a href="#" class="leaf-showCS"> Zobacz Case study </a>
+            </div>
+          </div>
+          <div class="leaf-item case2 greenLeaf">
+            <div class="leaf-content">
+              <h3 class="leaf-title">
+                <span class="title-number">+ 50</span>
+                <span class="desktop-padding">Projektów dla różnych branż</span>
+              </h3>
+              <p class="leaf-desc">
+                Realizujemy i wdrażamy projekty dla klientów B2B i B2C z wielu
+                branż. Od fashion, przez branże techniczne, hobby po usługi.
+              </p>
+              <div class="leaf-tags tags-list">
+                <a class="tag-button" href="#">B2B</a>
+                <a class="tag-button" href="#">B2C</a>
+                <a class="tag-button" href="#">Produkty</a>
+                <a class="tag-button" href="#">Branża Tech</a>
+                <a class="tag-button" href="#">Branża Beauty</a>
+              </div>
+            </div>
+          </div>
+          <div class="leaf-item case2 companyLeaf">
+            <img
+              class="leaf-img"
+              src="/assets/images/stores-site-desktop.jpg"
+              alt="Stores desktop site"
+            />
+
+            <div class="leaf-content">
+              <h3 class="leaf-title">_Stores</h3>
+              <div class="leaf-tags tags-list">
+                <a href="#" class="tag-button">Wdrożenie</a>
+                <a href="#" class="tag-button">B2B</a>
+                <a href="#" class="tag-button">Cyber_Folks</a>
+              </div>
+              <a href="#" class="leaf-showCS"> Zobacz Case study </a>
+            </div>
+          </div>
+          <div class="leaf-item case1 companyLeaf">
+            <img
+              class="leaf-img"
+              src="/assets/images/italux-site-mobile.jpg"
+              alt="Italux mobile site"
+            />
+
+            <div class="leaf-content">
+              <h3 class="leaf-title">Italux</h3>
+              <div class="leaf-tags tags-list">
+                <a href="#" class="tag-button">Wdrożenie</a>
+                <a href="#" class="tag-button">B2B</a>
+                <a href="#" class="tag-button">Firmowa</a>
+              </div>
+              <a href="#" class="leaf-showCS"> Zobacz Case study </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="home-trustedUs" class="section-container">
+        <h2 class="trustedUs-title">Zaufali nam</h2>
+        <div class="trustedUs-logos rowWave">
+          <img src="/assets/logos/techwish.svg" alt="Techwish logo" />
+          <img src="/assets/logos/davines.svg" alt="Davines logo" />
+          <img src="/assets/logos/tim.svg" alt="TIM logo" />
+          <img src="/assets/logos/one.svg" alt="ONE logo" />
+          <img src="/assets/logos/kemon.svg" alt="Kemon logo" />
+          <img src="/assets/logos/falelokikoki.svg" alt="FaleLokiKoki logo" />
+          <img src="/assets/logos/sig.svg" alt="SIG logo" />
+          <img src="/assets/logos/8stars.svg" alt="8STARS logo" />
+          <img src="/assets/logos/volkswagen.svg" alt="" />
+          <img src="/assets/logos/pneumat.svg" alt="Pneumat logo" />
+          <img src="/assets/logos/vwNew.svg" alt="" />
+          <img src="/assets/logos/3w.svg" alt="3W logo" />
+          <img src="/assets/logos/italux.svg" alt="Italux logo" />
+          <img src="/assets/logos/casbeg.svg" alt="Casbeg logo" />
+          <img
+            src="/assets/logos/cyberFolks.svg"
+            alt="cyber_Folks logo"
+            class="hideOnMobile"
+          />
+        </div>
+      </section>
+      <section id="home-aboutWork" class="section-container">
+        <h2 class="aboutWork-title">Co robimy?</h2>
+        <p class="aboutWork-desc section-content-container typeTextAnimation">
+          Tworzymy skuteczne systemy <u class="circle-selected">e‑commerce,</u>
+          harmonizując innowacyjne podejście do projektowania z głębokim
+          zrozumieniem branży. Dokładnie analizujemy procesy sprzedażowe, aby
+          efektywnie wspierać naszych klientów.
+        </p>
+      </section>
+
+      <section id="home-howWeWork" class="section-container">
+        <div class="howWeWork-list rowWave">
+          <a href="#" class="howWeWork-item onWindowCurrency">
+            <svg
+              class="unfold-button"
+              viewBox="0 0 22 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="line1"
+                d="M11.002 1L11.002 21"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M1 10.999H21"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+            <div class="howWeWork-name">
+              <h4 class="title">
+                <i class="circle-selected-onHover">
+                  Analiza
+                  <svg
+                    class="circle"
+                    preserveAspectRatio="none"
+                    width="162"
+                    height="65"
+                    viewBox="0 0 162 65"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="circle-line"
+                      d="M155.869 11.3671C134.273 7.0487 70.0943 4.40327 47.7694 7.24122C37.13 8.59371 26.3459 11.6737 16.7776 15.4656C12.3493 17.2206 6.95357 19.6008 4.20724 23.0193C-0.425324 28.7856 0.143558 34.4256 4.73572 40.0222C14.5395 51.9706 32.3442 58.1 49.7701 60.8458C76.8918 65.1193 106.389 65.7097 132.667 58.4543C141.348 56.0571 151.785 53.2509 157.468 47.1384C162.354 41.8815 161.973 35.3471 157.543 30.1063C146.657 17.2273 125.06 7.53132 106.167 3.7998C94.2959 1.45523 81.1737 1 68.9842 1C53.2511 1 40.124 4.69007 25.2711 8.05783"
+                      stroke="#60DC74"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </i>
+              </h4>
+              <p class="subtitle">
+                Nasz proces zaczynamy od solidnej fazy Discovery
+              </p>
+            </div>
+
+            <p class="howWeWork-desc">
+              W pierwszej kolejności realizujemy pogłębioną analizę biznesu
+              klienta w obszarze Digital, aby
+              <strong
+                >zrozumieć Twoje potrzeby, cele biznesowe oraz oczekiwania
+                użytkowników.</strong
+              >
+              Badamy, diagnozujemy i identyfikujemy kluczowe obszary do
+              usprawnienia.
+              <svg
+                class="green-circle-arrow"
+                width="49"
+                height="48"
+                viewBox="0 0 49 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  class="circle"
+                  x="0.882812"
+                  y="0.5"
+                  width="47"
+                  height="47"
+                  rx="23.5"
+                  stroke="#60DC74"
+                />
+                <path
+                  class="arrow1"
+                  d="M31.3828 25V17H23.3828"
+                  stroke="#252525"
+                  stroke-linecap="round"
+                />
+                <path
+                  class="arrow2"
+                  d="M31.3828 17L17.3828 31"
+                  stroke="#252525"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </p>
+          </a>
+          <a href="#" class="howWeWork-item onWindowCurrency">
+            <svg
+              class="unfold-button"
+              viewBox="0 0 22 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="line1"
+                d="M11.002 1L11.002 21"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M1 10.999H21"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+            <div class="howWeWork-name">
+              <h4 class="title">
+                <i class="circle-selected-onHover"
+                  >Projektowanie
+                  <svg
+                    class="circle"
+                    preserveAspectRatio="none"
+                    viewBox="0 0 162 65"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="circle-line"
+                      d="M155.869 11.3671C134.273 7.0487 70.0943 4.40327 47.7694 7.24122C37.13 8.59371 26.3459 11.6737 16.7776 15.4656C12.3493 17.2206 6.95357 19.6008 4.20724 23.0193C-0.425324 28.7856 0.143558 34.4256 4.73572 40.0222C14.5395 51.9706 32.3442 58.1 49.7701 60.8458C76.8918 65.1193 106.389 65.7097 132.667 58.4543C141.348 56.0571 151.785 53.2509 157.468 47.1384C162.354 41.8815 161.973 35.3471 157.543 30.1063C146.657 17.2273 125.06 7.53132 106.167 3.7998C94.2959 1.45523 81.1737 1 68.9842 1C53.2511 1 40.124 4.69007 25.2711 8.05783"
+                      stroke="#60DC74"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </i>
+              </h4>
+              <p class="subtitle">
+                Skuteczne projektowanie to więcej niż tylko estetyka
+              </p>
+            </div>
+
+            <p class="howWeWork-desc">
+              Tworzymy interfejsy, które nie tylko przyciągają wzrok, ale także
+              zapewniają płynne,
+              <strong>przyjemne i intuicyjne doświadczenia</strong> dla
+              użytkowników, aby zapewnić maksymalną użyteczność i satysfakcję.
+              <svg
+                class="green-circle-arrow"
+                viewBox="0 0 49 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  class="circle"
+                  x="0.882812"
+                  y="0.5"
+                  width="47"
+                  height="47"
+                  rx="23.5"
+                  stroke="#60DC74"
+                />
+                <path
+                  class="arrow1"
+                  d="M31.3828 25V17H23.3828"
+                  stroke="#252525"
+                  stroke-linecap="round"
+                />
+                <path
+                  class="arrow2"
+                  d="M31.3828 17L17.3828 31"
+                  stroke="#252525"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </p>
+          </a>
+          <a href="#" class="howWeWork-item onWindowCurrency">
+            <svg
+              class="unfold-button"
+              viewBox="0 0 22 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="line1"
+                d="M11.002 1L11.002 21"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M1 10.999H21"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+            <div class="howWeWork-name">
+              <h4 class="title">
+                <i class="circle-selected-onHover"
+                  >Wdrożenie
+                  <svg
+                    class="circle"
+                    preserveAspectRatio="none"
+                    viewBox="0 0 162 65"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="circle-line"
+                      d="M155.869 11.3671C134.273 7.0487 70.0943 4.40327 47.7694 7.24122C37.13 8.59371 26.3459 11.6737 16.7776 15.4656C12.3493 17.2206 6.95357 19.6008 4.20724 23.0193C-0.425324 28.7856 0.143558 34.4256 4.73572 40.0222C14.5395 51.9706 32.3442 58.1 49.7701 60.8458C76.8918 65.1193 106.389 65.7097 132.667 58.4543C141.348 56.0571 151.785 53.2509 157.468 47.1384C162.354 41.8815 161.973 35.3471 157.543 30.1063C146.657 17.2273 125.06 7.53132 106.167 3.7998C94.2959 1.45523 81.1737 1 68.9842 1C53.2511 1 40.124 4.69007 25.2711 8.05783"
+                      stroke="#60DC74"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </i>
+              </h4>
+              <p class="subtitle">
+                Nasze zaangażowanie nie kończy się na etapie projektowania
+              </p>
+            </div>
+
+            <p class="howWeWork-desc">
+              Pomagamy <strong>w skutecznym wdrożeniu</strong> rozwiązań,
+              zapewniając Twojej firmie wsparcie na każdym etapie procesu.
+              Realizujemy projekty w technologiach: PrestaShop, ONe,
+              Woocommerce, WordPress
+              <svg
+                class="green-circle-arrow"
+                width="49"
+                height="48"
+                viewBox="0 0 49 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  class="circle"
+                  x="0.882812"
+                  y="0.5"
+                  width="47"
+                  height="47"
+                  rx="23.5"
+                  stroke="#60DC74"
+                />
+                <path
+                  class="arrow1"
+                  d="M31.3828 25V17H23.3828"
+                  stroke="#252525"
+                  stroke-linecap="round"
+                />
+                <path
+                  class="arrow2"
+                  d="M31.3828 17L17.3828 31"
+                  stroke="#252525"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </p>
+          </a>
+        </div>
+      </section>
+
+      <section id="home-workType">
+        <div class="workType-img">
+          <img src="/assets/images/organizaton-type.jpg" />
+        </div>
+        <div class="workType-content section-container">
+          <h2 class="workType-title">
+            Jesteśmy organizacją<br />
+            <span class="special">TURKUSOWĄ</span>
+          </h2>
+
+          <div class="workType-bottom-content">
+            <p class="workType-desc">
+              Działamy jako zwinny zespół z wdrożonymi elementami organizacji
+              turkusowej. Dzięki temu każdy ma głos i jest słyszany. Ta
+              otwartość procentuje w otwartej i elastycznej współpracy z naszymi
+              klientami.
+            </p>
+            <a class="workType-button" href=""
+              ><svg
+                class="circle-arrow"
+                preserveAspectRatio="none"
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  class="circle"
+                  x="0.5"
+                  y="1"
+                  width="44"
+                  height="44"
+                  rx="22"
+                  stroke-width="0.7"
+                  stroke="white"
+                />
+                <path
+                  class="arrow-line"
+                  d="M12 23.0003H33"
+                  stroke="white"
+                  stroke-width="0.7"
+                  stroke-linecap="round"
+                />
+                <path
+                  class="arrow-line"
+                  d="M26 30L33 23L26 16"
+                  stroke="white"
+                  stroke-width="0.7"
+                  stroke-linecap="round"
+                />
+                <!-- <rect
+                  x="0.5"
+                  y="0.5"
+                  width="47"
+                  height="47"
+                  rx="23.5"
+                  stroke="#252525"
+                />
+                <path
+                  class="arrow-line"
+                  d="M31 25V17H23"
+                  stroke="#252525"
+                  stroke-linecap="round"
+                />
+                <path
+                  class="arrow-line"
+                  d="M31 17L17 31"
+                  stroke="#252525"
+                  stroke-linecap="round"
+                /> -->
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section id="home-ourValues" class="section-container">
+        <h2 class="ourValues-title">Nasze wartości</h2>
+        <div class="ourValues-content section-content-container rowWave">
+          <div class="value-item onWindowCurrency">
+            <svg
+              class="value-icon value-icon-1"
+              preserveAspectRatio="none"
+              viewBox="0 0 59 59"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="circle"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M29.5 57C44.6878 57 57 44.6878 57 29.5C57 14.3122 44.6878 2 29.5 2C14.3122 2 2 14.3122 2 29.5C2 44.6878 14.3122 57 29.5 57ZM29.5 59C45.7924 59 59 45.7924 59 29.5C59 13.2076 45.7924 0 29.5 0C13.2076 0 0 13.2076 0 29.5C0 45.7924 13.2076 59 29.5 59Z"
+                fill="#60DC74"
+              />
+              <path
+                class="dot1"
+                d="M43 30C43 37.1797 37.1797 43 30 43C22.8203 43 17 37.1797 17 30C17 22.8203 22.8203 17 30 17C37.1797 17 43 22.8203 43 30Z"
+                fill="#60DC74"
+              />
+              <path
+                class="dot2"
+                d="M43 30C43 37.1797 37.1797 43 30 43C22.8203 43 17 37.1797 17 30C17 22.8203 22.8203 17 30 17C37.1797 17 43 22.8203 43 30Z"
+                fill="#f9f8f7"
+              />
+            </svg>
+            <h3 class="value-name">Klientocentryczność</h3>
+            <p class="value-desc">
+              Podchodzimy do projektów indywidualnie z wykorzystaniem
+              wieloletnich wzorców i znajomości wielu branż.
+            </p>
+          </div>
+          <div class="value-item onWindowCurrency">
+            <svg
+              class="value-icon value-icon-2"
+              preserveAspectRatio="none"
+              viewBox="0 0 70 59"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="dot1"
+                d="M38 29.5C38 39.9934 29.4934 48.5 19 48.5C8.50659 48.5 0 39.9934 0 29.5C0 19.0066 8.50659 10.5 19 10.5C29.4934 10.5 38 19.0066 38 29.5Z"
+                fill="#60DC74"
+              />
+              <path
+                class="dot2"
+                d="M70 29.5C70 39.9934 61.4934 48.5 51 48.5C40.5066 48.5 32 39.9934 32 29.5C32 19.0066 40.5066 10.5 51 10.5C61.4934 10.5 70 19.0066 70 29.5Z"
+                fill="#60DC74"
+              />
+            </svg>
+            <h3 class="value-name">Partnerstwo</h3>
+            <p class="value-desc">
+              Efekty współpracy często zależą od jakości relacji. Możesz być
+              pewien, że zajmiemy się Twoim projektem.
+            </p>
+          </div>
+          <div class="value-item onWindowCurrency">
+            <svg
+              class="value-icon value-icon-3"
+              preserveAspectRatio="none"
+              viewBox="0 0 99 59"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="rect"
+                d="M8 3C8 1.34315 9.34315 0 11 0H64C65.6569 0 67 1.34315 67 3V56C67 57.6569 65.6569 59 64 59H11C9.34315 59 8 57.6569 8 56V3Z"
+                fill="#60DC74"
+              />
+              <path
+                class="dashes1"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M67.0953 2L69.5016 2.01837L69.4864 4.01832L67.08 3.99994L67.0953 2ZM74.3144 2.05512L79.1272 2.09187L79.1119 4.09181L74.2991 4.05507L74.3144 2.05512ZM83.9399 2.12862L86.3463 2.147C87.0474 2.15235 87.6981 2.33423 88.2612 2.64799L87.2877 4.39505C87.0126 4.2418 86.6908 4.14968 86.331 4.14694L83.9247 4.12856L83.9399 2.12862ZM90.3107 5.8871C90.3531 6.53028 90.2388 7.19618 89.9435 7.83206L89.1207 9.6031L87.3069 8.76051L88.1296 6.98947C88.2812 6.6632 88.3357 6.33291 88.315 6.01875L90.3107 5.8871ZM87.4753 13.1452L85.8299 16.6873L84.0161 15.8447L85.6615 12.3026L87.4753 13.1452ZM84.1845 20.2294L82.5391 23.7715L80.7252 22.9289L82.3706 19.3868L84.1845 20.2294ZM80.8937 27.3135L79.2482 30.8556L77.4344 30.013L79.0798 26.4709L80.8937 27.3135ZM77.6028 34.3977L75.9574 37.9398L74.1435 37.0972L75.789 33.5551L77.6028 34.3977ZM74.312 41.4819L72.6666 45.024L70.8527 44.1814L72.4981 40.6393L74.312 41.4819ZM71.0211 48.5661L69.3757 52.1081L67.5619 51.2655L69.2073 47.7235L71.0211 48.5661ZM67.7303 55.6502L66.9076 57.4213L65.0938 56.5787L65.9165 54.8076L67.7303 55.6502Z"
+                fill="#60DC74"
+              />
+              <path
+                class="dashes2"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M34.1233 4.30255C34.7818 2.89746 36.1935 2 37.7452 2H39.6938V4H37.7452C36.9693 4 36.2635 4.44873 35.9342 5.15127L35.0165 7.1096L33.2055 6.26088L34.1233 4.30255ZM43.591 2H47.4882V4H43.591V2ZM51.3854 2H55.2826V4H51.3854V2ZM59.1798 2H62.5961V4H59.1798V2ZM65.5316 2H66.9994V4H65.5316V2ZM29.5343 14.0942L31.3699 10.1775L33.1809 11.0263L31.3453 14.9429L29.5343 14.0942ZM25.8632 21.9275L27.6988 18.0109L29.5098 18.8596L27.6742 22.7763L25.8632 21.9275ZM22.1921 29.7609L24.0276 25.8442L25.8386 26.6929L24.0031 30.6096L22.1921 29.7609ZM18.521 37.5942L20.3565 33.6775L22.1675 34.5263L20.3319 38.4429L18.521 37.5942ZM14.8498 45.4275L16.6854 41.5109L18.4964 42.3596L16.6608 46.2763L14.8498 45.4275ZM12.0965 51.3025L13.0143 49.3442L14.8252 50.1929L13.9075 52.1513C13.7538 52.4792 13.6984 52.8112 13.719 53.1268L11.7232 53.2573C11.681 52.6107 11.7971 51.9413 12.0965 51.3025ZM15.7184 57C15.013 57 14.3576 56.8211 13.79 56.5084L14.7551 54.7567C15.0322 54.9093 15.3563 55 15.7184 55H17.8551V57H15.7184ZM26.402 57H22.1286V55H26.402V57ZM34.9488 57H30.6754V55H34.9488V57ZM43.4956 57H39.2222V55H43.4956V57ZM52.0424 57H47.769V55H52.0424V57ZM60.5892 57H56.3158V55H60.5892V57ZM66.9994 57H64.8627V55H66.9994V57Z"
+                fill="#F9F8F7"
+              />
+            </svg>
+            <h3 class="value-name">Elastyczność</h3>
+            <p class="value-desc">
+              Mamy swoje wypracowane procesy obsługi. Potrafimy odnaleźc sie
+              także we współpracy z dużymi Software Houseami.
+            </p>
+          </div>
+          <div class="value-item onWindowCurrency">
+            <svg
+              class="value-icon value-icon-4"
+              preserveAspectRatio="none"
+              viewBox="0 0 58 60"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle class="circle-1" cx="10" cy="10" r="10" fill="#60DC74" />
+              <circle class="circle-2" cx="10" cy="30" r="10" fill="#60DC74" />
+              <circle class="circle-3" cx="10" cy="50" r="10" fill="#60DC74" />
+              <circle class="circle-4" cx="29" cy="10" r="10" fill="#60DC74" />
+              <circle class="circle-5" cx="29" cy="30" r="10" fill="#60DC74" />
+              <circle class="circle-6" cx="29" cy="50" r="10" fill="#60DC74" />
+              <circle class="circle-7" cx="48" cy="10" r="10" fill="#60DC74" />
+              <circle class="circle-8" cx="48" cy="30" r="10" fill="#60DC74" />
+              <circle class="circle-9" cx="48" cy="50" r="10" fill="#60DC74" />
+            </svg>
+
+            <h3 class="value-name">Wszechstronność</h3>
+            <p class="value-desc">
+              Mamy wieloletnie doświadczenie w projektowaniu dla ecommerce i
+              wielu branż: usługi, SaaS, beauty, technologie.
+            </p>
+          </div>
+          <div class="value-item onWindowCurrency">
+            <svg
+              class="value-icon value-icon-5"
+              preserveAspectRatio="none"
+              viewBox="0 0 59 59"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="circle-1"
+                d="M40 20C40 31.0457 31.0457 40 20 40C8.9543 40 0 31.0457 0 20C0 8.9543 8.9543 0 20 0C31.0457 0 40 8.9543 40 20Z"
+                fill="#60DC74"
+              />
+              <!-- <path class="circle-2" d="M40 20C40 31.0457 31.0457 40 20 40C8.9543 40 0 31.0457 0 20C0 8.9543 8.9543 0 20 0C31.0457 0 40 8.9543 40 20Z" fill="#60DC74"/> -->
+              <path
+                class="dashes-2"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M39.5 19C40.1541 19 40.801 19.0331 41.4391 19.0977L41.2375 21.0875C40.6662 21.0297 40.0866 21 39.5 21V19ZM45.2392 19.8806C46.4844 20.2733 47.676 20.7903 48.8004 21.4171L47.8265 23.164C46.8186 22.6021 45.7516 22.1393 44.6376 21.7879L45.2392 19.8806ZM51.9798 23.6316C52.9604 24.4701 53.8591 25.4052 54.6623 26.4225L53.0925 27.6618C52.3696 26.7461 51.5612 25.9051 50.68 25.1517L51.9798 23.6316ZM56.7556 29.6763C57.341 30.8136 57.8226 32.0159 58.1875 33.2696L56.2673 33.8286C55.9384 32.6988 55.5045 31.6158 54.9773 30.5915L56.7556 29.6763ZM58.9101 37.068C58.9696 37.704 59 38.3485 59 39C59 39.6515 58.9696 40.296 58.9101 40.932L56.9188 40.7458C56.9725 40.1716 57 39.5892 57 39C57 38.4108 56.9725 37.8284 56.9188 37.2542L58.9101 37.068ZM20.0899 40.932C20.0304 40.296 20 39.6515 20 39H22C22 39.5892 22.0275 40.1716 22.0812 40.7458L20.0899 40.932ZM22.2443 48.3237C21.659 47.1864 21.1774 45.9841 20.8125 44.7304L22.7327 44.1714C23.0616 45.3012 23.4955 46.3842 24.0227 47.4085L22.2443 48.3237ZM58.1875 44.7304C57.8226 45.9841 57.341 47.1864 56.7556 48.3237L54.9773 47.4085C55.5045 46.3842 55.9384 45.3012 56.2673 44.1714L58.1875 44.7304ZM27.0202 54.3684C26.0396 53.5299 25.1409 52.5948 24.3377 51.5775L25.9075 50.3382C26.6304 51.2539 27.4388 52.0949 28.32 52.8483L27.0202 54.3684ZM54.6623 51.5775C53.8591 52.5948 52.9604 53.5299 51.9798 54.3684L50.68 52.8483C51.5612 52.0949 52.3696 51.2539 53.0925 50.3382L54.6623 51.5775ZM33.7608 58.1194C32.5156 57.7267 31.324 57.2097 30.1996 56.5829L31.1735 54.836C32.1814 55.3979 33.2484 55.8607 34.3624 56.2121L33.7608 58.1194ZM48.8004 56.5829C47.676 57.2097 46.4844 57.7267 45.2392 58.1194L44.6376 56.2121C45.7516 55.8607 46.8186 55.3979 47.8265 54.836L48.8004 56.5829ZM39.5 59C38.8459 59 38.199 58.9669 37.5609 58.9023L37.7625 56.9125C38.3338 56.9703 38.9134 57 39.5 57C40.0866 57 40.6662 56.9703 41.2375 56.9125L41.4391 58.9023C40.801 58.9669 40.1541 59 39.5 59Z"
+                fill="#60DC74"
+              />
+              <path
+                class="dashes-1"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M40 21C39.3898 21 38.7869 21.032 38.1929 21.0945L37.9837 19.1055C38.6471 19.0357 39.3197 19 40 19V21ZM34.6612 21.8495C33.508 22.227 32.4038 22.724 31.3616 23.327L30.3599 21.5959C31.52 20.9247 32.7512 20.3704 34.0389 19.9488L34.6612 21.8495ZM28.4255 25.4489C27.524 26.2487 26.6973 27.1406 25.9587 28.1112L24.3672 26.9001C25.1836 25.8271 26.0986 24.8397 27.0981 23.9528L28.4255 25.4489ZM24.0431 31.1996C23.5097 32.2748 23.0709 33.4107 22.7386 34.5952L20.8129 34.0548C21.1791 32.7497 21.6629 31.4972 22.2514 30.3108L24.0431 31.1996ZM22.0818 38.1768C22.0277 38.7766 22 39.3847 22 40H20C20 39.3247 20.0304 38.6566 20.0898 37.9972L22.0818 38.1768Z"
+                fill="#F9F8F7"
+              />
+            </svg>
+
+            <h3 class="value-name">Transparentność</h3>
+            <p class="value-desc">
+              Pracujemy bardzo otwarcie z naszymi klientami. Wykorzystujemy
+              nasze wieloletnie doświadczenie.
+            </p>
+          </div>
+          <div class="value-item onWindowCurrency">
+            <svg
+              class="value-icon value-icon-6"
+              preserveAspectRatio="none"
+              viewBox="0 0 59 59"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="heart-1"
+                d="M27.6671 49C27.6671 49 65.6544 22.556 53.6575 4.37577C49.6441 -1.70615 43.4782 -0.479556 37.5434 2.25081C32.7138 4.47276 27.6664 13.1117 27.6664 13.1117C27.6664 13.1117 22.1446 4.30635 17.0295 2.25081C11.2894 -0.0559442 5.01581 -1.86968 1.67677 4.37577C-8.04304 22.556 27.6671 49 27.6671 49Z"
+                fill="#60DC74"
+              />
+              <path
+                class="heart-2"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M50.1159 46.0685L50.1153 46.0695L48.4359 49.0417L46.6658 46.1229L46.6651 46.1217L46.6516 46.0999C46.6397 46.0807 46.6205 46.05 46.5946 46.0092C46.5426 45.9274 46.4639 45.8058 46.3628 45.6559C46.1594 45.354 45.8718 44.9468 45.5339 44.5216C45.1927 44.0921 44.8222 43.6723 44.4552 43.3304C44.0702 42.9716 43.7836 42.7882 43.6186 42.7197C42.5313 42.2678 41.7533 42.0327 41.1995 42.041C40.9714 42.0444 40.8572 42.0906 40.7901 42.1312C40.7258 42.1701 40.5789 42.2797 40.4054 42.6153C39.8475 43.6943 39.8583 45.0206 40.4832 46.6632C41.1128 48.3181 42.2875 50.063 43.6668 51.7059C45.0318 53.3316 46.5178 54.7642 47.6727 55.7967C47.9404 56.036 48.189 56.2527 48.4126 56.444C48.6603 56.2442 48.9381 56.0156 49.2382 55.7615C50.4574 54.729 52.0163 53.299 53.427 51.6787C54.8557 50.0377 56.033 48.3134 56.6148 46.697C57.1812 45.1235 57.1254 43.8534 56.4356 42.7727C56.0243 42.1281 55.6597 42.0172 55.2871 42.0016C54.7418 41.9789 53.9699 42.1879 52.938 42.6788C52.7831 42.7525 52.514 42.9421 52.1552 43.3035C51.8134 43.6477 51.4702 44.0659 51.1552 44.4914C50.8434 44.9127 50.5791 45.3142 50.3925 45.6112C50.2998 45.7587 50.2278 45.8781 50.1802 45.9583C50.1565 45.9984 50.1389 46.0285 50.1281 46.0473L50.1159 46.0685ZM48.3752 59C48.3752 59 62.6204 48.7462 58.1216 41.6967C56.6165 39.3384 54.3043 39.814 52.0788 40.8728C51.1847 41.2981 50.2708 42.3297 49.5745 43.2654C48.8602 44.2253 48.3749 45.0841 48.3749 45.0841C48.3749 45.0841 47.8664 44.2457 47.12 43.3028C46.3602 42.343 45.3537 41.2748 44.3861 40.8728C42.2335 39.9783 39.8809 39.275 38.6288 41.6967C34.9839 48.7462 48.3752 59 48.3752 59Z"
+                fill="#60DC74"
+              />
+              <path
+                class="heart-3"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M50.1159 46.0685L50.1153 46.0695L48.4359 49.0417L46.6658 46.1229L46.6651 46.1217L46.6516 46.0999C46.6397 46.0807 46.6205 46.05 46.5946 46.0092C46.5426 45.9274 46.4639 45.8058 46.3628 45.6559C46.1594 45.354 45.8718 44.9468 45.5339 44.5216C45.1927 44.0921 44.8222 43.6723 44.4552 43.3304C44.0702 42.9716 43.7836 42.7882 43.6186 42.7197C42.5313 42.2678 41.7533 42.0327 41.1995 42.041C40.9714 42.0444 40.8572 42.0906 40.7901 42.1312C40.7258 42.1701 40.5789 42.2797 40.4054 42.6153C39.8475 43.6943 39.8583 45.0206 40.4832 46.6632C41.1128 48.3181 42.2875 50.063 43.6668 51.7059C45.0318 53.3316 46.5178 54.7642 47.6727 55.7967C47.9404 56.036 48.189 56.2527 48.4126 56.444C48.6603 56.2442 48.9381 56.0156 49.2382 55.7615C50.4574 54.729 52.0163 53.299 53.427 51.6787C54.8557 50.0377 56.033 48.3134 56.6148 46.697C57.1812 45.1235 57.1254 43.8534 56.4356 42.7727C56.0243 42.1281 55.6597 42.0172 55.2871 42.0016C54.7418 41.9789 53.9699 42.1879 52.938 42.6788C52.7831 42.7525 52.514 42.9421 52.1552 43.3035C51.8134 43.6477 51.4702 44.0659 51.1552 44.4914C50.8434 44.9127 50.5791 45.3142 50.3925 45.6112C50.2998 45.7587 50.2278 45.8781 50.1802 45.9583C50.1565 45.9984 50.1389 46.0285 50.1281 46.0473L50.1159 46.0685ZM48.3752 59C48.3752 59 62.6204 48.7462 58.1216 41.6967C56.6165 39.3384 54.3043 39.814 52.0788 40.8728C51.1847 41.2981 50.2708 42.3297 49.5745 43.2654C48.8602 44.2253 48.3749 45.0841 48.3749 45.0841C48.3749 45.0841 47.8664 44.2457 47.12 43.3028C46.3602 42.343 45.3537 41.2748 44.3861 40.8728C42.2335 39.9783 39.8809 39.275 38.6288 41.6967C34.9839 48.7462 48.3752 59 48.3752 59Z"
+                fill="#60DC74"
+              />
+              <path
+                class="heart-4"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M50.1159 46.0685L50.1153 46.0695L48.4359 49.0417L46.6658 46.1229L46.6651 46.1217L46.6516 46.0999C46.6397 46.0807 46.6205 46.05 46.5946 46.0092C46.5426 45.9274 46.4639 45.8058 46.3628 45.6559C46.1594 45.354 45.8718 44.9468 45.5339 44.5216C45.1927 44.0921 44.8222 43.6723 44.4552 43.3304C44.0702 42.9716 43.7836 42.7882 43.6186 42.7197C42.5313 42.2678 41.7533 42.0327 41.1995 42.041C40.9714 42.0444 40.8572 42.0906 40.7901 42.1312C40.7258 42.1701 40.5789 42.2797 40.4054 42.6153C39.8475 43.6943 39.8583 45.0206 40.4832 46.6632C41.1128 48.3181 42.2875 50.063 43.6668 51.7059C45.0318 53.3316 46.5178 54.7642 47.6727 55.7967C47.9404 56.036 48.189 56.2527 48.4126 56.444C48.6603 56.2442 48.9381 56.0156 49.2382 55.7615C50.4574 54.729 52.0163 53.299 53.427 51.6787C54.8557 50.0377 56.033 48.3134 56.6148 46.697C57.1812 45.1235 57.1254 43.8534 56.4356 42.7727C56.0243 42.1281 55.6597 42.0172 55.2871 42.0016C54.7418 41.9789 53.9699 42.1879 52.938 42.6788C52.7831 42.7525 52.514 42.9421 52.1552 43.3035C51.8134 43.6477 51.4702 44.0659 51.1552 44.4914C50.8434 44.9127 50.5791 45.3142 50.3925 45.6112C50.2998 45.7587 50.2278 45.8781 50.1802 45.9583C50.1565 45.9984 50.1389 46.0285 50.1281 46.0473L50.1159 46.0685ZM48.3752 59C48.3752 59 62.6204 48.7462 58.1216 41.6967C56.6165 39.3384 54.3043 39.814 52.0788 40.8728C51.1847 41.2981 50.2708 42.3297 49.5745 43.2654C48.8602 44.2253 48.3749 45.0841 48.3749 45.0841C48.3749 45.0841 47.8664 44.2457 47.12 43.3028C46.3602 42.343 45.3537 41.2748 44.3861 40.8728C42.2335 39.9783 39.8809 39.275 38.6288 41.6967C34.9839 48.7462 48.3752 59 48.3752 59Z"
+                fill="#60DC74"
+              />
+            </svg>
+
+            <h3 class="value-name">Pasja</h3>
+            <p class="value-desc">
+              Mamy swoje wypracowane procesy obsługi. Potrafimy odnaleźc sie
+              także we współpracy z dużymi Software Houseami.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="home-clientsQuotes" class="section-container">
+        <h2 class="clientsQuotes-title">Co klienci mówią o nas</h2>
+        <div class="clientsQuotes-content">
+          <div class="clientsQuotes-item">
+            <p class="client-quote">
+              Członkowie zespołu OTREE to rzadkie połączenie ekspertów IT i
+              kreatywnych artystów. Ich badania z powodzeniem dotarły do
+              docelowej grupy odbiorców. Profesjonalizm i szybkość reakcji to
+              cechy charakteryzujące ich wysoką jakość pracy.
+            </p>
+            <div class="client-content">
+              <img class="client-img" src="/assets/images/client1.jpg" />
+              <div class="client-info">
+                <p class="client-name">ARTUR PIEKARCZYK</p>
+                <p class="client-position">Allwins General Director</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="clientsQuotes-item">
+            <p class="client-quote">
+              Członkowie zespołu OTREE to rzadkie połączenie ekspertów IT i
+              kreatywnych artystów. Ich badania z powodzeniem dotarły do
+              docelowej grupy odbiorców. Profesjonalizm i szybkość reakcji to
+              cechy charakteryzujące ich wysoką jakość pracy.
+            </p>
+            <div class="client-content">
+              <img class="client-img" src="/assets/images/client1.jpg" />
+              <div class="client-info">
+                <p class="client-name">ARTUR PIEKARCZYK</p>
+                <p class="client-position">Allwins General Director</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="clientsQuotes-item">
+            <p class="client-quote">
+              Członkowie zespołu OTREE to rzadkie połączenie ekspertów IT i
+              kreatywnych artystów. Ich badania z powodzeniem dotarły do
+              docelowej grupy odbiorców. Profesjonalizm i szybkość reakcji to
+              cechy charakteryzujące ich wysoką jakość pracy.
+            </p>
+            <div class="client-content">
+              <img class="client-img" src="/assets/images/client1.jpg" />
+              <div class="client-info">
+                <p class="client-name">ARTUR PIEKARCZYK</p>
+                <p class="client-position">Allwins General Director</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="clientsQuotes-item">
+            <p class="client-quote">
+              Członkowie zespołu OTREE to rzadkie połączenie ekspertów IT i
+              kreatywnych artystów. Ich badania z powodzeniem dotarły do
+              docelowej grupy odbiorców. Profesjonalizm i szybkość reakcji to
+              cechy charakteryzujące ich wysoką jakość pracy.
+            </p>
+            <div class="client-content">
+              <img class="client-img" src="/assets/images/client1.jpg" />
+              <div class="client-info">
+                <p class="client-name">ARTUR PIEKARCZYK</p>
+                <p class="client-position">Allwins General Director</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="clientsQuotes-item">
+            <p class="client-quote">
+              Członkowie zespołu OTREE to rzadkie połączenie ekspertów IT i
+              kreatywnych artystów. Ich badania z powodzeniem dotarły do
+              docelowej grupy odbiorców. Profesjonalizm i szybkość reakcji to
+              cechy charakteryzujące ich wysoką jakość pracy.
+            </p>
+            <div class="client-content">
+              <img class="client-img" src="/assets/images/client1.jpg" />
+              <div class="client-info">
+                <p class="client-name">ARTUR PIEKARCZYK</p>
+                <p class="client-position">Allwins General Director</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="clientsQuotes-item">
+            <p class="client-quote">
+              Członkowie zespołu OTREE to rzadkie połączenie ekspertów IT i
+              kreatywnych artystów. Ich badania z powodzeniem dotarły do
+              docelowej grupy odbiorców. Profesjonalizm i szybkość reakcji to
+              cechy charakteryzujące ich wysoką jakość pracy.
+            </p>
+            <div class="client-content">
+              <img class="client-img" src="/assets/images/client1.jpg" />
+              <div class="client-info">
+                <p class="client-name">ARTUR PIEKARCZYK</p>
+                <p class="client-position">Allwins General Director</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clientsQuotes-pagination">
+          <div class="quote-number">
+            <span class="current-quote">1</span>-<span class="max-quote"
+              >6</span
+            >
+          </div>
+          <a class="prev-quote pagination-button"
+            ><img src="/assets/icons/right-white-arrow.svg" />
+          </a>
+          <a class="next-quote pagination-button"
+            ><img src="/assets/icons/right-white-arrow.svg"
+          /></a>
+        </div>
+      </section>
+
+      <section
+        id="home-contactForm"
+        class="contactForm-section section-container"
+      >
+        <svg
+          class="contactForm-leaf onFirstTimeView"
+          viewBox="0 0 370 632"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            pathLength="100"
+            d="M-18.627 244.839C-33.3623 141.278 38.6549 45.3244 142.281 30.6004L340.575 2.42534C355.792 105.224 284.616 200.892 181.709 215.805L-18.627 244.839Z"
+            stroke="#60DC74"
+          />
+          <path
+            pathLength="100"
+            d="M165.037 630.841C60.4337 630.571 -24.1987 545.536 -23.9079 440.87L-23.3515 240.585C80.5671 240.269 165.037 324.43 165.037 428.412V630.841Z"
+            stroke="#60DC74"
+          />
+        </svg>
+        <h2 class="contactForm-title">
+          Chcielibyśmy razem zbudować coś niesamowitego.<br />
+          <strong>Zrealizujmy to. Skontaktuj się.</strong>
+        </h2>
+        <form class="contactForm-content section-container">
+          <div class="contactForm-topics">
+            <label class="title">Interesuje mnie</label>
+            <div class="topics-options">
+              <div class="topic-option">
+                <input
+                  type="checkbox"
+                  id="contactForm-analiza"
+                  name="contactForm-topic-option"
+                  value="contactForm-analiza"
+                /><label for="contactForm-analiza"
+                  >Analiza
+                  <svg
+                    preserveAspectRatio="none"
+                    viewBox="0 0 168 45"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M45 0.5H167.497C167.229 24.8463 147.41 44.5 123 44.5H0.502751C0.770785 20.1537 20.5902 0.5 45 0.5Z"
+                      stroke="black"
+                    />
+                  </svg>
+                </label>
+              </div>
+              <div class="topic-option">
+                <input
+                  type="checkbox"
+                  id="contactForm-projektowanie"
+                  name="contactForm-topic-option"
+                  value="contactForm-projektowanie"
+                /><label for="contactForm-projektowanie"
+                  >Projektowanie
+                  <svg
+                    preserveAspectRatio="none"
+                    viewBox="0 0 168 45"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M45 0.5H167.497C167.229 24.8463 147.41 44.5 123 44.5H0.502751C0.770785 20.1537 20.5902 0.5 45 0.5Z"
+                      stroke="black"
+                    />
+                  </svg>
+                </label>
+              </div>
+
+              <div class="topic-option">
+                <input
+                  type="checkbox"
+                  id="contactForm-wdrozenie"
+                  name="contactForm-topic-option"
+                  value="contactForm-wdrozenie"
+                /><label for="contactForm-wdrozenie"
+                  >Wdrożenie
+                  <svg
+                    preserveAspectRatio="none"
+                    viewBox="0 0 168 45"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M45 0.5H167.497C167.229 24.8463 147.41 44.5 123 44.5H0.502751C0.770785 20.1537 20.5902 0.5 45 0.5Z"
+                      stroke="black"
+                    />
+                  </svg>
+                </label>
+              </div>
+              <div class="topic-option">
+                <input
+                  type="checkbox"
+                  id="contactForm-innytemat"
+                  name="contactForm-topic-option"
+                  value="contactForm-innytemat"
+                /><label for="contactForm-innytemat"
+                  >Inny temat
+                  <svg
+                    preserveAspectRatio="none"
+                    viewBox="0 0 168 45"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M45 0.5H167.497C167.229 24.8463 147.41 44.5 123 44.5H0.502751C0.770785 20.1537 20.5902 0.5 45 0.5Z"
+                      stroke="black"
+                    />
+                  </svg>
+                </label>
+              </div>
+            </div>
+          </div>
+          <input
+            class="contactForm-input contactInput-fullname"
+            name="fullname"
+            placeholder="Imię i nazwisko"
+          />
+          <input
+            class="contactForm-input contactInput-company"
+            name="company"
+            placeholder="Nazwa firmy"
+          />
+          <input
+            class="contactForm-input contactInput-email"
+            name="email"
+            placeholder="Email"
+          />
+          <input
+            class="contactForm-input contactInput-phone"
+            name="phone"
+            placeholder="Telefon"
+          />
+          <div class="contactForm-input-wrapper">
+            <textarea
+              class="contactForm-input contactInput-content autoresize"
+              name="content"
+              placeholder="Treść"
+              maxlength="500"
+              wrap="soft"
+            ></textarea>
+          </div>
+          <button
+            class="contactForm-submit primaryButton hideOnMobile"
+            type="submit"
+          >
+            Zapytaj o projekt
+          </button>
+          <button class="contactForm-submit showOnMobile" type="submit">
+            Wyślij
+          </button>
+        </form>
+      </section>
+
+      <footer id="footer" class="section-container">
+        <h2 class="footer-special">
+          <p class="loop-text">Data Driven Design in Technology</p>
+          <p class="loop-text">Data Driven Design in Technology</p>
+        </h2>
+        <div class="footer-content">
+          <div class="footer-text">
+            <h2 class="footer-text-title">
+              Nasze doświadczenie.<br />
+              Twoja przewaga.
+            </h2>
+            <h3 class="footer-text-desc">
+              Otree to twój partner w projektowaniu interfejsów e‑commerce, WWW
+              i oprogramowania.
+            </h3>
+            <div class="footer-text-logos">
+              <img
+                class="corner-logo"
+                src="/assets/logos/corner.svg"
+                alt="Corner logo"
+              />
+              <img
+                class="clutch-logo"
+                src="/assets/logos/clutch.svg"
+                alt="Clutch logo"
+              />
+            </div>
+          </div>
+          <address
+            class="footer-otreeInfo"
+            itemscope
+            itemtype="https://schema.org/Organization"
+          >
+            <p>Skontaktuj się z nami:</p>
+            <p
+              class="otreeInfo-contact"
+              itemscope
+              itemtype="https://schema.org/ContactPoint"
+            >
+              <a href="tel:+48 606 345 454" itemprop="telephone"
+                >+48 606 345 454</a
+              >
+              <a href="mailto:kontakt@otree.tech" itemprop="email"
+                >kontakt@otree.tech</a
+              >
+            </p>
+            <div class="otreeInfo-links">
+              <a
+                href="https://pl.linkedin.com/company/otree.tech"
+                class="otreeInfo-link"
+                ><img src="/assets/icons/linkedin.svg"
+              /></a>
+            </div>
+            <p>OTREE P SA</p>
+            <div
+              class="otreeInfo-adress"
+              itemprop="address"
+              itemscope
+              itemtype="https://schema.org/PostalAddress"
+            >
+              <p>
+                <span itemprop="streetAddress">ul. Krakowska 29D</span><br />
+                <span itemprop="postalCode">50‑424</span>
+                <span itemprop="addressLocality">Wrocław</span>
+              </p>
+            </div>
+          </address>
+        </div>
+        <div class="footer-bottom">
+          <a href="" class="footer-bottom-link">Privacy Policy</a>
+          <a href="" class="footer-bottom-link">2023 Otree, LLC</a>
+          <a href="" class="footer-bottom-link">All rights Reserved</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="/scripts/onFirstTimeView.js"></script>
+    <script src="/scripts/onWindowCurrency.js"></script>
+    <script src="/scripts/waveAnimation.js"></script>
+    <script type="module" src="/scripts/clientsQuotesScript.js"></script>
+    <script src="/scripts/textTypingScript.js"></script>
+    <script src="/scripts/autoResize.js"></script>
+    <script src="/scripts/jquery/scrollmagic.js"></script>
+    <script src="/scripts/events.js"></script>
+  </body>
+</html>

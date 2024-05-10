@@ -1,0 +1,25 @@
+<?xml-stylesheet type="text/css" href="svg-style.css"?>
+<svg
+          class="draw-svg2"
+          width="316"
+          height="424"
+          viewBox="0 0 316 424"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="short-line"
+            d="M216 380H181.813H60C32.3858 380 10 357.614 10 330V293"
+            stroke="#E3E5E2"
+          />
+          <path
+            class="long-line"
+            d="M316 1L299.404 1L266 1C238.386 1 216 23.3858 216 51L216 424"
+            stroke="#E3E5E2"
+          />
+          <path
+            class="leaf"
+            d="M8.63477 268C14.3043 270.314 17.017 276.792 14.6876 282.455L10.2381 293.272C4.59273 291.006 1.86952 284.578 4.16803 278.946L8.63477 268Z"
+            fill="#3AE1AA"
+          />
+        </svg>

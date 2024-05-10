@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      OTREE | Agencja UX & Ecommerce > UX Design-Konwersja-Wdrożenia
+    </title>
+
+    <link href="/styles/oferta.style.min.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gruppo&family=Montserrat:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <section id="offer-hero" class="hero-section">
+        <img
+          class="hero-background"
+          src="/assets/images/oferta-bg.jpg"
+          alt="hero background"
+        />
+        <header class="hero-header">
+          <a href="/" class="logo"
+            ><img src="/assets/logos/logo-otree.svg" alt="Otree logo"
+          /></a>
+          <nav class="hero-nav">
+            <ul class="nav-items hideOnMobile">
+              <li class="nav-item">
+                <a href="/realizacje.html"
+                  ><span class="hover-line">Realizaje</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="/oferta.html"
+                  ><span class="hover-line">Oferta</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="/o-nas.html"><span class="hover-line">O nas</span></a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="primaryButton">Zapytaj o projekt</a>
+              </li>
+            </ul>
+
+            <svg
+              id="menu-button"
+              class="menu-icon"
+              viewBox="0 0 21 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="rec1"
+                d="M0 3C0 1.34315 1.34315 0 3 0H21V0C21 1.65685 19.6569 3 18 3H0V3Z"
+                fill="white"
+              />
+              <path
+                class="rec2"
+                d="M0 9C0 7.34315 1.34315 6 3 6H21V6C21 7.65685 19.6569 9 18 9H0V9Z"
+                fill="white"
+              />
+              <path
+                class="rec3"
+                d="M0 15C0 13.3431 1.34315 12 3 12H21V12C21 13.6569 19.6569 15 18 15H0V15Z"
+                fill="white"
+              />
+              <path
+                class="line1"
+                d="M2.00195 7.79688L18.9994 7.50018"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <path
+                class="line2"
+                d="M2 7.64648H19"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+
+            <div id="menu-nav" class="menu-nav">
+              <ul class="menu-nav-items">
+                <li class="menu-nav-item showOnMobile">
+                  <a href="/blog.html">Realizacje</a>
+                </li>
+                <li class="menu-nav-item showOnMobile">
+                  <a href="/kariera.html">Oferta</a>
+                </li>
+                <li class="menu-nav-item showOnMobile">
+                  <a href="">O nas</a>
+                </li>
+                <li class="menu-nav-item">
+                  <a href="/blog.html">Blog</a>
+                </li>
+                <li class="menu-nav-item">
+                  <a href="/kariera.html">Kariera</a>
+                </li>
+                <li class="menu-nav-item">
+                  <a href="">Kontakt</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+        <main class="hero-content">
+          <h3 class="hero-siteName">Oferta</h3>
+          <h1 class="hero-title">
+            Kompleksowa usługa dla <br />
+            Twojego biznesu
+          </h1>
+          <h2 class="hero-subtitle">Doradzamy, Projektujemy, Wdrożamy</h2>
+          <p class="hero-desc">
+            Odkrywamy, Projektujemy, Wdrażamy - to nasz proces, który zapewnia
+            kompleksowe wsparcie na każdym etapie projektu. Zaufaj nam, abyśmy
+            mogli przekształcić Twoje marzenia w skuteczne rozwiązania online.
+            Jesteśmy tutaj, aby Ci pomóc.
+          </p>
+        </main>
+
+        <div class="hero-bottom">
+          <a href="#offer-typingText1" class="scroll-down-button hideOnMobile">
+            <p class="hideOnMobile">Przewiń w dół</p>
+            <img class="hideOnMobile" src="/assets/icons/mouse-icon.svg" />
+          </a>
+        </div>
+      </section>
+
+      <section id="offer-typingText1" class="typingText-section-container">
+        <p class="typeTextAnimation">
+          Aż 64% klientów globalnych kupuje online, aby do nich trafić, serwis
+          musi być dopasowany do potrzeb grup docelowej.
+        </p>
+      </section>
+
+      <section
+        id="offer-analysis"
+        class="workSteps-section-container onWindowCurrency"
+      >
+        <div class="workSteps-top analysis-top">
+          <h2 class="workSteps-title analysis-title">
+            <i class="circle-selected-onHover">
+              Odkrywanie i analiza
+              <svg
+                class="circle"
+                preserveAspectRatio="none"
+                viewBox="0 0 162 65"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="circle-line"
+                  d="M155.869 11.3671C134.273 7.0487 70.0943 4.40327 47.7694 7.24122C37.13 8.59371 26.3459 11.6737 16.7776 15.4656C12.3493 17.2206 6.95357 19.6008 4.20724 23.0193C-0.425324 28.7856 0.143558 34.4256 4.73572 40.0222C14.5395 51.9706 32.3442 58.1 49.7701 60.8458C76.8918 65.1193 106.389 65.7097 132.667 58.4543C141.348 56.0571 151.785 53.2509 157.468 47.1384C162.354 41.8815 161.973 35.3471 157.543 30.1063C146.657 17.2273 125.06 7.53132 106.167 3.7998C94.2959 1.45523 81.1737 1 68.9842 1C53.2511 1 40.124 4.69007 25.2711 8.05783"
+                  stroke="#60DC74"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </i>
+          </h2>
+          <h3 class="workSteps-subtitle analysis-subtitle">
+            Nasz proces zaczynamy od gruntownej analizy
+          </h3>
+        </div>
+        <ul class="analysis-steps workSteps-content">
+          <li class="workStep-item">
+            <h4 class="workStep-title">Audyt użyteczności UX</h4>
+            <p class="workStep-desc">
+              Przeprowadzamy audyty stron internetowych lub aplikacji, aby
+              zidentyfikować obszary do poprawy. Analizujemy nawigację,
+              funkcjonalności, wydajność i inne kluczowe elementy, które
+              wpływają na konwersję.
+            </p>
+          </li>
+          <li class="workStep-item">
+            <h4 class="workStep-title">Warsztaty kreatywne</h4>
+            <p class="workStep-desc">
+              Prowadzimy warsztaty, które pomagają Twojemu zespołowi zrozumieć
+              potrzeby i perspektywy użytkowników, generować pomysły i
+              rozwiązywać problemy związane z projektowaniem interfejsu.
+            </p>
+          </li>
+          <li class="workStep-item">
+            <h4 class="workStep-title">Analityka WWW</h4>
+            <p class="workStep-desc">
+              Specjalizujemy się w interpretowaniu danych związanych z ruchem na
+              Twojej stronie internetowej. Dzięki zaawansowanym narzędziom i
+              analizie danych możemy dostarczyć Twojej firmie cennych informacji
+              na temat efektywności Twoich działań oraz wskazać obszary do
+              optymalizacji i poprawy.
+            </p>
+          </li>
+          <li class="workStep-item">
+            <h4 class="workStep-title">Badania z klientami (UX)</h4>
+            <p class="workStep-desc">
+              Badamy zachowania, preferencje oraz potrzeby użytkowników.
+              Przeprowadzamy testy z użytkownikami, wywiady pogłębione, sondaże
+              i wiele innych, aby zrozumieć ich perspektywę oraz dostarczyć
+              Twojej firmie cennej wiedzy na temat, potrzeb i bolączek Twoich
+              użytkowników.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section
+        id="offer-design"
+        class="workSteps-section-container onWindowCurrency"
+      >
+        <div class="workSteps-top design-top">
+          <h2 class="workSteps-title design-title">
+            <i class="circle-selected-onHover">
+              Projetkowanie
+              <svg
+                class="circle"
+                preserveAspectRatio="none"
+                viewBox="0 0 162 65"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="circle-line"
+                  d="M155.869 11.3671C134.273 7.0487 70.0943 4.40327 47.7694 7.24122C37.13 8.59371 26.3459 11.6737 16.7776 15.4656C12.3493 17.2206 6.95357 19.6008 4.20724 23.0193C-0.425324 28.7856 0.143558 34.4256 4.73572 40.0222C14.5395 51.9706 32.3442 58.1 49.7701 60.8458C76.8918 65.1193 106.389 65.7097 132.667 58.4543C141.348 56.0571 151.785 53.2509 157.468 47.1384C162.354 41.8815 161.973 35.3471 157.543 30.1063C146.657 17.2273 125.06 7.53132 106.167 3.7998C94.2959 1.45523 81.1737 1 68.9842 1C53.2511 1 40.124 4.69007 25.2711 8.05783"
+                  stroke="#1E1E1E"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </i>
+          </h2>
+          <h3 class="workSteps-subtitle design-subtitle">
+            Dobre projektowanie to więcej niż tylko estetyka
+          </h3>
+        </div>
+        <ul class="design-steps workSteps-content">
+          <li class="workStep-item">
+            <h4 class="workStep-title">Design system</h4>
+            <p class="workStep-desc">
+              Tworzymy kompleksowe systemy projektowe, które stanowią fundament
+              Twojego brandu online. Nasze design systemy zawierają zbiór zasad,
+              komponentów, stylów i wytycznych, które pozwalają zachować
+              spójność wizualną i funkcjonalną na wszystkich poziomach Twojej
+              platformy.
+            </p>
+          </li>
+          <li class="workStep-item">
+            <h4 class="workStep-title">Projektowanie interfejsów UI</h4>
+            <p class="workStep-desc">
+              Nasze projekty UI są oparte na najnowszych trendach w designie
+              oraz najlepszych praktykach branżowych. Tworzymy estetyczne,
+              funkcjonalne i łatwe w obsłudze interfejsy, które przyciągają
+              uwagę użytkowników i sprzyjają konwersji. Dbamy o każdy detal, aby
+              Twoje produkty wyróżniały się na tle konkurencji.
+            </p>
+          </li>
+          <li class="workStep-item">
+            <h4 class="workStep-title">Projektowanie doświadczeń UX</h4>
+            <p class="workStep-desc">
+              Nasz zespół doświadczonych projektantów UX kieruje się głębokim
+              zrozumieniem potrzeb użytkowników i celów biznesowych, aby
+              stworzyć interfejsy, które są intuicyjne, efektywne i
+              satysfakcjonujące. Przeprowadzamy badania, analizujemy dane i
+              projektujemy ścieżki użytkownika, które zapewniają optymalne
+              doświadczenia użytkownika na Twojej platformie.
+            </p>
+          </li>
+          <li class="workStep-item">
+            <h4 class="workStep-title">Architektura informacji</h4>
+            <p class="workStep-desc">
+              Pomagamy w zaplanowaniu struktury informacji na Twojej platformie,
+              aby zapewnić klarowność, łatwość nawigacji i dostępność treści dla
+              użytkowników. Nasze rozwiązania architektoniczne są
+              zoptymalizowane pod kątem efektywnego przekazywania informacji i
+              wspierania celów biznesowych.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section id="offer-typingText2" class="typingText-section-container">
+        <p class="typeTextAnimation">
+          Dobrze zaprojektowana i zoptymalizowana strona internetowa zwiększa
+          konwersję sprzedażową nawet o 300%.
+        </p>
+      </section>
+
+      <section
+        id="offer-implement"
+        class="workSteps-section-container onWindowCurrency"
+      >
+        <div class="workSteps-top implement-top">
+          <h2 class="workSteps-title implement-title">
+            <i class="circle-selected-onHover">
+              Wdrożenie
+              <svg
+                class="circle"
+                preserveAspectRatio="none"
+                viewBox="0 0 162 65"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="circle-line"
+                  d="M155.869 11.3671C134.273 7.0487 70.0943 4.40327 47.7694 7.24122C37.13 8.59371 26.3459 11.6737 16.7776 15.4656C12.3493 17.2206 6.95357 19.6008 4.20724 23.0193C-0.425324 28.7856 0.143558 34.4256 4.73572 40.0222C14.5395 51.9706 32.3442 58.1 49.7701 60.8458C76.8918 65.1193 106.389 65.7097 132.667 58.4543C141.348 56.0571 151.785 53.2509 157.468 47.1384C162.354 41.8815 161.973 35.3471 157.543 30.1063C146.657 17.2273 125.06 7.53132 106.167 3.7998C94.2959 1.45523 81.1737 1 68.9842 1C53.2511 1 40.124 4.69007 25.2711 8.05783"
+                  stroke="#1e1e1e"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </i>
+          </h2>
+          <h3 class="workSteps-subtitle implement-subtitle">
+            Nasze zaangażowanie nie kończy się na etapie projektowania
+          </h3>
+        </div>
+        <ul class="implement-steps workSteps-content">
+          <li class="workStep-item">
+            <h4 class="workStep-title">Kodowanie HTML/CSS/JS</h4>
+            <p class="workStep-desc">
+              Dostarczyamy, responsywne, szybkie i skalowalne rozwiązania
+              internetowe. Niezależnie od tego, czy potrzebujesz nowej strony
+              internetowej, landing page'a czy interaktywnej aplikacji
+              internetowej, możesz polegać na naszym doświadczeniu i
+              profesjonalizmie.
+            </p>
+          </li>
+          <li class="workStep-item">
+            <h4 class="workStep-title">Wdrożenie Wordpress/WOO</h4>
+            <p class="workStep-desc">
+              Specjalizujemy się we wdrożeniach oraz dostosowaniach platformy
+              Wordpress i WooCommerce. Oferujemy kompleksową obsługę od
+              instalacji po dostosowanie szablonów, rozwój funkcjonalności oraz
+              optymalizację SEO.
+            </p>
+          </li>
+          <li class="workStep-item">
+            <h4 class="workStep-title">Wdrożenie Presta Shop</h4>
+            <p class="workStep-desc">
+              Nasz zespół ekspertów wdroży Twój sklep internetowy na platformie
+              PrestaShop, zapewniając pełną konfigurację, integracje z
+              płatnościami, dostawcami i systemami zewnętrznymi.
+            </p>
+          </li>
+          <li class="workStep-item">
+            <h4 class="workStep-title">Projektowanie UX dla Software House</h4>
+            <p class="workStep-desc">
+              Oferujemy usługi projektowania UX dla firm zajmujących się
+              tworzeniem oprogramowania.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section
+        id="home-contactForm"
+        class="contactForm-section section-container"
+      >
+        <svg
+          class="contactForm-leaf onFirstTimeView"
+          viewBox="0 0 370 632"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            pathLength="100"
+            d="M-18.627 244.839C-33.3623 141.278 38.6549 45.3244 142.281 30.6004L340.575 2.42534C355.792 105.224 284.616 200.892 181.709 215.805L-18.627 244.839Z"
+            stroke="#60DC74"
+          />
+          <path
+            pathLength="100"
+            d="M165.037 630.841C60.4337 630.571 -24.1987 545.536 -23.9079 440.87L-23.3515 240.585C80.5671 240.269 165.037 324.43 165.037 428.412V630.841Z"
+            stroke="#60DC74"
+          />
+        </svg>
+        <h2 class="contactForm-title">
+          Chcielibyśmy razem zbudować coś niesamowitego.<br />
+          <strong>Zrealizujmy to. Skontaktuj się.</strong>
+        </h2>
+        <form class="contactForm-content section-container">
+          <div class="contactForm-topics">
+            <label class="title">Interesuje mnie</label>
+            <div class="topics-options">
+              <div class="topic-option">
+                <input
+                  type="checkbox"
+                  id="contactForm-analiza"
+                  name="contactForm-topic-option"
+                  value="contactForm-analiza"
+                /><label for="contactForm-analiza"
+                  >Analiza
+                  <svg
+                    preserveAspectRatio="none"
+                    viewBox="0 0 168 45"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M45 0.5H167.497C167.229 24.8463 147.41 44.5 123 44.5H0.502751C0.770785 20.1537 20.5902 0.5 45 0.5Z"
+                      stroke="black"
+                    />
+                  </svg>
+                </label>
+              </div>
+              <div class="topic-option">
+                <input
+                  type="checkbox"
+                  id="contactForm-projektowanie"
+                  name="contactForm-topic-option"
+                  value="contactForm-projektowanie"
+                /><label for="contactForm-projektowanie"
+                  >Projektowanie
+                  <svg
+                    preserveAspectRatio="none"
+                    viewBox="0 0 168 45"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M45 0.5H167.497C167.229 24.8463 147.41 44.5 123 44.5H0.502751C0.770785 20.1537 20.5902 0.5 45 0.5Z"
+                      stroke="black"
+                    />
+                  </svg>
+                </label>
+              </div>
+
+              <div class="topic-option">
+                <input
+                  type="checkbox"
+                  id="contactForm-wdrozenie"
+                  name="contactForm-topic-option"
+                  value="contactForm-wdrozenie"
+                /><label for="contactForm-wdrozenie"
+                  >Wdrożenie
+                  <svg
+                    preserveAspectRatio="none"
+                    viewBox="0 0 168 45"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M45 0.5H167.497C167.229 24.8463 147.41 44.5 123 44.5H0.502751C0.770785 20.1537 20.5902 0.5 45 0.5Z"
+                      stroke="black"
+                    />
+                  </svg>
+                </label>
+              </div>
+              <div class="topic-option">
+                <input
+                  type="checkbox"
+                  id="contactForm-innytemat"
+                  name="contactForm-topic-option"
+                  value="contactForm-innytemat"
+                /><label for="contactForm-innytemat"
+                  >Inny temat
+                  <svg
+                    preserveAspectRatio="none"
+                    viewBox="0 0 168 45"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M45 0.5H167.497C167.229 24.8463 147.41 44.5 123 44.5H0.502751C0.770785 20.1537 20.5902 0.5 45 0.5Z"
+                      stroke="black"
+                    />
+                  </svg>
+                </label>
+              </div>
+            </div>
+          </div>
+          <input
+            class="contactForm-input contactInput-fullname"
+            name="fullname"
+            placeholder="Imię i nazwisko"
+          />
+          <input
+            class="contactForm-input contactInput-company"
+            name="company"
+            placeholder="Nazwa firmy"
+          />
+          <input
+            class="contactForm-input contactInput-email"
+            name="email"
+            placeholder="Email"
+          />
+          <input
+            class="contactForm-input contactInput-phone"
+            name="phone"
+            placeholder="Telefon"
+          />
+          <div class="contactForm-input-wrapper">
+            <textarea
+              class="contactForm-input contactInput-content autoresize"
+              name="content"
+              placeholder="Treść"
+              maxlength="500"
+              wrap="soft"
+            ></textarea>
+          </div>
+          <button
+            class="contactForm-submit primaryButton hideOnMobile"
+            type="submit"
+          >
+            Zapytaj o projekt
+          </button>
+          <button class="contactForm-submit showOnMobile" type="submit">
+            Wyślij
+          </button>
+        </form>
+      </section>
+
+      <footer id="footer" class="section-container">
+        <h2 class="footer-special">
+          <p class="loop-text">Data Driven Design in Technology</p>
+          <p class="loop-text">Data Driven Design in Technology</p>
+        </h2>
+        <div class="footer-content">
+          <div class="footer-text">
+            <h2 class="footer-text-title">
+              Nasze doświadczenie.<br />
+              Twoja przewaga.
+            </h2>
+            <h3 class="footer-text-desc">
+              Otree to twój partner w projektowaniu interfejsów e‑commerce, WWW
+              i oprogramowania.
+            </h3>
+            <div class="footer-text-logos">
+              <img
+                class="corner-logo"
+                src="/assets/logos/corner.svg"
+                alt="Corner logo"
+              />
+              <img
+                class="clutch-logo"
+                src="/assets/logos/clutch.svg"
+                alt="Clutch logo"
+              />
+            </div>
+          </div>
+          <address
+            class="footer-otreeInfo"
+            itemscope
+            itemtype="https://schema.org/Organization"
+          >
+            <p>Skontaktuj się z nami:</p>
+            <p
+              class="otreeInfo-contact"
+              itemscope
+              itemtype="https://schema.org/ContactPoint"
+            >
+              <a href="tel:+48 606 345 454" itemprop="telephone"
+                >+48 606 345 454</a
+              >
+              <a href="mailto:kontakt@otree.tech" itemprop="email"
+                >kontakt@otree.tech</a
+              >
+            </p>
+            <div class="otreeInfo-links">
+              <a
+                href="https://pl.linkedin.com/company/otree.tech"
+                class="otreeInfo-link"
+                ><img src="/assets/icons/linkedin.svg"
+              /></a>
+            </div>
+            <p>OTREE P SA</p>
+            <div
+              class="otreeInfo-adress"
+              itemprop="address"
+              itemscope
+              itemtype="https://schema.org/PostalAddress"
+            >
+              <p>
+                <span itemprop="streetAddress">ul. Krakowska 29D</span><br />
+                <span itemprop="postalCode">50‑424</span>
+                <span itemprop="addressLocality">Wrocław</span>
+              </p>
+            </div>
+          </address>
+        </div>
+        <div class="footer-bottom">
+          <a href="" class="footer-bottom-link">Privacy Policy</a>
+          <a href="" class="footer-bottom-link">2023 Otree, LLC</a>
+          <a href="" class="footer-bottom-link">All rights Reserved</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="/scripts/textTypingScript.js"></script>
+    <script src="/scripts/onWindowCurrency.js"></script>
+    <script src="/scripts/onFirstTimeView.js"></script>
+    <script src="/scripts/jquery/scrollmagic.js"></script>
+    <script src="/scripts/events.js"></script>
+  </body>
+</html>
