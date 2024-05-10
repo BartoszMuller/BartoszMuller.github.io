@@ -164,18 +164,26 @@ u::before {
 
 u.circle-selected-green::before {
   background: url("/assets/vectors/green-circle.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 u.circle-selected-gray::before {
   background: url("/assets/vectors/gray-circle.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 u.circle-selected-black::before {
   background: url("/assets/vectors/black-circle.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 u.circle-selected-white::before {
   background: url("/assets/vectors/white-circle.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 i.circle-selected-onHover {
@@ -461,6 +469,7 @@ i.circle-selected-onHover .circle-line {
   font: 400 17px/29px "Poppins";
   cursor: pointer;
   transition: color 0.5s;
+  color: #ffffff;
 }
 
 .menu-nav-item:hover {

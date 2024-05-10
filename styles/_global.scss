@@ -291,21 +291,29 @@ u {
     &-green {
       &::before {
         background: url("/assets/vectors/green-circle.svg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
       }
     }
     &-gray {
       &::before {
         background: url("/assets/vectors/gray-circle.svg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
       }
     }
     &-black {
       &::before {
         background: url("/assets/vectors/black-circle.svg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
       }
     }
     &-white {
       &::before {
         background: url("/assets/vectors/white-circle.svg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
       }
     }
   }
