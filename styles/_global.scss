@@ -564,7 +564,7 @@ i.circle-selected-onHover {
   }
 
   &.isClicked {
-    transform: rotate(360deg);
+    transform: rotate(180deg);
     .line1,
     .line2 {
       transition: all 1s cubic-bezier(0.82, -0.05, 0, 1.04);
@@ -610,7 +610,7 @@ i.circle-selected-onHover {
   flex-direction: column;
 
   height: 100%;
-  padding: 3.75rem 3rem;
+  padding: 3.75rem 2.75rem 2.25rem;
 
   background: rgba(27, 27, 27, 0.653);
   backdrop-filter: blur(7px);
@@ -631,14 +631,13 @@ i.circle-selected-onHover {
   display: flex;
   flex-direction: column;
   flex-basis: 0;
-  gap: 0.75rem;
 
   padding: 3.4rem 0;
 }
 .menu-nav-item {
+  display: flex;
   width: max-content;
   margin-left: auto;
-  padding: 0.5rem;
 
   font: $font-b17-regular;
   cursor: pointer;
@@ -648,6 +647,45 @@ i.circle-selected-onHover {
   &:hover {
     color: $color-green-700;
   }
+
+  a {
+    padding: 1rem 0;
+  }
+}
+.menu-nav-button {
+  display: flex;
+  margin-left: auto;
+}
+.menu-nav-bottom {
+  margin-top: auto;
+}
+.menu-nav-links {
+  display: flex;
+  gap: 0rem;
+}
+.menu-nav-link {
+  width: 3rem;
+  &.linkedin {
+    padding: 0.5rem;
+    img {
+      width: 2rem;
+    }
+  }
+  &.phone {
+    padding: 0.75rem;
+    img {
+      width: 1.5rem;
+    }
+  }
+  &.mail {
+    padding: 0.625rem;
+    img {
+      width: 1.75rem;
+    }
+  }
+}
+.menu-nav-title {
+  margin-top: 1.6rem;
 }
 
 .hero-content {
@@ -759,7 +797,7 @@ i.circle-selected-onHover {
   }
   .menu-nav {
     width: 100%;
-    padding: 3.75rem 3rem;
+    padding: 3.75rem 1.5rem 1rem 0.875rem;
 
     &.isOpen {
       right: 0;
@@ -769,12 +807,14 @@ i.circle-selected-onHover {
       transform: translateX(0);
     }
   }
-  .menu-nav-items {
-    gap: 0;
-    padding: 3.4rem 0;
-  }
   .menu-nav-item {
     font: $font-b17-regular;
+    a {
+      padding: 1.125rem 0;
+    }
+  }
+  .menu-nav-links {
+    gap: 2rem;
   }
 }
 
@@ -961,8 +1001,6 @@ i.circle-selected-onHover {
     aspect-ratio: 0.96;
 
     .leaf-content {
-      opacity: 1 !important;
-
       // .leaf-title {
       //   font: $font-mobile-b20-semibold;
       // }
@@ -972,9 +1010,6 @@ i.circle-selected-onHover {
       .show-cs-button {
         font: $font-mobile-b14-regular;
       }
-    }
-    img {
-      filter: brightness(60%) !important;
     }
   }
 

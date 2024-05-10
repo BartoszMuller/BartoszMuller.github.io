@@ -393,7 +393,7 @@ i.circle-selected-onHover .circle-line {
 }
 
 .menu-icon.isClicked {
-  transform: rotate(360deg);
+  transform: rotate(180deg);
 }
 
 .menu-icon.isClicked .line1,
@@ -439,7 +439,7 @@ i.circle-selected-onHover .circle-line {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 3.75rem 3rem;
+  padding: 3.75rem 2.75rem 2.25rem;
   background: rgba(27, 27, 27, 0.653);
   backdrop-filter: blur(7px);
   opacity: 0.5;
@@ -458,14 +458,13 @@ i.circle-selected-onHover .circle-line {
   display: flex;
   flex-direction: column;
   flex-basis: 0;
-  gap: 0.75rem;
   padding: 3.4rem 0;
 }
 
 .menu-nav-item {
+  display: flex;
   width: max-content;
   margin-left: auto;
-  padding: 0.5rem;
   font: 400 17px/29px "Poppins";
   cursor: pointer;
   transition: color 0.5s;
@@ -474,6 +473,56 @@ i.circle-selected-onHover .circle-line {
 
 .menu-nav-item:hover {
   color: #6ef083;
+}
+
+.menu-nav-item a {
+  padding: 1rem 0;
+}
+
+.menu-nav-button {
+  display: flex;
+  margin-left: auto;
+}
+
+.menu-nav-bottom {
+  margin-top: auto;
+}
+
+.menu-nav-links {
+  display: flex;
+  gap: 0rem;
+}
+
+.menu-nav-link {
+  width: 3rem;
+}
+
+.menu-nav-link.linkedin {
+  padding: 0.5rem;
+}
+
+.menu-nav-link.linkedin img {
+  width: 2rem;
+}
+
+.menu-nav-link.phone {
+  padding: 0.75rem;
+}
+
+.menu-nav-link.phone img {
+  width: 1.5rem;
+}
+
+.menu-nav-link.mail {
+  padding: 0.625rem;
+}
+
+.menu-nav-link.mail img {
+  width: 1.75rem;
+}
+
+.menu-nav-title {
+  margin-top: 1.6rem;
 }
 
 .hero-content {
@@ -580,7 +629,7 @@ i.circle-selected-onHover .circle-line {
   }
   .menu-nav {
     width: 100%;
-    padding: 3.75rem 3rem;
+    padding: 3.75rem 1.5rem 1rem 0.875rem;
   }
   .menu-nav.isOpen {
     right: 0;
@@ -588,12 +637,14 @@ i.circle-selected-onHover .circle-line {
     opacity: 1;
     transform: translateX(0);
   }
-  .menu-nav-items {
-    gap: 0;
-    padding: 3.4rem 0;
-  }
   .menu-nav-item {
     font: 400 17px/29px "Poppins";
+  }
+  .menu-nav-item a {
+    padding: 1.125rem 0;
+  }
+  .menu-nav-links {
+    gap: 2rem;
   }
 }
 
@@ -763,17 +814,11 @@ i.circle-selected-onHover .circle-line {
     min-width: unset !important;
     aspect-ratio: 0.96;
   }
-  .leaf-item .leaf-content {
-    opacity: 1 !important;
-  }
   .leaf-item .leaf-content .leaf-buttons {
     font: 300 12px "Poppins";
   }
   .leaf-item .leaf-content .show-cs-button {
     font: 400 14px "Poppins";
-  }
-  .leaf-item img {
-    filter: brightness(60%) !important;
   }
   .greenLeaf {
     justify-content: center;
@@ -1271,7 +1316,7 @@ i.circle-selected-onHover .circle-line {
 
 #footer .footer-special .loop-text {
   padding-right: 10rem;
-  animation: loopText 30s infinite linear;
+  animation: loopText 40s infinite linear;
 }
 
 #footer .footer-content {
