@@ -767,7 +767,8 @@
         transform: translate(30px, 30px) scale(0);
       }
     }
-    .value-item:hover .value-icon-1 {
+    .value-item:hover .value-icon-1,
+    .value-item.isCurrentWindow .value-icon-1 {
       > * {
       }
       .circle {
@@ -786,7 +787,8 @@
         transition: all 1s;
       }
     }
-    .value-item:hover .value-icon-2 {
+    .value-item:hover .value-icon-2,
+    .value-item.isCurrentWindow .value-icon-2 {
       .dot1 {
         transform: translate(46%);
       }
@@ -803,7 +805,8 @@
         transition: all 0.8s;
       }
     }
-    .value-item:hover .value-icon-3 {
+    .value-item:hover .value-icon-3,
+    .value-item.isCurrentWindow .value-icon-3 {
       .rect {
         transform: scaleX(1.36);
       }
@@ -825,7 +828,8 @@
         transition: all 0.8s;
       }
     }
-    .value-item:hover .value-icon-4 {
+    .value-item:hover .value-icon-4,
+    .value-item.isCurrentWindow .value-icon-4 {
       .circle-1 {
         translate: 12% 24%;
       }
@@ -870,7 +874,8 @@
         transition: all cubic-bezier(0.65, 0.05, 0.53, 0.73) 0.8s;
       }
     }
-    .value-item:hover .value-icon-5 {
+    .value-item:hover .value-icon-5,
+    .value-item.isCurrentWindow .value-icon-5 {
       .circle-1 {
         fill: transparent;
       }
@@ -898,7 +903,8 @@
         transform: translate(-36%, -36%) scale(1);
       }
     }
-    .value-item:hover .value-icon-6 {
+    .value-item:hover .value-icon-6,
+    .value-item.isCurrentWindow .value-icon-6 {
       .heart-1 {
         transform: scale(1.2);
       }
@@ -915,115 +921,16 @@
   }
 
   @media only screen and (max-width: 767px) {
-    & {
-      .value-item.isCurrentWindow .value-icon-1 {
-        > * {
+    .ourValues-content {
+      gap: 2.5rem;
+      padding-bottom: 0;
+      .value-item {
+        width: 100%;
+        .value-name {
+          font: $font-mobile-b20-semibold;
         }
-        .circle {
-        }
-        .dot1 {
-          transform: translate(-37px, -37px) scale(2.2);
-        }
-        .dot2 {
-          transform: translate(0, 0) scale(1);
-        }
-      }
-
-      // Partnerstwo
-      .value-item.isCurrentWindow .value-icon-2 {
-        .dot1 {
-          transform: translate(46%);
-        }
-        .dot2 {
-          transform: translateX(-46%);
-        }
-      }
-
-      // Elastyczność
-      .value-item.isCurrentWindow .value-icon-3 {
-        .rect {
-          transform: scaleX(1.36);
-        }
-        .dashes1 {
-          transform: translateX(100%) scaleX(-1);
-          fill: $color-gray-400;
-        }
-        .dashes2 {
-          transform: translateX(100%) scaleX(-1);
-        }
-      }
-
-      // Wszechstronność
-      .value-item.isCurrentWindow .value-icon-4 {
-        .circle-1 {
-          translate: 12% 24%;
-        }
-        .circle-2 {
-          translate: -4% 16%;
-        }
-        .circle-3 {
-          translate: -19% 8%;
-        }
-        .circle-4 {
-          translate: -4% -2%;
-        }
-        .circle-5 {
-          translate: -21% 42%;
-        }
-        .circle-6 {
-          translate: 11% 9%;
-        }
-        .circle-7 {
-          translate: -21% 23%;
-        }
-        .circle-8 {
-          translate: -6% 16%;
-        }
-        .circle-9 {
-          translate: 9% 9%;
-        }
-      }
-
-      // Transparentność
-      .value-item.isCurrentWindow .value-icon-5 {
-        .circle-1 {
-          fill: transparent;
-        }
-        .dashes-2,
-        .dashes-1 {
-          fill: $color-green-700;
-          transform: translate(-60%, -59%) scale(1.4);
-        }
-      }
-
-      // Pasja
-
-      .value-item.isCurrentWindow .value-icon-6 {
-        .heart-1 {
-          transform: scale(1.2);
-        }
-        .heart-2 {
-          transform: scale(1.2);
-        }
-        .heart-3 {
-          transform: translate(25%, -90%) scale(1);
-        }
-        .heart-4 {
-          transform: translate(-98%, -28%) scale(1.1);
-        }
-      }
-
-      .ourValues-content {
-        gap: 2.5rem;
-        padding-bottom: 0;
-        .value-item {
-          width: 100%;
-          .value-name {
-            font: $font-mobile-b20-semibold;
-          }
-          .value-desc {
-            font: $font-mobile-b16-light;
-          }
+        .value-desc {
+          font: $font-mobile-b16-light;
         }
       }
     }

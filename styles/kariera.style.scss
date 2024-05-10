@@ -24,7 +24,6 @@
 
     align-items: center;
     font: $font-b16-light;
-    white-space: nowrap;
   }
   .wrapper {
     display: flex;
@@ -49,11 +48,11 @@
     padding: 0.625rem 2rem;
     width: 10rem;
     text-align: center;
-
+    margin: auto 0;
     font: $font-b15-light;
+    white-space: nowrap;
 
     color: $color-dark;
-    white-space: nowrap;
 
     cursor: pointer;
     transition: all 1.1s;
@@ -113,9 +112,16 @@
 
   @media only screen and (max-width: 1000px) {
     padding: 2.8rem 0.75rem 3rem;
-
+    align-items: center;
+    > * {
+      width: 100%;
+    }
+    .offers-list {
+      max-width: 600px;
+    }
     .offer-container {
       flex-direction: column;
+
       row-gap: 1.25rem;
     }
     .wrapper {
@@ -123,9 +129,18 @@
       gap: 4rem;
       width: 100%;
 
+      .position-salary {
+        text-align: right;
+      }
       &.offer-top {
+        gap: 1rem;
         flex-grow: 1;
+        // flex-wrap: wrap;
         justify-content: space-between;
+      }
+      .offer-talentPool {
+        max-width: 10rem;
+        padding-inline: 0.75rem;
       }
       &.offer-position {
         display: flex;
@@ -134,8 +149,10 @@
         flex-grow: 1;
       }
       &.offer-bottom {
+        gap: 1rem;
         justify-content: space-between;
         flex-grow: 5;
+        flex-wrap: wrap;
       }
     }
   }
@@ -326,7 +343,8 @@
       transform-origin: center center;
     }
   }
-  .value-item:hover .value-icon-1 {
+  .value-item:hover .value-icon-1,
+  .value-item.isCurrentWindow .value-icon-1 {
     > * {
       transform: rotate(90deg);
     }
@@ -360,7 +378,8 @@
       transform: translate(40%);
     }
   }
-  .value-item:hover .value-icon-2 {
+  .value-item:hover .value-icon-2,
+  .value-item.isCurrentWindow .value-icon-2 {
     .line1 {
       stroke-dasharray: 100;
     }
@@ -377,7 +396,8 @@
       transform: translate(0) scale(0.8);
     }
   }
-  .value-item:hover .value-icon-3 {
+  .value-item:hover .value-icon-3,
+  .value-item.isCurrentWindow .value-icon-3 {
     .heart2 {
       transform: translate(-23%, -17%) scale(1.2);
     }
@@ -406,7 +426,8 @@
       transition: all 1.3s cubic-bezier(1, -0.18, 0.55, 2.09);
     }
   }
-  .value-item:hover .value-icon-4 {
+  .value-item:hover .value-icon-4,
+  .value-item.isCurrentWindow .value-icon-4 {
     .circle1 {
       transform: scale(1.1);
     }

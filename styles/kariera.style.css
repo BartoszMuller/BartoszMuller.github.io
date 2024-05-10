@@ -164,18 +164,26 @@ u::before {
 
 u.circle-selected-green::before {
   background: url("/assets/vectors/green-circle.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 u.circle-selected-gray::before {
   background: url("/assets/vectors/gray-circle.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 u.circle-selected-black::before {
   background: url("/assets/vectors/black-circle.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 u.circle-selected-white::before {
   background: url("/assets/vectors/white-circle.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 i.circle-selected-onHover {
@@ -461,6 +469,7 @@ i.circle-selected-onHover .circle-line {
   font: 400 17px/29px "Poppins";
   cursor: pointer;
   transition: color 0.5s;
+  color: #ffffff;
 }
 
 .menu-nav-item:hover {
@@ -1262,7 +1271,7 @@ i.circle-selected-onHover .circle-line {
 
 #footer .footer-special .loop-text {
   padding-right: 10rem;
-  animation: loopText 30s infinite linear;
+  animation: loopText 40s infinite linear;
 }
 
 #footer .footer-content {
@@ -1478,7 +1487,6 @@ i.circle-selected-onHover .circle-line {
   row-gap: 1.5rem;
   align-items: center;
   font: 300 16px "Poppins";
-  white-space: nowrap;
 }
 
 #career-offers .wrapper {
@@ -1507,9 +1515,10 @@ i.circle-selected-onHover .circle-line {
   padding: 0.625rem 2rem;
   width: 10rem;
   text-align: center;
+  margin: auto 0;
   font: 300 15px "Poppins";
-  color: #1e1e1e;
   white-space: nowrap;
+  color: #1e1e1e;
   cursor: pointer;
   transition: all 1.1s;
   background: linear-gradient(90deg, #6ef083, #4fd5ff 50%, #4fd5ff 100%) 0%/200%;
@@ -1556,6 +1565,13 @@ i.circle-selected-onHover .circle-line {
 @media only screen and (max-width: 1000px) {
   #career-offers {
     padding: 2.8rem 0.75rem 3rem;
+    align-items: center;
+  }
+  #career-offers > * {
+    width: 100%;
+  }
+  #career-offers .offers-list {
+    max-width: 600px;
   }
   #career-offers .offer-container {
     flex-direction: column;
@@ -1566,9 +1582,17 @@ i.circle-selected-onHover .circle-line {
     gap: 4rem;
     width: 100%;
   }
+  #career-offers .wrapper .position-salary {
+    text-align: right;
+  }
   #career-offers .wrapper.offer-top {
+    gap: 1rem;
     flex-grow: 1;
     justify-content: space-between;
+  }
+  #career-offers .wrapper .offer-talentPool {
+    max-width: 10rem;
+    padding-inline: 0.75rem;
   }
   #career-offers .wrapper.offer-position {
     display: flex;
@@ -1577,8 +1601,10 @@ i.circle-selected-onHover .circle-line {
     flex-grow: 1;
   }
   #career-offers .wrapper.offer-bottom {
+    gap: 1rem;
     justify-content: space-between;
     flex-grow: 5;
+    flex-wrap: wrap;
   }
 }
 
@@ -1770,27 +1796,33 @@ i.circle-selected-onHover .circle-line {
   transform-origin: center center;
 }
 
-#career-ourValues .value-item:hover .value-icon-1 > * {
+#career-ourValues .value-item:hover .value-icon-1 > *,
+#career-ourValues .value-item.isCurrentWindow .value-icon-1 > * {
   transform: rotate(90deg);
 }
 
-#career-ourValues .value-item:hover .value-icon-1 .white-circle {
+#career-ourValues .value-item:hover .value-icon-1 .white-circle,
+#career-ourValues .value-item.isCurrentWindow .value-icon-1 .white-circle {
   transform: scale(3.1);
 }
 
-#career-ourValues .value-item:hover .value-icon-1 .circle1 {
+#career-ourValues .value-item:hover .value-icon-1 .circle1,
+#career-ourValues .value-item.isCurrentWindow .value-icon-1 .circle1 {
   transform: translateY(-15%);
 }
 
-#career-ourValues .value-item:hover .value-icon-1 .circle2 {
+#career-ourValues .value-item:hover .value-icon-1 .circle2,
+#career-ourValues .value-item.isCurrentWindow .value-icon-1 .circle2 {
   transform: translateX(-15%);
 }
 
-#career-ourValues .value-item:hover .value-icon-1 .circle3 {
+#career-ourValues .value-item:hover .value-icon-1 .circle3,
+#career-ourValues .value-item.isCurrentWindow .value-icon-1 .circle3 {
   transform: translateX(15%);
 }
 
-#career-ourValues .value-item:hover .value-icon-1 .circle4 {
+#career-ourValues .value-item:hover .value-icon-1 .circle4,
+#career-ourValues .value-item.isCurrentWindow .value-icon-1 .circle4 {
   transform: translateY(15%);
 }
 
@@ -1807,7 +1839,8 @@ i.circle-selected-onHover .circle-line {
   transform: translate(40%);
 }
 
-#career-ourValues .value-item:hover .value-icon-2 .line1 {
+#career-ourValues .value-item:hover .value-icon-2 .line1,
+#career-ourValues .value-item.isCurrentWindow .value-icon-2 .line1 {
   stroke-dasharray: 100;
 }
 
@@ -1820,7 +1853,8 @@ i.circle-selected-onHover .circle-line {
   transform: translate(0) scale(0.8);
 }
 
-#career-ourValues .value-item:hover .value-icon-3 .heart2 {
+#career-ourValues .value-item:hover .value-icon-3 .heart2,
+#career-ourValues .value-item.isCurrentWindow .value-icon-3 .heart2 {
   transform: translate(-23%, -17%) scale(1.2);
 }
 
@@ -1841,15 +1875,18 @@ i.circle-selected-onHover .circle-line {
   transition: all 1.3s cubic-bezier(1, -0.18, 0.55, 2.09);
 }
 
-#career-ourValues .value-item:hover .value-icon-4 .circle1 {
+#career-ourValues .value-item:hover .value-icon-4 .circle1,
+#career-ourValues .value-item.isCurrentWindow .value-icon-4 .circle1 {
   transform: scale(1.1);
 }
 
-#career-ourValues .value-item:hover .value-icon-4 .circle2 {
+#career-ourValues .value-item:hover .value-icon-4 .circle2,
+#career-ourValues .value-item.isCurrentWindow .value-icon-4 .circle2 {
   transform: scale(1.3);
 }
 
-#career-ourValues .value-item:hover .value-icon-4 .circle3 {
+#career-ourValues .value-item:hover .value-icon-4 .circle3,
+#career-ourValues .value-item.isCurrentWindow .value-icon-4 .circle3 {
   transform: scale(1.2);
 }
 

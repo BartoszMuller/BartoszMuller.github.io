@@ -2139,11 +2139,13 @@ i.circle-selected-onHover .circle-line {
   transform: translate(30px, 30px) scale(0);
 }
 
-#home-ourValues .ourValues-content .value-item:hover .value-icon-1 .dot1 {
+#home-ourValues .ourValues-content .value-item:hover .value-icon-1 .dot1,
+#home-ourValues .ourValues-content .value-item.isCurrentWindow .value-icon-1 .dot1 {
   transform: translate(-37px, -37px) scale(2.2);
 }
 
-#home-ourValues .ourValues-content .value-item:hover .value-icon-1 .dot2 {
+#home-ourValues .ourValues-content .value-item:hover .value-icon-1 .dot2,
+#home-ourValues .ourValues-content .value-item.isCurrentWindow .value-icon-1 .dot2 {
   transform: translate(0, 0) scale(1);
 }
 
@@ -2151,11 +2153,13 @@ i.circle-selected-onHover .circle-line {
   transition: all 1s;
 }
 
-#home-ourValues .ourValues-content .value-item:hover .value-icon-2 .dot1 {
+#home-ourValues .ourValues-content .value-item:hover .value-icon-2 .dot1,
+#home-ourValues .ourValues-content .value-item.isCurrentWindow .value-icon-2 .dot1 {
   transform: translate(46%);
 }
 
-#home-ourValues .ourValues-content .value-item:hover .value-icon-2 .dot2 {
+#home-ourValues .ourValues-content .value-item:hover .value-icon-2 .dot2,
+#home-ourValues .ourValues-content .value-item.isCurrentWindow .value-icon-2 .dot2 {
   transform: translateX(-46%);
 }
 
@@ -2168,16 +2172,19 @@ i.circle-selected-onHover .circle-line {
   transition: all 0.8s;
 }
 
-#home-ourValues .ourValues-content .value-item:hover .value-icon-3 .rect {
+#home-ourValues .ourValues-content .value-item:hover .value-icon-3 .rect,
+#home-ourValues .ourValues-content .value-item.isCurrentWindow .value-icon-3 .rect {
   transform: scaleX(1.36);
 }
 
-#home-ourValues .ourValues-content .value-item:hover .value-icon-3 .dashes1 {
+#home-ourValues .ourValues-content .value-item:hover .value-icon-3 .dashes1,
+#home-ourValues .ourValues-content .value-item.isCurrentWindow .value-icon-3 .dashes1 {
   transform: translateX(100%) scaleX(-1);
   fill: #f9f8f7;
 }
 
-#home-ourValues .ourValues-content .value-item:hover .value-icon-3 .dashes2 {
+#home-ourValues .ourValues-content .value-item:hover .value-icon-3 .dashes2,
+#home-ourValues .ourValues-content .value-item.isCurrentWindow .value-icon-3 .dashes2 {
   transform: translateX(100%) scaleX(-1);
 }
 
@@ -2185,39 +2192,48 @@ i.circle-selected-onHover .circle-line {
   transition: all 0.8s;
 }
 
-#home-ourValues .ourValues-content .value-item:hover .value-icon-4 .circle-1 {
+#home-ourValues .ourValues-content .value-item:hover .value-icon-4 .circle-1,
+#home-ourValues .ourValues-content .value-item.isCurrentWindow .value-icon-4 .circle-1 {
   translate: 12% 24%;
 }
 
-#home-ourValues .ourValues-content .value-item:hover .value-icon-4 .circle-2 {
+#home-ourValues .ourValues-content .value-item:hover .value-icon-4 .circle-2,
+#home-ourValues .ourValues-content .value-item.isCurrentWindow .value-icon-4 .circle-2 {
   translate: -4% 16%;
 }
 
-#home-ourValues .ourValues-content .value-item:hover .value-icon-4 .circle-3 {
+#home-ourValues .ourValues-content .value-item:hover .value-icon-4 .circle-3,
+#home-ourValues .ourValues-content .value-item.isCurrentWindow .value-icon-4 .circle-3 {
   translate: -19% 8%;
 }
 
-#home-ourValues .ourValues-content .value-item:hover .value-icon-4 .circle-4 {
+#home-ourValues .ourValues-content .value-item:hover .value-icon-4 .circle-4,
+#home-ourValues .ourValues-content .value-item.isCurrentWindow .value-icon-4 .circle-4 {
   translate: -4% -2%;
 }
 
-#home-ourValues .ourValues-content .value-item:hover .value-icon-4 .circle-5 {
+#home-ourValues .ourValues-content .value-item:hover .value-icon-4 .circle-5,
+#home-ourValues .ourValues-content .value-item.isCurrentWindow .value-icon-4 .circle-5 {
   translate: -21% 42%;
 }
 
-#home-ourValues .ourValues-content .value-item:hover .value-icon-4 .circle-6 {
+#home-ourValues .ourValues-content .value-item:hover .value-icon-4 .circle-6,
+#home-ourValues .ourValues-content .value-item.isCurrentWindow .value-icon-4 .circle-6 {
   translate: 11% 9%;
 }
 
-#home-ourValues .ourValues-content .value-item:hover .value-icon-4 .circle-7 {
+#home-ourValues .ourValues-content .value-item:hover .value-icon-4 .circle-7,
+#home-ourValues .ourValues-content .value-item.isCurrentWindow .value-icon-4 .circle-7 {
   translate: -21% 23%;
 }
 
-#home-ourValues .ourValues-content .value-item:hover .value-icon-4 .circle-8 {
+#home-ourValues .ourValues-content .value-item:hover .value-icon-4 .circle-8,
+#home-ourValues .ourValues-content .value-item.isCurrentWindow .value-icon-4 .circle-8 {
   translate: -6% 16%;
 }
 
-#home-ourValues .ourValues-content .value-item:hover .value-icon-4 .circle-9 {
+#home-ourValues .ourValues-content .value-item:hover .value-icon-4 .circle-9,
+#home-ourValues .ourValues-content .value-item.isCurrentWindow .value-icon-4 .circle-9 {
   translate: 9% 9%;
 }
 
@@ -2230,12 +2246,15 @@ i.circle-selected-onHover .circle-line {
   transition: all cubic-bezier(0.65, 0.05, 0.53, 0.73) 0.8s;
 }
 
-#home-ourValues .ourValues-content .value-item:hover .value-icon-5 .circle-1 {
+#home-ourValues .ourValues-content .value-item:hover .value-icon-5 .circle-1,
+#home-ourValues .ourValues-content .value-item.isCurrentWindow .value-icon-5 .circle-1 {
   fill: transparent;
 }
 
 #home-ourValues .ourValues-content .value-item:hover .value-icon-5 .dashes-2,
-#home-ourValues .ourValues-content .value-item:hover .value-icon-5 .dashes-1 {
+#home-ourValues .ourValues-content .value-item:hover .value-icon-5 .dashes-1,
+#home-ourValues .ourValues-content .value-item.isCurrentWindow .value-icon-5 .dashes-2,
+#home-ourValues .ourValues-content .value-item.isCurrentWindow .value-icon-5 .dashes-1 {
   fill: #6ef083;
   transform: translate(-60%, -59%) scale(1.4);
 }
@@ -2252,92 +2271,27 @@ i.circle-selected-onHover .circle-line {
   transform: translate(-36%, -36%) scale(1);
 }
 
-#home-ourValues .ourValues-content .value-item:hover .value-icon-6 .heart-1 {
+#home-ourValues .ourValues-content .value-item:hover .value-icon-6 .heart-1,
+#home-ourValues .ourValues-content .value-item.isCurrentWindow .value-icon-6 .heart-1 {
   transform: scale(1.2);
 }
 
-#home-ourValues .ourValues-content .value-item:hover .value-icon-6 .heart-2 {
+#home-ourValues .ourValues-content .value-item:hover .value-icon-6 .heart-2,
+#home-ourValues .ourValues-content .value-item.isCurrentWindow .value-icon-6 .heart-2 {
   transform: scale(1.2);
 }
 
-#home-ourValues .ourValues-content .value-item:hover .value-icon-6 .heart-3 {
+#home-ourValues .ourValues-content .value-item:hover .value-icon-6 .heart-3,
+#home-ourValues .ourValues-content .value-item.isCurrentWindow .value-icon-6 .heart-3 {
   transform: translate(25%, -90%) scale(1);
 }
 
-#home-ourValues .ourValues-content .value-item:hover .value-icon-6 .heart-4 {
+#home-ourValues .ourValues-content .value-item:hover .value-icon-6 .heart-4,
+#home-ourValues .ourValues-content .value-item.isCurrentWindow .value-icon-6 .heart-4 {
   transform: translate(-98%, -28%) scale(1.1);
 }
 
 @media only screen and (max-width: 767px) {
-  #home-ourValues .value-item.isCurrentWindow .value-icon-1 .dot1 {
-    transform: translate(-37px, -37px) scale(2.2);
-  }
-  #home-ourValues .value-item.isCurrentWindow .value-icon-1 .dot2 {
-    transform: translate(0, 0) scale(1);
-  }
-  #home-ourValues .value-item.isCurrentWindow .value-icon-2 .dot1 {
-    transform: translate(46%);
-  }
-  #home-ourValues .value-item.isCurrentWindow .value-icon-2 .dot2 {
-    transform: translateX(-46%);
-  }
-  #home-ourValues .value-item.isCurrentWindow .value-icon-3 .rect {
-    transform: scaleX(1.36);
-  }
-  #home-ourValues .value-item.isCurrentWindow .value-icon-3 .dashes1 {
-    transform: translateX(100%) scaleX(-1);
-    fill: #f9f8f7;
-  }
-  #home-ourValues .value-item.isCurrentWindow .value-icon-3 .dashes2 {
-    transform: translateX(100%) scaleX(-1);
-  }
-  #home-ourValues .value-item.isCurrentWindow .value-icon-4 .circle-1 {
-    translate: 12% 24%;
-  }
-  #home-ourValues .value-item.isCurrentWindow .value-icon-4 .circle-2 {
-    translate: -4% 16%;
-  }
-  #home-ourValues .value-item.isCurrentWindow .value-icon-4 .circle-3 {
-    translate: -19% 8%;
-  }
-  #home-ourValues .value-item.isCurrentWindow .value-icon-4 .circle-4 {
-    translate: -4% -2%;
-  }
-  #home-ourValues .value-item.isCurrentWindow .value-icon-4 .circle-5 {
-    translate: -21% 42%;
-  }
-  #home-ourValues .value-item.isCurrentWindow .value-icon-4 .circle-6 {
-    translate: 11% 9%;
-  }
-  #home-ourValues .value-item.isCurrentWindow .value-icon-4 .circle-7 {
-    translate: -21% 23%;
-  }
-  #home-ourValues .value-item.isCurrentWindow .value-icon-4 .circle-8 {
-    translate: -6% 16%;
-  }
-  #home-ourValues .value-item.isCurrentWindow .value-icon-4 .circle-9 {
-    translate: 9% 9%;
-  }
-  #home-ourValues .value-item.isCurrentWindow .value-icon-5 .circle-1 {
-    fill: transparent;
-  }
-  #home-ourValues .value-item.isCurrentWindow .value-icon-5 .dashes-2,
-  #home-ourValues .value-item.isCurrentWindow .value-icon-5 .dashes-1 {
-    fill: #6ef083;
-    transform: translate(-60%, -59%) scale(1.4);
-  }
-  #home-ourValues .value-item.isCurrentWindow .value-icon-6 .heart-1 {
-    transform: scale(1.2);
-  }
-  #home-ourValues .value-item.isCurrentWindow .value-icon-6 .heart-2 {
-    transform: scale(1.2);
-  }
-  #home-ourValues .value-item.isCurrentWindow .value-icon-6 .heart-3 {
-    transform: translate(25%, -90%) scale(1);
-  }
-  #home-ourValues .value-item.isCurrentWindow .value-icon-6 .heart-4 {
-    transform: translate(-98%, -28%) scale(1.1);
-  }
   #home-ourValues .ourValues-content {
     gap: 2.5rem;
     padding-bottom: 0;
