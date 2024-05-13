@@ -206,7 +206,7 @@ i.circle-selected-onHover .circle {
 i.circle-selected-onHover path {
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
-  transition: all ease 1s;
+  transition: all 1s ease;
 }
 
 .primaryButton {
@@ -1886,7 +1886,7 @@ i.circle-selected-onHover path {
 }
 
 @media only screen and (min-width: 768px) {
-  #home-howWeWork .howWeWork-item:hover svg > path {
+  #home-howWeWork .howWeWork-item:hover svg > * {
     stroke-dashoffset: 0;
   }
 }
@@ -2006,6 +2006,9 @@ i.circle-selected-onHover path {
     margin-top: 0.75rem;
     margin-left: auto;
     transition: all 0.6s;
+  }
+  #home-howWeWork .howWeWork-list .howWeWork-desc .green-circle-arrow > * {
+    stroke-dashoffset: 0;
   }
   #home-howWeWork .howWeWork-list .unfold-button {
     display: block;

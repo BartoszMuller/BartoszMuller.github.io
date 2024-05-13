@@ -206,7 +206,7 @@ i.circle-selected-onHover .circle {
 i.circle-selected-onHover path {
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
-  transition: all ease 1s;
+  transition: all 1s ease;
 }
 
 .primaryButton {

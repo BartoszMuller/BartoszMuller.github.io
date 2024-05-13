@@ -616,7 +616,7 @@
     padding: 3.25rem 0 0 2.5rem;
 
     @media only screen and (min-width: 768px) {
-      &:hover svg > path {
+      &:hover svg > * {
         stroke-dashoffset: 0;
       }
     }
@@ -743,6 +743,10 @@
             margin-top: 0.75rem;
             margin-left: auto;
             transition: all 0.6s;
+
+            > * {
+              stroke-dashoffset: 0;
+            }
           }
         }
         .unfold-button {
