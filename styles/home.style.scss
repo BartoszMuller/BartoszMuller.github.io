@@ -557,16 +557,12 @@
     font: $font-h4-medium;
   }
 
-  &::before {
-    content: "";
+  .aboutWork-line {
     position: absolute;
     bottom: 0;
     right: 0;
-    height: 30vh;
+    max-height: 30vh;
     width: 3rem;
-    border-left: 1px solid $color-gray-800;
-    border-top: 1px solid $color-gray-800;
-    border-top-left-radius: 50px;
   }
 
   ////////// MOBILE ABOUT WORK //////////

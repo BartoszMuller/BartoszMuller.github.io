@@ -572,7 +572,7 @@ i.circle-selected-onHover {
     transform: rotate(180deg);
     .line1,
     .line2 {
-      transition: all 1s cubic-bezier(0.77,-0.02, 0, 0.75);
+      transition: all 1.25s cubic-bezier(0.81,-0.43, 0, 1.02);
     }
 
     .rec1,
@@ -1732,6 +1732,18 @@ i.circle-selected-onHover {
 }
 .UpDownIn {
   animation: UpDown 0.8s ease-in-out forwards;
+}
+svg.onFirstTimeView{
+  path{
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+
+    transition: all 5s;
+  }
+
+  &.isShown path{
+    stroke-dashoffset: 0;
+  }
 }
 
 @keyframes UpDown {

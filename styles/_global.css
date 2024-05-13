@@ -401,7 +401,7 @@ i.circle-selected-onHover path {
 
 .menu-icon.isClicked .line1,
 .menu-icon.isClicked .line2 {
-  transition: all 1s cubic-bezier(0.77, -0.02, 0, 0.75);
+  transition: all 1.25s cubic-bezier(0.81, -0.43, 0, 1.02);
 }
 
 .menu-icon.isClicked .rec1,
@@ -1432,6 +1432,16 @@ i.circle-selected-onHover path {
 
 .UpDownIn {
   animation: UpDown 0.8s ease-in-out forwards;
+}
+
+svg.onFirstTimeView path {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  transition: all 5s;
+}
+
+svg.onFirstTimeView.isShown path {
+  stroke-dashoffset: 0;
 }
 
 @keyframes UpDown {

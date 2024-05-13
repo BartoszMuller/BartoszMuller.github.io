@@ -401,7 +401,7 @@ i.circle-selected-onHover path {
 
 .menu-icon.isClicked .line1,
 .menu-icon.isClicked .line2 {
-  transition: all 1s cubic-bezier(0.77, -0.02, 0, 0.75);
+  transition: all 1.25s cubic-bezier(0.81, -0.43, 0, 1.02);
 }
 
 .menu-icon.isClicked .rec1,
@@ -1434,6 +1434,16 @@ i.circle-selected-onHover path {
   animation: UpDown 0.8s ease-in-out forwards;
 }
 
+svg.onFirstTimeView path {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  transition: all 5s;
+}
+
+svg.onFirstTimeView.isShown path {
+  stroke-dashoffset: 0;
+}
+
 @keyframes UpDown {
   50% {
     opacity: 1;
@@ -1825,16 +1835,12 @@ i.circle-selected-onHover path {
   font: 500 32px/51px "Poppins";
 }
 
-#home-aboutWork::before {
-  content: "";
+#home-aboutWork .aboutWork-line {
   position: absolute;
   bottom: 0;
   right: 0;
-  height: 30vh;
+  max-height: 30vh;
   width: 3rem;
-  border-left: 1px solid #545454;
-  border-top: 1px solid #545454;
-  border-top-left-radius: 50px;
 }
 
 @media only screen and (max-width: 767px) {
