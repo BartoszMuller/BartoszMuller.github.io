@@ -219,6 +219,7 @@ i.circle-selected-onHover path {
   background: #6ef083;
   color: #1e1e1e;
   white-space: nowrap;
+  text-align: center;
   cursor: pointer;
   transition: all 1s;
   background: linear-gradient(90deg, #6ef083, #4fd5ff 50%, #6ef083 75%, #6ef083 100%) 0%/300%;
@@ -400,12 +401,12 @@ i.circle-selected-onHover path {
 
 .menu-icon.isClicked .line1,
 .menu-icon.isClicked .line2 {
-  transition: all 1s cubic-bezier(0.82, -0.05, 0, 1.04);
+  transition: all 1s cubic-bezier(0.77, -0.02, 0, 0.75);
 }
 
 .menu-icon.isClicked .rec1,
 .menu-icon.isClicked .rec3 {
-  transition: scale 1s cubic-bezier(0.8, 0, 0.28, 0.66), transform 1s;
+  transition: transform 1s;
 }
 
 .menu-icon.isClicked .line1 {
@@ -1085,6 +1086,7 @@ i.circle-selected-onHover path {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  row-gap: 1rem;
   width: 100%;
 }
 
@@ -1175,18 +1177,13 @@ i.circle-selected-onHover path {
 }
 
 .contactForm-content .contactForm-input-wrapper {
-  position: relative;
-  display: flex;
   width: 100%;
 }
 
 .contactForm-content .contactForm-input-wrapper::after {
   content: "Max. 500 znaków";
-  position: absolute;
-  bottom: -1.2rem;
-  left: 0;
   font: 300 12px "Poppins";
-  color: #545454;
+  color: #252525;
 }
 
 .contactForm-content .contactInput-content {
@@ -1231,13 +1228,13 @@ i.circle-selected-onHover path {
   .contactForm-section .contactForm-content {
     display: flex;
     flex-wrap: wrap;
-    gap: 2.75rem;
+    gap: 1.5rem;
     max-width: 750px;
     padding: 0;
   }
   .contactForm-section .contactForm-content .contactForm-topics {
-    display: none;
     font: 400 14px "Poppins";
+    margin-bottom: 1.5rem;
   }
   .contactForm-section .contactForm-content .contactForm-input {
     width: 100%;
@@ -1260,16 +1257,14 @@ i.circle-selected-onHover path {
     max-width: 140px;
   }
   .contactForm-section .contactForm-content .contactForm-input-wrapper {
-    position: relative;
     width: 100%;
     padding: 0;
+    margin: 1.3rem 0;
   }
   .contactForm-section .contactForm-content .contactForm-input-wrapper::after {
-    bottom: -1.5rem;
-    font: 300 12px "Poppins";
+    font: 400 12px "Poppins";
   }
   .contactForm-section .contactForm-content .contactInput-content {
-    position: relative;
     width: 100%;
     max-width: 710px;
   }
@@ -1289,12 +1284,6 @@ i.circle-selected-onHover path {
   }
   .contactForm-section .contactForm-content .contactForm-submit {
     width: 100%;
-    padding: 0.75rem 1.5rem;
-    background: #1e1e1e;
-    color: #ffffff;
-    border-radius: 5rem;
-    font: 500 14px "Poppins";
-    cursor: pointer;
   }
 }
 
@@ -2377,8 +2366,7 @@ i.circle-selected-onHover path {
   padding: 10.6rem 0rem 9.6rem;
   overflow: hidden;
   color: #ffffff;
-  background: linear-gradient(90deg, #ff5e21, #ffa48e, #ff5e21);
-  background-size: 600% 600%;
+  background: #ff5e21;
   transition: all 1s;
 }
 

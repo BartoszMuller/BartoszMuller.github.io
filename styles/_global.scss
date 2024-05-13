@@ -114,6 +114,7 @@ $font-mobile-b14-medium: 500 14px $main-fontname;
 $font-mobile-b14-regular: 400 14px $main-fontname;
 $font-mobile-b14-light: 300 14px $main-fontname;
 $font-mobile-b12-light: 300 12px $main-fontname;
+$font-mobile-b12-regular: 400 12px $main-fontname;
 
 $font-montserrat-45-semibold: 600 45px "Montserrat";
 $font-montserrat-45-medium: 500 45px "Montserrat";
@@ -359,6 +360,7 @@ i.circle-selected-onHover {
 
   color: $color-dark;
   white-space: nowrap;
+  text-align: center;
 
   cursor: pointer;
   transition: all 1s;
@@ -570,12 +572,12 @@ i.circle-selected-onHover {
     transform: rotate(180deg);
     .line1,
     .line2 {
-      transition: all 1s cubic-bezier(0.82, -0.05, 0, 1.04);
+      transition: all 1s cubic-bezier(0.77,-0.02, 0, 0.75);
     }
 
     .rec1,
     .rec3 {
-      transition: scale 1s cubic-bezier(0.8, 0, 0.28, 0.66), transform 1s;
+      transition: transform 1s;
     }
 
     .line1 {
@@ -1340,6 +1342,7 @@ i.circle-selected-onHover {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
+      row-gap: 1rem;
       width: 100%;
 
       .topic-option {
@@ -1436,19 +1439,12 @@ i.circle-selected-onHover {
     max-width: 140px;
   }
   .contactForm-input-wrapper {
-    position: relative;
-    display: flex;
-
     width: 100%;
 
     &::after {
       content: "Max. 500 znaków";
-      position: absolute;
-      bottom: -1.2rem;
-      left: 0;
-
       font: $font-b12-light;
-      color: $color-gray-800;
+      color: $color-gray-900;
     }
   }
   .contactInput-content {
@@ -1497,14 +1493,14 @@ i.circle-selected-onHover {
     .contactForm-content {
       display: flex;
       flex-wrap: wrap;
-      gap: 2.75rem;
+      gap: 1.5rem;
       max-width: 750px;
 
       padding: 0;
 
       .contactForm-topics {
-        display: none;
         font: $font-b14-regular;
+        margin-bottom: 1.5rem;
       }
 
       .contactForm-input {
@@ -1530,19 +1526,15 @@ i.circle-selected-onHover {
         max-width: 140px;
       }
       .contactForm-input-wrapper {
-        position: relative;
-
         width: 100%;
         padding: 0;
+        margin: 1.3rem 0;
 
         &::after {
-          bottom: -1.5rem;
-          font: $font-mobile-b12-light;
+          font:  $font-mobile-b12-regular;
         }
       }
       .contactInput-content {
-        position: relative;
-
         width: 100%;
         max-width: 710px;
 
@@ -1563,15 +1555,18 @@ i.circle-selected-onHover {
           background-color: $color-gray-800;
         }
       }
-      .contactForm-submit {
+      .contactForm-submit{
         width: 100%;
-        padding: 0.75rem 1.5rem;
-        background: $color-dark;
-        color: $color-white;
-        border-radius: 5rem;
-        font: $font-mobile-b14-medium;
-        cursor: pointer;
       }
+      // .contactForm-submit {
+      //   width: 100%;
+      //   padding: 0.75rem 1.5rem;
+      //   background: $color-dark;
+      //   color: $color-white;
+      //   border-radius: 5rem;
+      //   font: $font-mobile-b14-medium;
+      //   cursor: pointer;
+      // }
     }
   }
 }

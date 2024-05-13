@@ -1128,13 +1128,15 @@
   // background: url("/assets/vectors/quotes-orange-bg.svg") center no-repeat;
   // background-size: cover;
 
-  background: linear-gradient(
-    90deg,
-    $color-orange,
-    $color-light-orange,
-    $color-orange
-  );
-  background-size: 600% 600%;
+  // background: linear-gradient(
+  //   90deg,
+  //   $color-orange,
+  //   $color-light-orange,
+  //   $color-orange
+  // );
+  // background-size: 600% 600%;
+
+  background: $color-orange;
   transition: all 1s;
 }
 .clientsQuotes-title {
