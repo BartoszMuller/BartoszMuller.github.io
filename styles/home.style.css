@@ -1709,6 +1709,7 @@ svg.onFirstTimeView.isShown path {
 
 #home-caseStudy .background-lines {
   overflow: hidden;
+  transform: none !important;
 }
 
 #home-caseStudy .background-lines .line-right {

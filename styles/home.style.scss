@@ -210,33 +210,8 @@
 
   .background-lines {
     overflow: hidden;
-    // &::before {
-    //   content: "";
-    //   position: absolute;
-    //   right: 50%;
-    //   top: -2px;
+    transform: none !important;
 
-    //   width: 4rem;
-    //   height: 25rem;
-
-    //   border-top-left-radius: 3rem;
-    //   border-top: 1px solid $color-gray-800;
-    //   border-left: 1px solid $color-gray-800;
-    // }
-
-    // &::after {
-    //   content: "";
-    //   position: absolute;
-    //   left: 0;
-    //   bottom: 0;
-
-    //   width: 3rem;
-    //   height: 56%;
-
-    //   border-top-right-radius: 3rem;
-    //   border-top: 1px solid $color-gray-800;
-    //   border-right: 1px solid $color-gray-800;
-    // }
     .line-right {
       position: absolute;
       right: 0;

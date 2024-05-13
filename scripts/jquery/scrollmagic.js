@@ -3,7 +3,7 @@ $(document).ready(() => {
 
   $("section > *")
     .not(
-      ".hero-background, .background-lines, .clientsQuotes-content, .hero-header, .hero-bottom, .hero-animations"
+      ".hero-background, .clientsQuotes-content, .hero-header, .hero-bottom, .hero-animations"
     )
     .each(function () {
       var tweenIn = gsap.from(this, {
