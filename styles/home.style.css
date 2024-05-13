@@ -1755,6 +1755,12 @@ i.circle-selected-onHover path {
   z-index: 1;
 }
 
+@media only screen and (max-width: 1350px) {
+  #home-caseStudy .background-lines {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 800px) {
   #home-caseStudy .caseStudy-title {
     padding: 0 0.5rem;
