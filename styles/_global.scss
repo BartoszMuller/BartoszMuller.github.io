@@ -203,57 +203,57 @@ section {
 }
 
 /////
-  ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(88, 88, 88, 0.122);
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(88, 88, 88, 0.122);
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+  height: 0.4rem;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+  background-color: $color-gray-800;
+}
+
+.custom-scrollbar {
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
     border-radius: 10px;
     background-color: transparent;
   }
 
-  ::-webkit-scrollbar {
+  &::-webkit-scrollbar {
     width: 0.4rem;
-    height: 0.4rem;
     background-color: transparent;
   }
 
-  ::-webkit-scrollbar-thumb {
+  &::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
     background-color: $color-gray-800;
   }
+}
 
-  .custom-scrollbar {
-    &::-webkit-scrollbar-track {
-      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
-      border-radius: 10px;
-      background-color: transparent;
-    }
+.hiddenScrollbar,
+.horizontalScroll {
+  scroll-behavior: smooth;
 
-    &::-webkit-scrollbar {
-      width: 0.4rem;
-      background-color: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      border-radius: 10px;
-      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
-      background-color: $color-gray-800;
-    }
+  // Chrome, Safari and Opera
+  &::-webkit-scrollbar {
+    display: none;
   }
 
-  .hiddenScrollbar,
-  .horizontalScroll {
-    scroll-behavior: smooth;
-
-    // Chrome, Safari and Opera
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    & {
-      -ms-overflow-style: none; // IE and Edge
-      scrollbar-width: none; // Firefox
-    }
+  & {
+    -ms-overflow-style: none; // IE and Edge
+    scrollbar-width: none; // Firefox
   }
+}
 
 //
 // Selected text with circle //
@@ -572,7 +572,7 @@ i.circle-selected-onHover {
     transform: rotate(180deg);
     .line1,
     .line2 {
-      transition: all 1.25s cubic-bezier(0.81,-0.43, 0, 1.02);
+      transition: all 1.25s cubic-bezier(0.81, -0.43, 0, 1.02);
     }
 
     .rec1,
@@ -780,8 +780,8 @@ i.circle-selected-onHover {
       padding: 4rem 0.75rem 1.75rem;
 
       > * {
-        width: 100% !important;
-        max-width: 500px !important;
+        width: 100%;
+        max-width: 500px;
       }
       .hero-siteName {
         font: $font-mobile-b16-regular;
@@ -1002,7 +1002,7 @@ i.circle-selected-onHover {
   }
 
   .leaf-item {
-    min-width: unset !important;
+    min-width: unset;
     aspect-ratio: 0.96;
 
     .leaf-content {
@@ -1531,7 +1531,7 @@ i.circle-selected-onHover {
         margin: 1.3rem 0;
 
         &::after {
-          font:  $font-mobile-b12-regular;
+          font: $font-mobile-b12-regular;
         }
       }
       .contactInput-content {
@@ -1555,7 +1555,7 @@ i.circle-selected-onHover {
           background-color: $color-gray-800;
         }
       }
-      .contactForm-submit{
+      .contactForm-submit {
         width: 100%;
       }
       // .contactForm-submit {
@@ -1657,56 +1657,60 @@ i.circle-selected-onHover {
     padding: 0.75rem 4.25rem;
 
     background: $color-dark;
-
-    .footer-bottom-link {
-      font: $font-b14-light;
-      color: $color-white;
-      white-space: nowrap;
-    }
+  }
+  .footer-bottom-link {
+    font: $font-b14-light;
+    color: $color-white;
+    white-space: nowrap;
   }
   @media only screen and (max-width: 767px) {
     & {
       gap: 2.5rem;
 
       padding-top: 2rem;
-      .footer-special {
-        font: $font-mobile-footer-special;
-      }
-      .footer-content {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 2.4rem;
+    }
+    .footer-special {
+      font: $font-mobile-footer-special;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2.4rem;
 
-        padding: 0 0.75rem;
-      }
-      .footer-text {
-        gap: 1rem;
+      padding: 0 0.75rem;
+    }
+    .footer-text {
+      gap: 1rem;
 
-        .footer-text-title {
-          font: $font-mobile-h2-regular;
-        }
-        .footer-text-desc {
-          font: $font-mobile-b20-italic;
-        }
-        .footer-text-logos {
-          margin-top: 0.6rem;
-        }
+      .footer-text-title {
+        font: $font-mobile-h2-regular;
       }
-      .footer-otreeInfo {
-        font: $font-mobile-b16-regular;
-        width: 80%;
+      .footer-text-desc {
+        font: $font-mobile-b20-italic;
       }
-      .footer-bottom {
-        justify-content: center;
-        gap: 1rem;
+      .footer-text-logos {
+        margin-top: 0.6rem;
+      }
+    }
+    .footer-otreeInfo {
+      font: $font-mobile-b16-regular;
+      width: 80%;
+    }
+    .footer-bottom {
+      justify-content: center;
+      gap: 1rem;
 
-        padding: 0.75rem;
+      padding: 0.75rem;
+    }
+    .footer-bottom-link {
+      font: $font-b14-light;
+    }
+  }
 
-        .footer-bottom-link {
-          font: $font-b14-light;
-        }
-      }
+  @media only screen and (max-width: 400px) {
+    .footer-bottom-link {
+      font: $font-mobile-b12-light;
     }
   }
 }
@@ -1733,15 +1737,15 @@ i.circle-selected-onHover {
 .UpDownIn {
   animation: UpDown 0.8s ease-in-out forwards;
 }
-svg.onFirstTimeView{
-  path{
+svg.onFirstTimeView {
+  path {
     stroke-dasharray: 100;
     stroke-dashoffset: 100;
 
     transition: all 5s;
   }
 
-  &.isShown path{
+  &.isShown path {
     stroke-dashoffset: 0;
   }
 }

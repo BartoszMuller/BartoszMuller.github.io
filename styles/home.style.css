@@ -612,8 +612,8 @@ i.circle-selected-onHover path {
     padding: 4rem 0.75rem 1.75rem;
   }
   .hero-section .hero-content > * {
-    width: 100% !important;
-    max-width: 500px !important;
+    width: 100%;
+    max-width: 500px;
   }
   .hero-section .hero-content .hero-siteName {
     font: 400 16px "Poppins";
@@ -814,7 +814,7 @@ i.circle-selected-onHover path {
     padding: 3.75rem 0.75rem;
   }
   .leaf-item {
-    min-width: unset !important;
+    min-width: unset;
     aspect-ratio: 0.96;
   }
   .leaf-item .leaf-content .leaf-buttons {
@@ -1378,7 +1378,7 @@ i.circle-selected-onHover path {
   background: #1e1e1e;
 }
 
-#footer .footer-bottom .footer-bottom-link {
+#footer .footer-bottom-link {
   font: 300 14px "Poppins";
   color: #ffffff;
   white-space: nowrap;
@@ -1420,8 +1420,14 @@ i.circle-selected-onHover path {
     gap: 1rem;
     padding: 0.75rem;
   }
-  #footer .footer-bottom .footer-bottom-link {
+  #footer .footer-bottom-link {
     font: 300 14px "Poppins";
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #footer .footer-bottom-link {
+    font: 300 12px "Poppins";
   }
 }
 
@@ -1756,6 +1762,105 @@ svg.onFirstTimeView.isShown path {
   z-index: 1;
 }
 
+#home-caseStudy .leaf-item.unfold2 {
+  position: relative;
+  transform-origin: left;
+  transform: perspective(1500px) translate(-3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg);
+}
+
+#home-caseStudy .leaf-item.unfold2 img {
+  z-index: 1;
+}
+
+#home-caseStudy .leaf-item.unfold2.isShown {
+  animation: unfold4Anime 2s forwards;
+}
+
+@keyframes unfold4Anime {
+  0% {
+  }
+  50% {
+    transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotateX(0deg) rotateY(0deg);
+  }
+}
+
+#home-caseStudy .leaf-item.unfold2 {
+  position: relative;
+  transform-origin: top left;
+  transform: perspective(1500px) translate(-3.5rem, 0) rotateY(-180deg);
+  z-index: 3;
+}
+
+#home-caseStudy .leaf-item.unfold2.isShown {
+  animation: unfold2Anime 1s forwards;
+}
+
+@keyframes unfold2Anime {
+  50% {
+    z-index: 0;
+  }
+  100% {
+    z-index: 0;
+    transform: translate(0, 0) rotateX(0deg) rotateY(0deg);
+  }
+}
+
+#home-caseStudy .leaf-item.unfold3 {
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: top right;
+  transform: perspective(1500px) translate(0, -3.5rem) rotateX(180deg);
+}
+
+#home-caseStudy .leaf-item.unfold3.isShown {
+  animation: unfold3Anime 3s forwards;
+}
+
+@keyframes unfold3Anime {
+  0% {
+  }
+  33% {
+    transform: perspective(1500px) translate(3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg);
+  }
+  49% {
+  }
+  66% {
+    transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg) rotateY(-180deg);
+  }
+  100% {
+    transform: perspective(1500px) translate(0, 0) rotateX(0) rotateY(-360deg);
+  }
+}
+
+#home-caseStudy .leaf-item.unfold4 {
+  position: relative;
+  transform-origin: top left;
+  transform: perspective(1500px) translate(-3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg);
+}
+
+#home-caseStudy .leaf-item.unfold4.isShown {
+  animation: unfold4Anime 2s forwards;
+}
+
+@keyframes unfold4Anime {
+  0% {
+  }
+  50% {
+    z-index: 3;
+    transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg);
+  }
+  75% {
+    z-index: -1;
+  }
+  100% {
+    z-index: -1;
+    transform: translate(0, 0) rotateX(0deg) rotateY(0deg);
+  }
+}
+
 @media only screen and (max-width: 1350px) {
   #home-caseStudy .background-lines {
     display: none;
@@ -1841,6 +1946,10 @@ svg.onFirstTimeView.isShown path {
   right: 0;
   max-height: 30vh;
   width: 3rem;
+}
+
+#home-aboutWork .aboutWork-line path {
+  transition: all 3s;
 }
 
 @media only screen and (max-width: 767px) {
