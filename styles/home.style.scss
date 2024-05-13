@@ -209,41 +209,77 @@
   background: $color-gray-500;
 
   .background-lines {
-    &::before {
-      content: "";
+    overflow: hidden;
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   right: 50%;
+    //   top: -2px;
+
+    //   width: 4rem;
+    //   height: 25rem;
+
+    //   border-top-left-radius: 3rem;
+    //   border-top: 1px solid $color-gray-800;
+    //   border-left: 1px solid $color-gray-800;
+    // }
+
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   left: 0;
+    //   bottom: 0;
+
+    //   width: 3rem;
+    //   height: 56%;
+
+    //   border-top-right-radius: 3rem;
+    //   border-top: 1px solid $color-gray-800;
+    //   border-right: 1px solid $color-gray-800;
+    // }
+    .line-right {
       position: absolute;
-      right: 50%;
-      top: -2px;
+      right: 0;
+      top: 40%;
 
-      width: 4rem;
-      height: 25rem;
+      width: 30%;
 
-      border-top-left-radius: 3rem;
-      border-top: 1px solid $color-gray-800;
-      border-left: 1px solid $color-gray-800;
+      path {
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+        transition: all 7s;
+      }
     }
 
-    &::after {
-      content: "";
+    .line-left {
       position: absolute;
       left: 0;
       bottom: 0;
 
       width: 3rem;
-      height: 56%;
-
-      border-top-right-radius: 3rem;
-      border-top: 1px solid $color-gray-800;
-      border-right: 1px solid $color-gray-800;
+      path {
+        stroke-dasharray: 100;
+        stroke-dashoffset: -100;
+        transition: stroke-dashoffset 8s;
+      }
     }
-    .line-1 {
+    .line-center {
+      content: "";
       position: absolute;
-      right: 0;
-      top: 40%;
+      right: 50%;
+      top: -0.25rem;
 
-      background: url("/assets/vectors/curve-line.svg");
-      width: 30%;
-      height: 30%;
+      width: 4rem;
+
+      path {
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+        transition: stroke-dashoffset 5s;
+      }
+    }
+
+    .isShown path {
+      stroke-dashoffset: 0;
     }
   }
 
@@ -552,7 +588,7 @@
   }
 }
 
-// Analiza projektowanie
+// Analiza projektowanie wdrożanie
 
 #home-howWeWork {
   padding: 8.8rem 10rem;
@@ -572,7 +608,7 @@
     padding: 3.25rem 0 0 2.5rem;
 
     @media only screen and (min-width: 768px) {
-      &:hover svg > * {
+      &:hover svg > path {
         stroke-dashoffset: 0;
       }
     }
@@ -674,8 +710,8 @@
         .howWeWork-item {
           padding: 3.25rem 0 4.25rem;
           &:not(.isHidden) {
-            svg > * {
-              stroke-dashoffset: 0 !important;
+            svg > path {
+              stroke-dashoffset: 0;
             }
           }
         }
@@ -753,16 +789,13 @@
 
     animation: movinGradient 7s ease infinite;
 
-    &::before {
-      content: "";
+    .line-right{
       position: absolute;
       bottom: 0;
       right: 0;
-      height: 65%;
+
       width: 3rem;
-      border-left: 1px solid $color-gray-800;
-      border-top: 1px solid $color-gray-800;
-      border-top-left-radius: 50px;
+      max-height: 70%;
     }
     .workType-title {
       white-space: nowrap;

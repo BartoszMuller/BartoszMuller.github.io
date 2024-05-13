@@ -203,9 +203,9 @@ i.circle-selected-onHover .circle {
   transform: scale(1.3, 1.55);
 }
 
-i.circle-selected-onHover .circle-line {
-  stroke-dasharray: 402%;
-  stroke-dashoffset: 402%;
+i.circle-selected-onHover path {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
   transition: all ease 1s;
 }
 

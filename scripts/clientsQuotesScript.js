@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
       currentQuoteNumber = 1;
     }
 
+    autoChangeQuotes();
     updateUI();
   };
 
