@@ -28,11 +28,19 @@ document.addEventListener("DOMContentLoaded", function () {
     fadedTextElement.innerHTML = currentElement.innerHTML;
 
     const elementHeight = currentElement.scrollHeight;
+
+    const elementWidth = currentElement.clientWidth;
+    const elementText = currentElement.textContent.trim();
+    currentElement.appendChild(fadedTextElement);
+    const words = elementText.split("/s+/");
+    words.forEach((word) => {
+      fadedTextElement.textContent += word + " ";
+      console.log(fadedTextElement.clientHeight);
+    });
     const textToType = currentElement.innerText;
 
     currentElement.innerHTML = "";
     currentElement.style.minHeight = elementHeight + "px";
-    currentElement.appendChild(fadedTextElement);
 
     const onScrollSection = () => {
       const elementOffset = currentElement.getBoundingClientRect();

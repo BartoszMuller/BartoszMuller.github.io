@@ -533,7 +533,7 @@ i.circle-selected-onHover {
   width: 3.5rem;
   overflow: visible;
   cursor: pointer;
-  transition: all 1s;
+  transition: all 0.8s;
 
   > * {
     transform-origin: center center;
@@ -558,26 +558,26 @@ i.circle-selected-onHover {
   }
   .line1,
   .line2 {
-    transition: all 0.25s cubic-bezier(0.83, -0.02, 0, 1.11);
+    transition: all 0.2s cubic-bezier(0.83, -0.02, 0, 1.11);
   }
   .rec1,
   .rec3 {
-    transition: scale 1s cubic-bezier(0.17, 0.85, 0, 1.04), transform 1s;
+    transition: scale 0.8s cubic-bezier(0.17, 0.85, 0, 1.04), transform 0.8s;
   }
   .rec2 {
-    transition: all 1s cubic-bezier(0.38, 0.39, 0.16, 1.06);
+    transition: all 0.8s cubic-bezier(0.38, 0.39, 0.16, 1.06);
   }
 
   &.isClicked {
     transform: rotate(180deg);
     .line1,
     .line2 {
-      transition: all 1.25s cubic-bezier(0.81, -0.43, 0, 1.02);
+      transition: all 1s cubic-bezier(0.81, -0.43, 0, 1.02);
     }
 
     .rec1,
     .rec3 {
-      transition: transform 1s;
+      transition: transform 0.8s;
     }
 
     .line1 {
@@ -595,7 +595,7 @@ i.circle-selected-onHover {
       // scale: 0.5;
     }
     .rec2 {
-      transition: all 1s;
+      transition: all 0.8s;
       transform: translate(0%, 0%) scale(0);
     }
     .rec3 {

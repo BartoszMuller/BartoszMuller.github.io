@@ -403,7 +403,7 @@
           rotateX(180deg) rotateY(-180deg);
       }
 
-      49%{
+      49% {
       }
 
       66% {
@@ -423,7 +423,6 @@
     transform-origin: top left;
     transform: perspective(1500px) translate(-3.5rem, -3.5rem) rotateX(180deg)
       rotateY(-180deg);
-
 
     // &::after {
     //   content: "";
@@ -555,14 +554,19 @@
     width: 100%;
     padding: 6.5rem 7.5rem;
     font: $font-h4-medium;
+
+    .circle-selected{
+      stroke-dashoffset: 0;
+      stroke-dasharray: 0;
+    }
   }
 
   .aboutWork-line {
     position: absolute;
     bottom: 0;
     right: 0;
-    max-height: 30vh;
     width: 3rem;
+    max-height: 30vh;
 
     path {
       transition: all 3s;

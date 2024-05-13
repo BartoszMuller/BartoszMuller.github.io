@@ -1,15 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
   const speed = 30;
-
-  const typeText = (elementToType, textToType) => {
+  const typeText = (elementToType, textToType, newLineIndex, initalContent) => {
+    console.log(newLineIndex);
     let letterIndex = 0;
     const type = () => {
       if (letterIndex < textToType.length) {
+        console.log(textToType.charAt(letterIndex));
+        if (newLineIndex.includes(letterIndex)) {
+          elementToType.innerHTML += "<br />";
+          console.log(letterIndex);
+        }
+
         elementToType.innerHTML += textToType.charAt(letterIndex);
         letterIndex++;
+
         setTimeout(type, speed);
       } else {
-        // elementToType.style.minHeight = "inherit";
+        elementToType.innerHTML = initalContent;
+        elementToType.style.minHeight = "unset";
       }
     };
     type();
@@ -20,58 +28,40 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   elementsToType.forEach((currentElement) => {
-    // const lines = currentElement.textContent.split("\n");
-
-    // // Iteracja przez każdą linijkę tekstu
-    // const lineHeight = parseInt(window.getComputedStyle(currentElement).lineHeight);
-    // // Pobranie szerokości kontenera dla elementu
-    // const containerWidth = currentElement.clientWidth;
-    // // Pobranie tekstu bez białych znaków z elementu
-    // const text = currentElement.textContent.trim();
-    // // Podzielenie tekstu na słowa
-    // const words = text.split(/\s+/);
-    // // Inicjalizacja zmiennych
-    // let lineWords = [];
-    // let currentLineWidth = 0;
-    // // Iteracja przez każde słowo w tekście
-    // words.forEach(word => {
-    //     // Utworzenie tymczasowego elementu, aby uzyskać szerokość słowa
-    //     const tempSpan = document.createElement('span');
-    //     tempSpan.textContent = word;
-    //     document.body.appendChild(tempSpan);
-    //     const wordWidth = tempSpan.clientWidth;
-    //     document.body.removeChild(tempSpan);
-    //     // Jeśli dodanie słowa nie przekroczy szerokości kontenera
-    //     if (currentLineWidth + wordWidth <= containerWidth) {
-    //         lineWords.push(word);
-    //         currentLineWidth += wordWidth + 5; // Dodajemy trochę marginesu między słowami (5 pikseli)
-    //     } else {
-    //         // Wyświetlenie ostatniego słowa z linii
-    //         const lastWord = lineWords[lineWords.length - 1];
-    //         console.log(lastWord);
-    //         // Rozpoczęcie nowej linii
-    //         lineWords = [word];
-    //         currentLineWidth = wordWidth + 5;
-    //     }
-    // });
-    // // Wyświetlenie ostatniego słowa z ostatniej linii
-    // if (lineWords.length > 0) {
-    //     const lastWord = lineWords[lineWords.length - 1];
-    //     console.log(lastWord);
-    // }
-
     currentElement.parentNode.style.position = "relative";
 
     const fadedTextElement = document.createElement("span");
+    // const newLine = document.createElement("br");
     fadedTextElement.classList.add("faded");
 
-    fadedTextElement.innerHTML = currentElement.innerHTML;
+    // fadedTextElement.innerHTML = currentElement.innerHTML;
 
-    const elementHeight = currentElement.scrollHeight;
-    const textToType = currentElement.innerText;
+    const newLineIndex = [];
+    const initalContent = currentElement.innerHTML;
+    const elementText = currentElement.textContent.trim();
+    const words = elementText.split(/\s+/);
 
-    currentElement.innerHTML = "";
-    currentElement.style.minHeight = elementHeight + "px";
+    currentElement.appendChild(fadedTextElement);
+    currentElement.textContent = words[0];
+    fadedTextElement.textContent = words[0];
+    let elementLastHeight = currentElement.clientHeight;
+    for (let i = 1; i < words.length; i++) {
+      currentElement.textContent += " " + words[i];
+
+      if (currentElement.clientHeight > elementLastHeight) {
+        newLineIndex.push(fadedTextElement.textContent.length + 1);
+        fadedTextElement.innerHTML += "<br />";
+        console.log();
+        elementLastHeight = currentElement.clientHeight;
+      }
+      fadedTextElement.innerHTML += " " + words[i];
+    }
+
+    const textToType = fadedTextElement.textContent;
+    // const textToType = fadedTextElement.innerText;
+
+    currentElement.style.minHeight = currentElement.scrollHeight + "px";
+    currentElement.textContent = "";
     currentElement.appendChild(fadedTextElement);
 
     const onScrollSection = () => {
@@ -79,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const viewPoint = window.innerHeight / 2;
 
       if (elementOffset.top <= viewPoint && elementOffset.bottom >= viewPoint) {
-        typeText(currentElement, textToType);
+        typeText(currentElement, textToType, newLineIndex, initalContent);
         window.removeEventListener("scroll", onScrollSection);
       }
     };
