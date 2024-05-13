@@ -52,6 +52,8 @@ section {
   display: flex;
   flex-direction: column;
   color: #1e1e1e;
+  width: 100vw;
+  overflow: hidden;
 }
 
 @media only screen and (min-width: 768px) {
@@ -2068,7 +2070,6 @@ i.circle-selected-onHover path {
 }
 
 #home-workType .workType-content .workType-title {
-  white-space: nowrap;
   font: 500 32px/51px "Poppins";
 }
 
@@ -2132,7 +2133,7 @@ i.circle-selected-onHover path {
     height: 100svh;
     max-height: 750px;
   }
-  #home-workType .workType-content::before {
+  #home-workType .workType-content .line-right {
     display: none;
   }
   #home-workType .workType-content .workType-title {

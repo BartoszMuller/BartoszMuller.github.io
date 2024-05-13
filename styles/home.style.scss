@@ -810,7 +810,6 @@
       max-height: 70%;
     }
     .workType-title {
-      white-space: nowrap;
       font: $font-h4-medium;
 
       .special {
@@ -865,14 +864,15 @@
     & {
       max-height: unset;
       height: unset;
+
       .workType-content {
         padding: 2.5rem 0.75rem;
         min-width: 64%;
 
         height: 100svh;
-        max-height: 750px; // ASK
+        max-height: 750px;
 
-        &::before {
+        .line-right {
           display: none;
         }
         .workType-title {
