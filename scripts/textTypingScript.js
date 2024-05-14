@@ -1,14 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   const speed = 30;
   const typeText = (elementToType, textToType, newLineIndex, initalContent) => {
-    console.log(newLineIndex);
     let letterIndex = 0;
     const type = () => {
       if (letterIndex < textToType.length) {
-        console.log(textToType.charAt(letterIndex));
         if (newLineIndex.includes(letterIndex)) {
           elementToType.innerHTML += "<br />";
-          console.log(letterIndex);
         }
 
         elementToType.innerHTML += textToType.charAt(letterIndex);
@@ -31,10 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     currentElement.parentNode.style.position = "relative";
 
     const fadedTextElement = document.createElement("span");
-    // const newLine = document.createElement("br");
     fadedTextElement.classList.add("faded");
-
-    // fadedTextElement.innerHTML = currentElement.innerHTML;
 
     const newLineIndex = [];
     const initalContent = currentElement.innerHTML;
@@ -44,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     currentElement.appendChild(fadedTextElement);
     currentElement.textContent = words[0];
     fadedTextElement.textContent = words[0];
+
     let elementLastHeight = currentElement.clientHeight;
     for (let i = 1; i < words.length; i++) {
       currentElement.textContent += " " + words[i];
@@ -51,14 +46,12 @@ document.addEventListener("DOMContentLoaded", function () {
       if (currentElement.clientHeight > elementLastHeight) {
         newLineIndex.push(fadedTextElement.textContent.length + 1);
         fadedTextElement.innerHTML += "<br />";
-        console.log();
         elementLastHeight = currentElement.clientHeight;
       }
       fadedTextElement.innerHTML += " " + words[i];
     }
 
     const textToType = fadedTextElement.textContent;
-    // const textToType = fadedTextElement.innerText;
 
     currentElement.style.minHeight = currentElement.scrollHeight + "px";
     currentElement.textContent = "";
