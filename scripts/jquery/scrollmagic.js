@@ -38,12 +38,12 @@ $(document).ready(() => {
       // duration: this.clientHeight,
     })
       .on("enter", () => console.log("XDD", this.id))
-      .addIndicators({
-        name: this.id,
-        colorTrigger: "black",
-        colorStart: "pink",
-        colorEnd: "red",
-      })
+      // .addIndicators({
+      //   name: this.id,
+      //   colorTrigger: "black",
+      //   colorStart: "pink",
+      //   colorEnd: "red",
+      // })
       
       .setTween(tweenOut)
       .addTo(controller)
