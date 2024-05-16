@@ -26,109 +26,6 @@ html {
   letter-spacing: 0.02em;
 }
 
-///////// GLOBAL VARS //////////
-
-$color-white: #ffffff;
-$color-dark: #1e1e1e;
-
-$color-blue: #4fd5ff;
-$color-orange: #ff5e21;
-$color-light-orange: #ffa48e;
-
-$color-gray-400: #f9f8f7;
-$color-gray-500: #e3e5e2;
-$color-gray-600: #d1d1d1;
-$color-gray-700: #a6a6a6;
-$color-gray-800: #545454;
-$color-gray-900: #252525;
-
-$color-green-700: #6ef083;
-
-$color-gradient: linear-gradient(180deg, $color-green-700 0%, $color-blue 100%);
-
-$main-fontname: "Poppins";
-$font-footer-special: 275 250px / 290px $main-fontname;
-$font-h1-regular: 400 55px / 79px $main-fontname;
-$font-h2-regular: 500 45px / 56px $main-fontname;
-$font-h3-regular: 400 40px $main-fontname;
-$font-h4-medium: 500 32px / 51px $main-fontname;
-$font-h4-light: 300 32px / 62px $main-fontname;
-$font-h5-medium: 500 28px $main-fontname;
-$font-h5-italic: italic 400 28px $main-fontname;
-
-$font-b24-semibold: 600 24px / 37px $main-fontname;
-$font-b24-medium: 500 24px $main-fontname;
-$font-b20-semibold: 600 20px $main-fontname;
-$font-b20-medium: 500 20px $main-fontname;
-$font-b20-regular: 400 20px $main-fontname;
-$font-b20-italic: italic 400 20px $main-fontname;
-$font-b20-light: 300 20px $main-fontname;
-$font-b19-semibold: 600 19px / 28px $main-fontname;
-$font-b18-semibold: 600 18px / 30px $main-fontname;
-$font-b18-medium: 500 18px / 30px $main-fontname;
-$font-b18-regular: 400 18px / 30px $main-fontname;
-$font-b18-light: 300 18px / 30px $main-fontname;
-$font-b17-regular: 400 17px / 29px $main-fontname;
-$font-b17-light: 300 17px / 29px $main-fontname;
-$font-b17-light-italic: italic 300 17px $main-fontname;
-$font-b16-semibold: 600 16px $main-fontname;
-$font-b16-medium: 500 16px $main-fontname;
-$font-b16-regular: 400 16px $main-fontname;
-$font-b16-light: 300 16px $main-fontname;
-$font-b16-light-italic: italic 300 16px $main-fontname;
-$font-b15-regular: 400 15px $main-fontname;
-$font-b15-light: 300 15px $main-fontname;
-$font-b14-regular: 400 14px $main-fontname;
-$font-b14-medium: 500 14px $main-fontname;
-$font-b14-light: 300 14px $main-fontname;
-$font-b12-light: 300 12px $main-fontname;
-
-$font-mobile-footer-special: 300 94px $main-fontname;
-$font-mobile-h1-regular: 400 32px $main-fontname;
-$font-mobile-h1-light: 300 32px / 47px $main-fontname;
-$font-mobile-h2-regular: 500 28px / 56px $main-fontname;
-$font-mobile-h4-light: 300 24px $main-fontname;
-$font-mobile-b24-semibold: 600 24px $main-fontname;
-$font-mobile-b24-medium: 500 24px $main-fontname;
-$font-mobile-b24-regular: 400 24px $main-fontname;
-$font-mobile-b24-light: 300 24px $main-fontname;
-$font-mobile-b20-semibold: 600 20px $main-fontname;
-$font-mobile-b20-medium: 500 20px $main-fontname;
-$font-mobile-b20-regular: 400 20px $main-fontname;
-$font-mobile-b20-italic: italic 400 20px $main-fontname;
-$font-mobile-b19-medium: 500 19px $main-fontname;
-$font-mobile-b19-italic: italic 400 19px $main-fontname;
-$font-mobile-b18-regular: 400 18px $main-fontname;
-$font-mobile-b18-medium: 500 18px $main-fontname;
-$font-mobile-b18-medium-italic: italic 500 18px $main-fontname;
-$font-mobile-b17-semibold: 600 17px /26px $main-fontname;
-$font-mobile-b17-medium: 600 17px $main-fontname;
-$font-mobile-b17-regular: 400 17px $main-fontname;
-$font-mobile-b17-light-italic: italic 300 17px $main-fontname;
-$font-mobile-b16-medium: 500 16px $main-fontname;
-$font-mobile-b16-regular: 400 16px $main-fontname;
-$font-mobile-b16-light: 300 16px $main-fontname;
-$font-mobile-b15-regular: 400 15px $main-fontname;
-$font-mobile-b14-semibold: 600 14px $main-fontname;
-$font-mobile-b14-medium: 500 14px $main-fontname;
-$font-mobile-b14-regular: 400 14px $main-fontname;
-$font-mobile-b14-light: 300 14px $main-fontname;
-$font-mobile-b12-light: 300 12px $main-fontname;
-$font-mobile-b12-regular: 400 12px $main-fontname;
-
-$font-montserrat-45-semibold: 600 45px "Montserrat";
-$font-montserrat-45-medium: 500 45px "Montserrat";
-$font-montserrat-18-semibold: 600 18px "Montserrat";
-
-$font-mobile-montserrat-24-semibold: 600 24px "Montserrat";
-
-$font-h1-gruppo: 3.5rem "Gruppo";
-
-// INDEXES
-$index-menu: 5;
-$index-above-menu: 6;
-$index-top: 10;
-
 ///
 //////
 ///////// GLOBAL //////////
@@ -364,25 +261,29 @@ i.circle-selected-onHover {
 
   cursor: pointer;
   transition: all 1s;
+  // background: linear-gradient(
+  //     90deg,
+  //     $color-green-700,
+  //     $color-blue 50%,
+  //     $color-green-700 75%,
+  //     $color-green-700 100%
+  //   )
+  //   0%/300%;
+  // background-position: 110%;
   background: linear-gradient(
-      90deg,
-      $color-green-700,
+      0deg,
+      $color-blue,
       $color-blue 50%,
       $color-green-700 75%,
       $color-green-700 100%
-    )
-    0%/300%;
-  background-position: 110%;
+    );
+    background-size: 100% 300%;
+  background-position: 100% 30%;
 }
 
 .primaryButton:hover {
-  background-position: 3%;
-  // border-top-left-radius: 0px;
-  // border-bottom-right-radius: 0px;
-  // border-bottom-left-radius: 50px;
-  // border-top-right-radius: 50px;
+  background-position: 100% 75%;
 }
-
 //
 // TAGS //
 //
@@ -448,7 +349,6 @@ i.circle-selected-onHover {
 
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   min-height: 100svh;
 
   color: $color-white;
