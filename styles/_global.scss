@@ -58,8 +58,7 @@ section {
   display: flex;
   flex-direction: column;
   color: $color-dark;
-
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -150,6 +149,20 @@ section {
     -ms-overflow-style: none; // IE and Edge
     scrollbar-width: none; // Firefox
   }
+}
+
+//
+// Fold/Unfold content//
+//
+
+.foldable-content {
+  overflow: hidden;
+  transition: height 0.75s ease-in-out, padding 0.75s ease-in-out;
+}
+.isFold .foldable-content {
+  height: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 //
@@ -271,13 +284,13 @@ i.circle-selected-onHover {
   //   0%/300%;
   // background-position: 110%;
   background: linear-gradient(
-      0deg,
-      $color-blue,
-      $color-blue 50%,
-      $color-green-700 75%,
-      $color-green-700 100%
-    );
-    background-size: 100% 300%;
+    0deg,
+    $color-blue,
+    $color-blue 50%,
+    $color-green-700 75%,
+    $color-green-700 100%
+  );
+  background-size: 100% 300%;
   background-position: 100% 30%;
 }
 
@@ -569,21 +582,57 @@ i.circle-selected-onHover {
   gap: 0rem;
 }
 .menu-nav-link {
-  width: 3rem;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 2.75rem;
+  height: 2.75rem;
+
+  transition: padding-bottom 0.35s ease-in-out;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    width: 0;
+    height: 0.1rem;
+    margin: auto;
+
+    background: $color-white;
+    border-radius: 50px;
+    transition: width 0.35s ease-in-out;
+  }
+  &:hover {
+    padding-bottom: 1.25rem;
+
+    &::after {
+      width: 0.75rem;
+    }
+  }
+
+  img {
+    display: block;
+    margin: auto;
+    align-self: baseline;
+  }
   &.linkedin {
-    padding: 0.5rem;
     img {
       width: 2rem;
     }
   }
   &.phone {
-    padding: 0.75rem;
     img {
       width: 1.5rem;
     }
   }
   &.mail {
-    padding: 0.625rem;
     img {
       width: 1.75rem;
     }
@@ -1484,6 +1533,37 @@ i.circle-selected-onHover {
 
   border-top: 10px solid #000;
   overflow: hidden;
+
+  a {
+    position: relative;
+    display: block;
+    transition: transform 0.35s ease-in-out;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      top: 0;
+
+      width: 0.15rem;
+      height: 0rem;
+      margin: auto;
+
+      background: $color-dark;
+      border-radius: 50px;
+      transition: height 0.35s ease-in-out, transform 0.35s ease-in-out;
+    }
+    &:hover {
+      transform: translateX(0.75rem);
+
+      &::after {
+        transform: translateX(-0.75rem);
+        height: 0.75rem;
+      }
+    }
+  }
   .footer-special {
     display: flex;
     width: 100%;

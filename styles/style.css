@@ -42,7 +42,7 @@ section {
   display: flex;
   flex-direction: column;
   color: #1e1e1e;
-  width: 100vw;
+  width: 100%;
   overflow: hidden; }
 
 @media only screen and (min-width: 768px) {
@@ -101,6 +101,15 @@ section {
   .horizontalScroll {
     -ms-overflow-style: none;
     scrollbar-width: none; }
+
+.foldable-content {
+  overflow: hidden;
+  transition: height 0.75s ease-in-out, padding 0.75s ease-in-out; }
+
+.isFold .foldable-content {
+  height: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important; }
 
 u {
   position: relative;
@@ -375,19 +384,39 @@ i.circle-selected-onHover {
   gap: 0rem; }
 
 .menu-nav-link {
-  width: 3rem; }
-  .menu-nav-link.linkedin {
-    padding: 0.5rem; }
-    .menu-nav-link.linkedin img {
-      width: 2rem; }
-  .menu-nav-link.phone {
-    padding: 0.75rem; }
-    .menu-nav-link.phone img {
-      width: 1.5rem; }
-  .menu-nav-link.mail {
-    padding: 0.625rem; }
-    .menu-nav-link.mail img {
-      width: 1.75rem; }
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  transition: padding-bottom 0.35s ease-in-out; }
+  .menu-nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    height: 0.1rem;
+    margin: auto;
+    background: #ffffff;
+    border-radius: 50px;
+    transition: width 0.35s ease-in-out; }
+  .menu-nav-link:hover {
+    padding-bottom: 1.25rem; }
+    .menu-nav-link:hover::after {
+      width: 0.75rem; }
+  .menu-nav-link img {
+    display: block;
+    margin: auto;
+    align-self: baseline; }
+  .menu-nav-link.linkedin img {
+    width: 2rem; }
+  .menu-nav-link.phone img {
+    width: 1.5rem; }
+  .menu-nav-link.mail img {
+    width: 1.75rem; }
 
 .menu-nav-title {
   margin-top: 1.6rem; }
@@ -946,6 +975,27 @@ i.circle-selected-onHover {
   padding: 0;
   border-top: 10px solid #000;
   overflow: hidden; }
+  #footer a {
+    position: relative;
+    display: block;
+    transition: transform 0.35s ease-in-out; }
+    #footer a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      top: 0;
+      width: 0.15rem;
+      height: 0rem;
+      margin: auto;
+      background: #1e1e1e;
+      border-radius: 50px;
+      transition: height 0.35s ease-in-out, transform 0.35s ease-in-out; }
+    #footer a:hover {
+      transform: translateX(0.75rem); }
+      #footer a:hover::after {
+        transform: translateX(-0.75rem);
+        height: 0.75rem; }
   #footer .footer-special {
     display: flex;
     width: 100%;
@@ -1947,10 +1997,14 @@ body {
     display: flex;
     flex-direction: column;
     row-gap: 1.56rem; }
-    #career-offers .offers-list > *:not(:last-child) {
+    #career-offers .offers-list > *:not(:last-child) .offer-header {
       padding-bottom: 1.56rem;
-      border-bottom: 1px solid #252525; }
+      border-bottom: 1px solid #e3e5e2; }
   #career-offers .offer-container {
+    display: flex;
+    flex-direction: column;
+    font: 300 16px "Poppins"; }
+  #career-offers .offer-header {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -1987,12 +2041,6 @@ body {
     background-position: 0%; }
     #career-offers .offer-talentPool:hover {
       background-position: 100%; }
-  #career-offers .offer-talentPool.sec {
-    transition: all 0.6s;
-    background: linear-gradient(90deg, #6ef083, #4fd5ff 50%, #6ef083 100%) 0%/200%;
-    background-position: 0%; }
-    #career-offers .offer-talentPool.sec:hover {
-      background-position: 100%; }
   #career-offers .offer-name {
     width: 12rem;
     font: 400 16px "Poppins"; }
@@ -2000,12 +2048,64 @@ body {
     font: 500 16px "Poppins"; }
   #career-offers .offer-location {
     width: 10rem; }
+  #career-offers .offer-showDetails {
+    display: flex;
+    gap: 0.75rem;
+    transition: transform 0.35s ease-in-out;
+    cursor: pointer;
+    transform: translateY(10px); }
+    #career-offers .offer-showDetails::after {
+      content: url("/assets/icons/chevron-down.svg");
+      width: 1.6rem;
+      transition: transform 0.5s ease-in-out;
+      transform-origin: center center;
+      transform: rotateX(180deg) translateY(25%); }
+  #career-offers .isFold .offer-showDetails {
+    transform: translateY(0px); }
+    #career-offers .isFold .offer-showDetails::after {
+      transform: rotateX(0deg); }
+    #career-offers .isFold .offer-showDetails:hover {
+      transform: translateY(10px); }
   #career-offers .offer-details {
     display: flex;
-    gap: 0.75rem; }
-    #career-offers .offer-details::after {
-      content: url("/assets/icons/chevron-down.svg");
-      width: 1.6rem; }
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4rem;
+    padding: 2rem 0 5rem; }
+  #career-offers .details-lists {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    width: 70%;
+    flex-grow: 1; }
+  #career-offers .details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font: 400 16px "Poppins"; }
+  #career-offers .details-list-item {
+    display: flex; }
+    #career-offers .details-list-item::before {
+      display: inline-block;
+      content: url("/assets/icons/check-circle-green.svg");
+      min-width: 1rem;
+      margin-right: 0.75rem;
+      margin-top: 0.1rem; }
+  #career-offers .details-niceToHave .details-list-item::before {
+    content: url("/assets/icons/check-circle-blue.svg"); }
+  #career-offers .details-title {
+    margin-bottom: 1.5rem;
+    font: 600 17px/29px "Poppins"; }
+  #career-offers .details-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4rem;
+    flex-grow: 1;
+    flex-basis: 0;
+    width: 15%;
+    min-width: 150px;
+    height: max-content; }
   @media only screen and (max-width: 1000px) {
     #career-offers {
       padding: 2.8rem 0.75rem 3rem;
@@ -2106,9 +2206,10 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1rem;
-  background: #6ef083;
-  padding: 1rem 10.5rem 1.1rem 8.5rem; }
+  gap: 2rem;
+  background: #ff5e21;
+  color: #ffffff;
+  padding: 1rem 7.5rem 1.1rem 8.5rem; }
   #career-contact .contact-info {
     display: flex;
     flex-direction: column;
@@ -2123,13 +2224,14 @@ body {
   #career-contact .contact-img {
     flex-basis: 0;
     height: 25rem;
-    aspect-ratio: 1; }
+    aspect-ratio: 1;
+    margin-left: auto; }
   @media only screen and (max-width: 767px) {
     #career-contact {
       padding: 3rem 0.75rem;
       flex-direction: column;
       justify-content: center;
-      gap: 0; }
+      gap: 4rem; }
       #career-contact .contact-title {
         width: 100%;
         font: 300 32px/47px "Poppins"; }
@@ -2171,23 +2273,17 @@ body {
   transition: all 1s; }
 #career-ourValues .value-icon-1 .white-circle {
   transform-origin: center center; }
-#career-ourValues .value-item:hover .value-icon-1 > *,
-#career-ourValues .value-item.isCurrentWindow .value-icon-1 > * {
+#career-ourValues .value-item:hover .value-icon-1 > * {
   transform: rotate(90deg); }
-#career-ourValues .value-item:hover .value-icon-1 .white-circle,
-#career-ourValues .value-item.isCurrentWindow .value-icon-1 .white-circle {
+#career-ourValues .value-item:hover .value-icon-1 .white-circle {
   transform: scale(3.1); }
-#career-ourValues .value-item:hover .value-icon-1 .circle1,
-#career-ourValues .value-item.isCurrentWindow .value-icon-1 .circle1 {
+#career-ourValues .value-item:hover .value-icon-1 .circle1 {
   transform: translateY(-15%); }
-#career-ourValues .value-item:hover .value-icon-1 .circle2,
-#career-ourValues .value-item.isCurrentWindow .value-icon-1 .circle2 {
+#career-ourValues .value-item:hover .value-icon-1 .circle2 {
   transform: translateX(-15%); }
-#career-ourValues .value-item:hover .value-icon-1 .circle3,
-#career-ourValues .value-item.isCurrentWindow .value-icon-1 .circle3 {
+#career-ourValues .value-item:hover .value-icon-1 .circle3 {
   transform: translateX(15%); }
-#career-ourValues .value-item:hover .value-icon-1 .circle4,
-#career-ourValues .value-item.isCurrentWindow .value-icon-1 .circle4 {
+#career-ourValues .value-item:hover .value-icon-1 .circle4 {
   transform: translateY(15%); }
 #career-ourValues .value-icon-2 * {
   transform-origin: center;
@@ -2196,16 +2292,14 @@ body {
   transform: translate(30%) scale(0.5, 0.75); }
 #career-ourValues .value-icon-2 .arrow {
   transform: translate(40%); }
-#career-ourValues .value-item:hover .value-icon-2 .line1,
-#career-ourValues .value-item.isCurrentWindow .value-icon-2 .line1 {
+#career-ourValues .value-item:hover .value-icon-2 .line1 {
   stroke-dasharray: 100; }
 #career-ourValues .value-icon-3 * {
   transition: all 1s;
   transform-origin: center center; }
 #career-ourValues .value-icon-3 .heart2 {
   transform: translate(0) scale(0.8); }
-#career-ourValues .value-item:hover .value-icon-3 .heart2,
-#career-ourValues .value-item.isCurrentWindow .value-icon-3 .heart2 {
+#career-ourValues .value-item:hover .value-icon-3 .heart2 {
   transform: translate(-23%, -17%) scale(1.2); }
 #career-ourValues .value-icon-4 * {
   transition: all 1s;
@@ -2216,14 +2310,11 @@ body {
   transition: all 1.2s cubic-bezier(1, -0.18, 0.53, 1.38); }
 #career-ourValues .value-icon-4 .circle3 {
   transition: all 1.3s cubic-bezier(1, -0.18, 0.55, 2.09); }
-#career-ourValues .value-item:hover .value-icon-4 .circle1,
-#career-ourValues .value-item.isCurrentWindow .value-icon-4 .circle1 {
+#career-ourValues .value-item:hover .value-icon-4 .circle1 {
   transform: scale(1.1); }
-#career-ourValues .value-item:hover .value-icon-4 .circle2,
-#career-ourValues .value-item.isCurrentWindow .value-icon-4 .circle2 {
+#career-ourValues .value-item:hover .value-icon-4 .circle2 {
   transform: scale(1.3); }
-#career-ourValues .value-item:hover .value-icon-4 .circle3,
-#career-ourValues .value-item.isCurrentWindow .value-icon-4 .circle3 {
+#career-ourValues .value-item:hover .value-icon-4 .circle3 {
   transform: scale(1.2); }
 @media only screen and (max-width: 767px) {
   #career-ourValues {
@@ -2236,35 +2327,77 @@ body {
   #career-ourValues .value-name {
     font: 600 20px "Poppins"; }
   #career-ourValues .value-desc {
-    font: 400 16px "Poppins"; } }
+    font: 400 16px "Poppins"; }
+  #career-ourValues .value-item.isCurrentWindow .value-icon-1 > * {
+    transform: rotate(90deg); }
+  #career-ourValues .value-item.isCurrentWindow .value-icon-1 .white-circle {
+    transform: scale(3.1); }
+  #career-ourValues .value-item.isCurrentWindow .value-icon-1 .circle1 {
+    transform: translateY(-15%); }
+  #career-ourValues .value-item.isCurrentWindow .value-icon-1 .circle2 {
+    transform: translateX(-15%); }
+  #career-ourValues .value-item.isCurrentWindow .value-icon-1 .circle3 {
+    transform: translateX(15%); }
+  #career-ourValues .value-item.isCurrentWindow .value-icon-1 .circle4 {
+    transform: translateY(15%); }
+  #career-ourValues .value-item.isCurrentWindow .value-icon-2 .line1 {
+    stroke-dasharray: 100; }
+  #career-ourValues .value-item.isCurrentWindow .value-icon-3 .heart2 {
+    transform: translate(-23%, -17%) scale(1.2); }
+  #career-ourValues .value-item.isCurrentWindow .value-icon-4 .circle1 {
+    transform: scale(1.1); }
+  #career-ourValues .value-item.isCurrentWindow .value-icon-4 .circle2 {
+    transform: scale(1.3); }
+  #career-ourValues .value-item.isCurrentWindow .value-icon-4 .circle3 {
+    transform: scale(1.2); } }
 
 #career-apply {
   padding: 12.25rem 8.45rem 11.8rem;
   background: #ff5e21;
   color: #ffffff;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
+  #career-apply::before {
+    content: url("/assets/vectors/Ellipse1.svg");
+    position: absolute;
+    left: 5rem;
+    bottom: 2.25rem;
+    width: 5.25rem; }
+  #career-apply::after {
+    content: url("/assets/vectors/shapes-inline.svg");
+    position: absolute;
+    right: 0rem;
+    bottom: 2.25rem;
+    width: 21.25rem; }
   #career-apply .apply-steps {
     display: flex;
     justify-content: space-between;
     width: 100%;
     gap: 4rem;
     margin: auto;
-    padding: 6.25rem 6.25rem 0;
+    padding: 7.25rem 0;
     overflow-x: scroll;
-    max-width: 1400px; }
+    max-width: 1800px; }
   #career-apply .applyStep-item {
     display: flex;
-    min-width: 8.25rem;
+    width: 25%;
+    min-width: 16rem;
     flex-direction: column;
     align-items: baseline; }
   #career-apply .applyStep-img {
     width: 6rem;
     height: 6rem; }
   #career-apply .applyStep-number {
-    font: 400 16px "Poppins";
+    font: 400 17px/29px "Poppins";
     white-space: nowrap;
-    color: #ffa48e;
-    margin: 2.2rem 0 1.5rem; }
+    color: #ff5e21;
+    margin-bottom: 2.75rem;
+    padding: 0.625rem 1.4rem;
+    background: #4fd5ff;
+    border-radius: 40px 0 40px 0; }
+  #career-apply .applyStep-title {
+    font: 400 18px/30px "Poppins";
+    margin-bottom: 2rem; }
   #career-apply .applyStep-desc {
     font: 400 18px/30px "Poppins"; }
   @media only screen and (max-width: 767px) {
@@ -2280,53 +2413,99 @@ body {
       #career-apply .applyStep-desc {
         font: 400 18px "Poppins"; } }
 
-#career-benefits {
-  align-items: center;
-  gap: 6.75rem;
-  padding: 7.5rem 8rem 6.75rem 8.44rem; }
-  #career-benefits .benefits-title {
-    width: 100%; }
-  #career-benefits .benefits-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 3.1rem;
-    max-width: 2000px; }
-    #career-benefits .benefits-list .wrapper {
-      flex-basis: 0;
-      flex-grow: 1;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 3.1rem; }
-  #career-benefits .benefit-item {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 20%;
-    flex-grow: 1;
-    min-width: 215px; }
-  #career-benefits .benefit-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 6.25rem;
-    height: 6.25rem;
-    object-fit: contain;
-    padding: 1rem;
-    border: 1px solid #1e1e1e;
-    border-radius: 50%; }
-  #career-benefits .benefit-name {
-    font: 400 18px/30px "Poppins"; }
-  #career-benefits .benefit-desc {
-    font: 400 16px "Poppins"; }
-  @media only screen and (max-width: 767px) {
-    #career-benefits {
-      padding: 3.75rem 0.75rem; }
-      #career-benefits .benefit-name {
-        font: 400 18px "Poppins"; }
-      #career-benefits .benefit-desc {
-        font: 400 16px "Poppins"; } }
+#career-benefits .ourValues-title {
+  flex-grow: 1;
+  margin-left: 0; }
+#career-benefits .value-item {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  flex-grow: 1;
+  min-width: 250px;
+  width: 45%;
+  max-width: 500px; }
+  #career-benefits .value-item::before {
+    display: none; }
+#career-benefits .value-name {
+  padding: 1rem 0 1.5rem;
+  font: 600 20px "Poppins"; }
+#career-benefits .value-desc {
+  font: 400 16px "Poppins"; }
+#career-benefits .value-icon {
+  height: 3.7rem;
+  transition: all 1s;
+  overflow: visible; }
+#career-benefits .value-icon-1 * {
+  transform-origin: center;
+  transition: all 1s; }
+#career-benefits .value-icon-1 .white-circle {
+  transform-origin: center center; }
+#career-benefits .value-item:hover .value-icon-1 > *,
+#career-benefits .value-item.isCurrentWindow .value-icon-1 > * {
+  transform: rotate(90deg); }
+#career-benefits .value-item:hover .value-icon-1 .white-circle,
+#career-benefits .value-item.isCurrentWindow .value-icon-1 .white-circle {
+  transform: scale(3.1); }
+#career-benefits .value-item:hover .value-icon-1 .circle1,
+#career-benefits .value-item.isCurrentWindow .value-icon-1 .circle1 {
+  transform: translateY(-15%); }
+#career-benefits .value-item:hover .value-icon-1 .circle2,
+#career-benefits .value-item.isCurrentWindow .value-icon-1 .circle2 {
+  transform: translateX(-15%); }
+#career-benefits .value-item:hover .value-icon-1 .circle3,
+#career-benefits .value-item.isCurrentWindow .value-icon-1 .circle3 {
+  transform: translateX(15%); }
+#career-benefits .value-item:hover .value-icon-1 .circle4,
+#career-benefits .value-item.isCurrentWindow .value-icon-1 .circle4 {
+  transform: translateY(15%); }
+#career-benefits .value-icon-2 * {
+  transform-origin: center;
+  transition: all 1s; }
+#career-benefits .value-icon-2 .line2 {
+  transform: translate(30%) scale(0.5, 0.75); }
+#career-benefits .value-icon-2 .arrow {
+  transform: translate(40%); }
+#career-benefits .value-item:hover .value-icon-2 .line1,
+#career-benefits .value-item.isCurrentWindow .value-icon-2 .line1 {
+  stroke-dasharray: 100; }
+#career-benefits .value-icon-3 * {
+  transition: all 1s;
+  transform-origin: center center; }
+#career-benefits .value-icon-3 .heart2 {
+  transform: translate(0) scale(0.8); }
+#career-benefits .value-item:hover .value-icon-3 .heart2,
+#career-benefits .value-item.isCurrentWindow .value-icon-3 .heart2 {
+  transform: translate(-23%, -17%) scale(1.2); }
+#career-benefits .value-icon-4 * {
+  transition: all 1s;
+  transform-origin: center center; }
+#career-benefits .value-icon-4 .circle1 {
+  transition: all 1s cubic-bezier(0.67, -0.73, 0.43, 1.91); }
+#career-benefits .value-icon-4 .circle2 {
+  transition: all 1.2s cubic-bezier(1, -0.18, 0.53, 1.38); }
+#career-benefits .value-icon-4 .circle3 {
+  transition: all 1.3s cubic-bezier(1, -0.18, 0.55, 2.09); }
+#career-benefits .value-item:hover .value-icon-4 .circle1,
+#career-benefits .value-item.isCurrentWindow .value-icon-4 .circle1 {
+  transform: scale(1.1); }
+#career-benefits .value-item:hover .value-icon-4 .circle2,
+#career-benefits .value-item.isCurrentWindow .value-icon-4 .circle2 {
+  transform: scale(1.3); }
+#career-benefits .value-item:hover .value-icon-4 .circle3,
+#career-benefits .value-item.isCurrentWindow .value-icon-4 .circle3 {
+  transform: scale(1.2); }
+@media only screen and (max-width: 767px) {
+  #career-benefits {
+    padding: 2.8rem 0.75rem 4.7rem; }
+  #career-benefits .ourValues-list {
+    gap: 2.8rem; }
+  #career-benefits .value-item {
+    width: 100%;
+    min-width: unset; }
+  #career-benefits .value-name {
+    font: 600 20px "Poppins"; }
+  #career-benefits .value-desc {
+    font: 400 16px "Poppins"; } }
 
 #home-hero {
   position: relative;
@@ -2496,24 +2675,20 @@ body {
     color: #1e1e1e;
     position: relative;
     z-index: 1; }
-  #home-caseStudy .leaf-item.unfold2 {
-    position: relative;
-    transform-origin: left;
-    transform: perspective(1500px) translate(-3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg); }
-    #home-caseStudy .leaf-item.unfold2 img {
-      z-index: 1; }
-    #home-caseStudy .leaf-item.unfold2.isShown {
-      animation: unfold4Anime 2s forwards; }
-@keyframes unfold4Anime {
-  50% {
-    transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg); }
-  100% {
-    transform: translate(0, 0) rotateX(0deg) rotateY(0deg); } }
+  #home-caseStudy .leaf-item {
+    transform-style: preserve-3d; }
+    #home-caseStudy .leaf-item .left-content {
+      transform-style: preserve-3d; }
   #home-caseStudy .leaf-item.unfold2 {
     position: relative;
     transform-origin: top left;
     transform: perspective(1500px) translate(-3.5rem, 0) rotateY(-180deg);
     z-index: 3; }
+    #home-caseStudy .leaf-item.unfold2 .leaf-img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #6ef083; }
     #home-caseStudy .leaf-item.unfold2.isShown {
       animation: unfold2Anime 1s forwards; }
 @keyframes unfold2Anime {
@@ -2613,7 +2788,7 @@ body {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 3rem;
+    max-width: 3rem;
     max-height: 30vh; }
     #home-aboutWork .aboutWork-line path {
       transition: all 3s; }
@@ -2722,8 +2897,7 @@ body {
         padding-top: 7.65rem;
         padding-right: 0;
         padding-bottom: 5rem;
-        min-width: unset;
-        overflow: hidden; }
+        min-width: unset; }
         #home-howWeWork .howWeWork-list .howWeWork-desc .green-circle-arrow {
           position: static;
           margin-top: 0.75rem;
@@ -2732,11 +2906,7 @@ body {
           #home-howWeWork .howWeWork-list .howWeWork-desc .green-circle-arrow > * {
             stroke-dashoffset: 0; }
       #home-howWeWork .howWeWork-list .unfold-button {
-        display: block; }
-      #home-howWeWork .howWeWork-list .isHidden .howWeWork-desc {
-        padding-top: 0;
-        padding-bottom: 0;
-        height: 0 !important; } }
+        display: block; } }
 
 #home-workType {
   display: flex;
@@ -3016,7 +3186,7 @@ body {
 
 .clientsQuotes-content {
   display: flex;
-  transition: all 1s; }
+  transition: transform 1s; }
 
 .clientsQuotes-item {
   display: flex;

@@ -1,7 +1,7 @@
 $(document).ready(() => {
   var controller = new ScrollMagic.Controller();
 
-  $("section > *")
+  $("section > *, footer > *")
     .not(".hero-background, .hero-header, .hero-bottom, .hero-animations")
     .each(function () {
       var tweenIn = gsap.from(this, {
@@ -11,7 +11,7 @@ $(document).ready(() => {
       });
       var sceneIn = new ScrollMagic.Scene({
         triggerElement: this,
-        triggerHook: 0.8,
+        triggerHook: 0.8
       })
         // .addIndicators({
         //   name: this.className,
@@ -27,27 +27,23 @@ $(document).ready(() => {
 
     var tweenOut = gsap.to(this, {
       opacity: 0,
-      duration: 0.7,
+      duration: 0.5,
     });
 
+    
     var sceneOut = new ScrollMagic.Scene({
-      triggerElement: this,
-      // triggerPosition: this.clientHeight,
-      triggerHook: 0.15,
-      revese: false
-      // duration: this.clientHeight,
+      triggerElement: this.nextElementSibling,
+      triggerHook:0.16
     })
-      .on("enter", () => console.log("XDD", this.id))
       // .addIndicators({
       //   name: this.id,
       //   colorTrigger: "black",
       //   colorStart: "pink",
       //   colorEnd: "red",
       // })
-      
       .setTween(tweenOut)
       .addTo(controller)
 
-      sceneOut.offset(this.clientHeight);
+      // sceneOut.offset(this.clientHeight);
   });
 });

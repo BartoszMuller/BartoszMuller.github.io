@@ -260,47 +260,11 @@
     position: relative;
     z-index: 1;
   }
-  .leaf-item.unfold2 {
-    position: relative;
-    transform-origin: left;
-    transform: perspective(1500px) translate(-3.5rem, -3.5rem) rotateX(180deg)
-      rotateY(-180deg);
 
-    img {
-      z-index: 1;
-    }
-    // &::after {
-    //   content: "";
-    //   position: absolute;
-    //   top: 0;
-    //   right: 0;
-    //   bottom: 0;
-    //   left: 0;
-    //   z-index: 1;
-    //   width: 100%;
-    //   height: 100%;
-    //   opacity: 1;
-    //   border-radius: inherit;
-    //   background: #6ef083;
-    //   backdrop-filter: blur(8px);
-    //   transition: all 2s;
-    // }
-
-    &.isShown {
-      animation: unfold4Anime 2s forwards;
-      &::after {
-        // opacity: 0;
-      }
-    }
-    @keyframes unfold4Anime {
-      0% {
-      }
-      50% {
-        transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg);
-      }
-      100% {
-        transform: translate(0, 0) rotateX(0deg) rotateY(0deg);
-      }
+  .leaf-item{
+    transform-style: preserve-3d;
+    .left-content{
+      transform-style: preserve-3d;
     }
   }
 
@@ -310,6 +274,12 @@
     transform: perspective(1500px) translate(-3.5rem, 0) rotateY(-180deg);
     z-index: 3;
 
+    .leaf-img{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #6ef083;
+    }
     // &::after {
     //   content: "";
     //   position: absolute;
@@ -336,6 +306,7 @@
     @keyframes unfold2Anime {
       50% {
         z-index: 0;
+       
       }
       100% {
         z-index: 0;
@@ -420,27 +391,12 @@
     transform: perspective(1500px) translate(-3.5rem, -3.5rem) rotateX(180deg)
       rotateY(-180deg);
 
-    // &::after {
-    //   content: "";
-    //   position: absolute;
-    //   top: 0;
-    //   right: 0;
-    //   bottom: 0;
-    //   left: 0;
-    //   z-index: 1;
-    //   width: 100%;
-    //   height: 100%;
-    //   opacity: 1;
-    //   border-radius: inherit;
-    //   background: #6ef083;
-    //   backdrop-filter: blur(8px);
-    //   transition: all 2s;
-    // }
+    
 
     &.isShown {
       animation: unfold4Anime 2s forwards;
       &::after {
-        // opacity: 0;
+        
       }
     }
     @keyframes unfold4Anime {
@@ -561,7 +517,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 3rem;
+    max-width: 3rem;
     max-height: 30vh;
 
     path {
@@ -736,7 +692,6 @@
           padding-right: 0;
           padding-bottom: 5rem;
           min-width: unset;
-          overflow: hidden;
 
           .green-circle-arrow {
             position: static;
@@ -751,11 +706,6 @@
         }
         .unfold-button {
           display: block;
-        }
-        .isHidden .howWeWork-desc {
-          padding-top: 0;
-          padding-bottom: 0;
-          height: 0 !important;
         }
       }
     }
@@ -1251,7 +1201,7 @@
 }
 .clientsQuotes-content {
   display: flex;
-  transition: all 1s;
+  transition: transform 1s;
 }
 .clientsQuotes-item {
   display: flex;

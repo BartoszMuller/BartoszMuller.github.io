@@ -7,21 +7,43 @@ document.addEventListener("DOMContentLoaded", function () {
     menuNav.classList.toggle("isOpen");
   });
 
-  const elementsToFold = [...document.getElementsByClassName("howWeWork-item")];
+  //   const elementsToFold = [...document.getElementsByClassName("howWeWork-item")];
+
+  //   elementsToFold.forEach((currentElement) => {
+  //     const elementDesc = currentElement.querySelector(".howWeWork-desc");
+  //     const unfoldButton = currentElement.querySelector(".unfold-button");
+
+  //     elementDesc.style.height = elementDesc.clientHeight + "px";
+  //     currentElement.classList.add("isHidden");
+
+  //     unfoldButton?.addEventListener("click", (event) => {
+  //       event.preventDefault();
+  //       if (!currentElement.classList.contains("isHidden")) {
+  //         elementDesc.style.height = elementDesc.clientHeight + "px";
+  //       }
+  //       currentElement.classList.toggle("isHidden");
+  //     });
+  //   });
+  // });
+
+  const elementsToFold = [
+    ...document.querySelectorAll(".foldable-item, .foldable-items > *"),
+  ];
 
   elementsToFold.forEach((currentElement) => {
-    const elementDesc = currentElement.querySelector(".howWeWork-desc");
-    const unfoldButton = currentElement.querySelector(".unfold-button");
+    const content = currentElement.querySelector(".foldable-content");
+    const button = currentElement.querySelector(".unfold-button");
+    const contentHeight = content.clientHeight + "px";
 
-    elementDesc.style.height = elementDesc.clientHeight + "px";
-    currentElement.classList.add("isHidden");
+    content.style.height = contentHeight;
+    currentElement.classList.add("isFold");
 
-    unfoldButton?.addEventListener("click", (event) => {
+    button?.addEventListener("click", (event) => {
       event.preventDefault();
-      if (!currentElement.classList.contains("isHidden")) {
-        elementDesc.style.height = elementDesc.clientHeight + "px";
+      if (!currentElement.classList.contains("isFold")) {
+        content.style.height = contentHeight;
       }
-      currentElement.classList.toggle("isHidden");
+      currentElement.classList.toggle("isFold");
     });
   });
 });
