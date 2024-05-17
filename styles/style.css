@@ -102,15 +102,17 @@ section {
     -ms-overflow-style: none;
     scrollbar-width: none; }
 
+/*
 .foldable-content {
   overflow: hidden;
-  transition: height 0.75s ease-in-out, padding 0.75s ease-in-out; }
-
+  transition: height 0.75s ease-in-out, padding 0.75s ease-in-out;
+}
 .isFold .foldable-content {
   height: 0 !important;
   padding-top: 0 !important;
-  padding-bottom: 0 !important; }
-
+  padding-bottom: 0 !important;
+}
+*/
 u {
   position: relative;
   white-space: nowrap;
@@ -978,7 +980,7 @@ i.circle-selected-onHover {
   #footer a {
     position: relative;
     display: block;
-    transition: transform 0.35s ease-in-out; }
+    transition: transform 0.35s ease-in-out, padding-left 0.35s ease-in-out, margin-left 0.35s ease-in-out; }
     #footer a::after {
       content: "";
       position: absolute;
@@ -986,16 +988,18 @@ i.circle-selected-onHover {
       left: 0;
       top: 0;
       width: 0.15rem;
-      height: 0rem;
+      height: 0.75rem;
       margin: auto;
       background: #1e1e1e;
       border-radius: 50px;
-      transition: height 0.35s ease-in-out, transform 0.35s ease-in-out; }
+      transform: scaleY(0);
+      transition: height 0.35s ease-in-out, transform 0.35s ease-in-out, scale 0.35s ease-in-out; }
     #footer a:hover {
+      padding-left: 0.75rem;
+      margin-left: -0.75rem;
       transform: translateX(0.75rem); }
       #footer a:hover::after {
-        transform: translateX(-0.75rem);
-        height: 0.75rem; }
+        transform: scaleY(1); }
   #footer .footer-special {
     display: flex;
     width: 100%;
@@ -2065,6 +2069,8 @@ body {
     #career-offers .isFold .offer-showDetails::after {
       transform: rotateX(0deg); }
     #career-offers .isFold .offer-showDetails:hover {
+      padding-top: 0.75rem;
+      margin-top: -0.75rem;
       transform: translateY(10px); }
   #career-offers .offer-details {
     display: flex;
@@ -2106,6 +2112,13 @@ body {
     width: 15%;
     min-width: 150px;
     height: max-content; }
+  #career-offers .foldable-content {
+    overflow: hidden;
+    transition: height 0.75s ease-in-out, padding 0.75s ease-in-out; }
+  #career-offers .isFold .foldable-content {
+    height: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important; }
   @media only screen and (max-width: 1000px) {
     #career-offers {
       padding: 2.8rem 0.75rem 3rem;
@@ -2679,48 +2692,6 @@ body {
     transform-style: preserve-3d; }
     #home-caseStudy .leaf-item .left-content {
       transform-style: preserve-3d; }
-  #home-caseStudy .leaf-item.unfold2 {
-    position: relative;
-    transform-origin: top left;
-    transform: perspective(1500px) translate(-3.5rem, 0) rotateY(-180deg);
-    z-index: 3; }
-    #home-caseStudy .leaf-item.unfold2.isShown {
-      animation: unfold2Anime 1s forwards; }
-@keyframes unfold2Anime {
-  50% {
-    z-index: 0; }
-  100% {
-    z-index: 0;
-    transform: translate(0, 0) rotateX(0deg) rotateY(0deg); } }
-  #home-caseStudy .leaf-item.unfold3 {
-    position: relative;
-    transform-style: preserve-3d;
-    transform-origin: top right;
-    transform: perspective(1500px) translate(0, -3.5rem) rotateX(180deg); }
-    #home-caseStudy .leaf-item.unfold3.isShown {
-      animation: unfold3Anime 3s forwards; }
-@keyframes unfold3Anime {
-  33% {
-    transform: perspective(1500px) translate(3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg); }
-  66% {
-    transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg) rotateY(-180deg); }
-  100% {
-    transform: perspective(1500px) translate(0, 0) rotateX(0) rotateY(-360deg); } }
-  #home-caseStudy .leaf-item.unfold4 {
-    position: relative;
-    transform-origin: top left;
-    transform: perspective(1500px) translate(-3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg); }
-    #home-caseStudy .leaf-item.unfold4.isShown {
-      animation: unfold4Anime 2s forwards; }
-@keyframes unfold4Anime {
-  50% {
-    z-index: 3;
-    transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg); }
-  75% {
-    z-index: -1; }
-  100% {
-    z-index: -1;
-    transform: translate(0, 0) rotateX(0deg) rotateY(0deg); } }
   @media only screen and (max-width: 1350px) {
     #home-caseStudy .background-lines {
       display: none; } }
@@ -2873,7 +2844,7 @@ body {
       transition: all 0.5s;
       transform-origin: center;
       rotate: 90deg; }
-  #home-howWeWork .isHidden .line1 {
+  #home-howWeWork .isFold .line1 {
     rotate: 0deg; }
   @media only screen and (max-width: 767px) {
     #home-howWeWork {
@@ -2900,7 +2871,14 @@ body {
           transition: all 0.6s; }
           #home-howWeWork .howWeWork-list .howWeWork-desc .green-circle-arrow > * {
             stroke-dashoffset: 0; }
-      #home-howWeWork .howWeWork-list .unfold-button {
+      #home-howWeWork .foldable-content {
+        overflow: hidden;
+        transition: height 0.75s ease-in-out, padding 0.75s ease-in-out; }
+      #home-howWeWork .isFold .foldable-content {
+        height: 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important; }
+      #home-howWeWork .unfold-button {
         display: block; } }
 
 #home-workType {
@@ -3307,5 +3285,155 @@ body {
       margin-right: 1.25rem; }
     .clientsQuotes-pagination .prev-quote {
       order: -1; } }
+@media only screen and (min-width: 768px) {
+  .leaf-item.unfold2 {
+    position: relative;
+    transform-origin: top left;
+    transform: perspective(1500px) translate(-3.5rem, 0) rotateY(-180deg);
+    z-index: 3; }
+    .leaf-item.unfold2.firstUnfold {
+      animation: unfold2Anime 1s forwards; }
+  @keyframes unfold2Anime {
+    50% {
+      z-index: 0; }
+    100% {
+      z-index: 0;
+      transform: translate(0, 0) rotateX(0deg) rotateY(0deg); } }
+  .leaf-item.unfold3 {
+    position: relative;
+    transform-style: preserve-3d;
+    transform-origin: top right;
+    transform: perspective(1500px) translate(0, -3.5rem) rotateX(180deg); }
+    .leaf-item.unfold3.firstUnfold {
+      animation: firstUnfold3Anime 1s forwards; }
+  @keyframes firstUnfold3Anime {
+    100% {
+      transform: perspective(1500px) translate(3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg); } }
+    .leaf-item.unfold3.secondUnfold {
+      animation: secondUnfold3Anime 1s forwards; }
+  @keyframes secondUnfold3Anime {
+    0% {
+      transform: perspective(1500px) translate(3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg); }
+    100% {
+      transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg) rotateY(-180deg); } }
+    .leaf-item.unfold3.thirdUnfold {
+      animation: thirdUnfold3Anime 1s forwards; }
+  @keyframes thirdUnfold3Anime {
+    0% {
+      transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg) rotateY(-180deg); }
+    100% {
+      transform: perspective(1500px) translate(0, 0) rotateX(0) rotateY(-360deg); } }
+  @keyframes unfold3Anime {
+    33% {
+      transform: perspective(1500px) translate(3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg); }
+    66% {
+      transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg) rotateY(-180deg); }
+    100% {
+      transform: perspective(1500px) translate(0, 0) rotateX(0) rotateY(-360deg); } }
+  .leaf-item.unfold4 {
+    position: relative;
+    transform-origin: top left;
+    transform: perspective(1500px) translate(-3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg); }
+    .leaf-item.unfold4.firstUnfold {
+      animation: firstUnfold4Anime 1s forwards; }
+    .leaf-item.unfold4.secondUnfold {
+      animation: secondUnfold4Anime 1s forwards; }
+  @keyframes firstUnfold4Anime {
+    100% {
+      z-index: 3;
+      transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg); } }
+  @keyframes secondUnfold4Anime {
+    0% {
+      z-index: 3;
+      transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg); }
+    50% {
+      z-index: -1; }
+    100% {
+      z-index: -1;
+      transform: translate(0, 0) rotateX(0deg) rotateY(0deg); } }
+  @keyframes unfold4Anime {
+    50% {
+      z-index: 3;
+      transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg); }
+    75% {
+      z-index: -1; }
+    100% {
+      z-index: -1;
+      transform: translate(0, 0) rotateX(0deg) rotateY(0deg); } } }
+@media only screen and (max-width: 0px) {
+  .leaf-item.unfold2 {
+    position: relative;
+    transform-origin: top left;
+    transform: perspective(1500px) translate(-3.5rem, 0) rotateY(-180deg);
+    z-index: 3; }
+    .leaf-item.unfold2.firstUnfold {
+      animation: unfold2Anime 1s forwards; }
+  @keyframes unfold2Anime {
+    50% {
+      z-index: 0; }
+    100% {
+      z-index: 0;
+      transform: translate(0, 0) rotateX(0deg) rotateY(0deg); } }
+  .leaf-item.unfold3 {
+    position: relative;
+    transform-style: preserve-3d;
+    transform-origin: top right;
+    transform: perspective(1500px) translate(0, -3.5rem) rotateX(180deg); }
+    .leaf-item.unfold3.firstUnfold {
+      animation: firstUnfold3Anime 1s forwards; }
+  @keyframes firstUnfold3Anime {
+    100% {
+      transform: perspective(1500px) translate(3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg); } }
+    .leaf-item.unfold3.secondUnfold {
+      animation: secondUnfold3Anime 1s forwards; }
+  @keyframes secondUnfold3Anime {
+    0% {
+      transform: perspective(1500px) translate(3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg); }
+    100% {
+      transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg) rotateY(-180deg); } }
+    .leaf-item.unfold3.thirdUnfold {
+      animation: thirdUnfold3Anime 1s forwards; }
+  @keyframes thirdUnfold3Anime {
+    0% {
+      transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg) rotateY(-180deg); }
+    100% {
+      transform: perspective(1500px) translate(0, 0) rotateX(0) rotateY(-360deg); } }
+  @keyframes unfold3Anime {
+    33% {
+      transform: perspective(1500px) translate(3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg); }
+    66% {
+      transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg) rotateY(-180deg); }
+    100% {
+      transform: perspective(1500px) translate(0, 0) rotateX(0) rotateY(-360deg); } }
+  .leaf-item.unfold4 {
+    position: relative;
+    transform-origin: top left;
+    transform: perspective(1500px) translate(-3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg); }
+    .leaf-item.unfold4.firstUnfold {
+      animation: firstUnfold4Anime 1s forwards; }
+    .leaf-item.unfold4.secondUnfold {
+      animation: secondUnfold4Anime 1s forwards; }
+  @keyframes firstUnfold4Anime {
+    100% {
+      z-index: 3;
+      transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg); } }
+  @keyframes secondUnfold4Anime {
+    0% {
+      z-index: 3;
+      transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg); }
+    50% {
+      z-index: -1; }
+    100% {
+      z-index: -1;
+      transform: translate(0, 0) rotateX(0deg) rotateY(0deg); } }
+  @keyframes unfold4Anime {
+    50% {
+      z-index: 3;
+      transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg); }
+    75% {
+      z-index: -1; }
+    100% {
+      z-index: -1;
+      transform: translate(0, 0) rotateX(0deg) rotateY(0deg); } } }
 
 /*# sourceMappingURL=style.css.map */

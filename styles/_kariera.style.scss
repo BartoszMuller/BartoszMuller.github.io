@@ -112,6 +112,8 @@
     }
 
     &:hover {
+      padding-top: 0.75rem;
+      margin-top: -0.75rem;
       transform: translateY(10px);
       &::after {
         // transform: translateY(10px);
@@ -177,6 +179,16 @@
     width: 15%;
     min-width: 150px;
     height: max-content;
+  }
+
+  .foldable-content {
+    overflow: hidden;
+    transition: height 0.75s ease-in-out, padding 0.75s ease-in-out;
+  }
+  .isFold .foldable-content {
+    height: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
 
   @media only screen and (max-width: 1000px) {

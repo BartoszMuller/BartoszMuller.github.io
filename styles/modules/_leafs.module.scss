@@ -1,224 +1,293 @@
-.leafs-section-container {
-  padding: 3.75rem 12rem;
-}
-
-.leafs-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 3.5rem;
-
-  max-width: 2000px;
-  margin: auto;
-  padding-top: 3.75rem;
-}
-.leaf-item {
-  position: relative;
-  flex-grow: 1;
-
-  min-width: 450px;
-  width: 40%;
-  aspect-ratio: 1.1;
-  overflow: hidden;
-
-  color: $color-white;
-  img {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  &.case1,
-  &.case1 img {
-    border-top-right-radius: 30%;
-    border-bottom-left-radius: 30%;
-  }
-  &.case2,
-  &.case2 img {
-    border-bottom-right-radius: 30%;
-    border-top-left-radius: 30%;
-  }
-  // &.wider {
-  //   .leaf-content {
-  //     padding: 5rem 2.5rem 2.5rem 5rem;
-  //   }
-  // }
-}
-
-.companyLeaf {
-  &.case1 {
-    .leaf-content {
-      padding: 2.5rem; // ASK
-    }
-  }
-  &.case2 {
-    .leaf-content {
-      padding: 10% 2.5rem 2.5rem 10%; // ASK
-    }
-    .show-cs-button {
-      align-self: flex-start;
-    }
-  }
-
-  .leaf-content {
+@media only screen and (min-width: 768px) {
+  .leaf-item.unfold2 {
     position: relative;
-    z-index: 1;
+    transform-origin: top left;
+    transform: perspective(1500px) translate(-3.5rem, 0) rotateY(-180deg);
+    z-index: 3;
 
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-
-    height: 100%;
-
-    color: $color-white;
-
-    opacity: 0;
-  }
-  .leaf-title {
-    font: $font-b24-semibold;
-  }
-  .leaf-tags {
-    .rounded-button {
-      border-color: $color-white;
-      background: #ffffff34;
-      backdrop-filter: blur(2px);
-      transition: all 0.5s;
+    &.firstUnfold {
+      animation: unfold2Anime 1s forwards;
     }
-    .rounded-button:hover {
-      background: rgba(0, 0, 0, 0.323);
-      color: $color-white;
-    }
-  }
-
-  .leaf-showCS {
-    margin-top: auto;
-    align-self: flex-end;
-  }
-  .leaf-showCS:hover {
-    color: $color-light-orange;
-  }
-
-  &.case2 {
-    .leaf-showCS {
-      align-self: flex-start;
-    }
-  }
-
-  .leaf-content,
-  img {
-    transition: all 0.6s;
-  }
-  &:hover {
-    .leaf-content {
-      opacity: 1;
-      transition: 1s all;
-      &:hover {
-        opacity: 1;
+    @keyframes unfold2Anime {
+      50% {
+        z-index: 0;
+      }
+      100% {
+        z-index: 0;
+        transform: translate(0, 0) rotateX(0deg) rotateY(0deg);
       }
     }
-    .leaf-img {
-      filter: brightness(60%);
+  }
+
+  .leaf-item.unfold3 {
+    position: relative;
+
+    transform-style: preserve-3d;
+    transform-origin: top right;
+    transform: perspective(1500px) translate(0, -3.5rem) rotateX(180deg);
+
+    &.firstUnfold {
+      animation: firstUnfold3Anime 1s forwards;
+    }
+    @keyframes firstUnfold3Anime {
+      100% {
+        transform: perspective(1500px) translate(3.5rem, -3.5rem)
+          rotateX(180deg) rotateY(-180deg);
+      }
+    }
+
+    &.secondUnfold {
+      animation: secondUnfold3Anime 1s forwards;
+    }
+    @keyframes secondUnfold3Anime {
+      0% {
+        transform: perspective(1500px) translate(3.5rem, -3.5rem)
+          rotateX(180deg) rotateY(-180deg);
+      }
+      100% {
+        transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg)
+          rotateY(-180deg);
+      }
+    }
+
+    &.thirdUnfold {
+      animation: thirdUnfold3Anime 1s forwards;
+    }
+    @keyframes thirdUnfold3Anime {
+      0% {
+        transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg)
+          rotateY(-180deg);
+      }
+      100% {
+        transform: perspective(1500px) translate(0, 0) rotateX(0)
+          rotateY(-360deg);
+      }
+    }
+
+    
+
+    @keyframes unfold3Anime {
+      0% {
+      }
+      33% {
+        transform: perspective(1500px) translate(3.5rem, -3.5rem)
+          rotateX(180deg) rotateY(-180deg);
+      }
+
+      49% {
+      }
+
+      66% {
+        transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg)
+          rotateY(-180deg);
+      }
+
+      100% {
+        transform: perspective(1500px) translate(0, 0) rotateX(0)
+          rotateY(-360deg);
+      }
+    }
+  }
+
+  .leaf-item.unfold4 {
+    position: relative;
+    transform-origin: top left;
+    transform: perspective(1500px) translate(-3.5rem, -3.5rem) rotateX(180deg)
+      rotateY(-180deg);
+
+    &.firstUnfold {
+      animation: firstUnfold4Anime 1s forwards;
+    }
+    &.secondUnfold {
+      animation: secondUnfold4Anime 1s forwards;
+    }
+
+    @keyframes firstUnfold4Anime {
+      100% {
+        z-index: 3;
+        transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg);
+      }
+    }
+    @keyframes secondUnfold4Anime {
+      0% {
+        z-index: 3;
+        transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg);
+      }
+      50%{
+        z-index: -1;
+      }
+      100% {
+        z-index: -1;
+        transform: translate(0, 0) rotateX(0deg) rotateY(0deg);
+      }
+    }
+  }
+  // &.isShown {
+  //   animation: unfold4Anime 2s forwards;
+
+  // }
+  @keyframes unfold4Anime {
+    0% {
+    }
+
+    50% {
+      z-index: 3;
+      transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg);
+    }
+    75% {
+      z-index: -1;
+    }
+    100% {
+      z-index: -1;
+      transform: translate(0, 0) rotateX(0deg) rotateY(0deg);
     }
   }
 }
 
-.greenLeaf {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 6rem;
 
-  background: $color-green-700;
 
-  .leaf-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 1.5rem;
+@media only screen and (max-width: 0px) {
+  .leaf-item.unfold2 {
+    position: relative;
+    transform-origin: top left;
+    transform: perspective(1500px) translate(-3.5rem, 0) rotateY(-180deg);
+    z-index: 3;
 
-    padding: 0;
-
-    color: $color-dark;
-    .leaf-title {
-      display: flex;
-      justify-content: center;
-      gap: 0.625rem;
-
-      font: $font-b20-regular;
-
-      .title-number {
-        white-space: nowrap;
-        font: $font-h1-gruppo;
-      }
-      .desktop-padding {
-        padding-top: 0.7rem;
-      }
+    &.firstUnfold {
+      animation: unfold2Anime 1s forwards;
     }
-    .leaf-desc {
-      font: $font-mobile-b17-regular;
-    }
-    .tag-button {
-      border-color: $color-dark;
-      &:not(:hover) {
-        background: none;
+    @keyframes unfold2Anime {
+      50% {
+        z-index: 0;
+      }
+      100% {
+        z-index: 0;
+        transform: translate(0, 0) rotateX(0deg) rotateY(0deg);
       }
     }
   }
-}
 
-@media only screen and (max-width: 767px) {
-  .leafs-section-container {
-    padding: 3.75rem 0.75rem;
-  }
+  .leaf-item.unfold3 {
+    position: relative;
 
-  .leaf-item {
-    min-width: unset !important;
-    width: 100% !important;
-    aspect-ratio: 0.96;
+    transform-style: preserve-3d;
+    transform-origin: top right;
+    transform: perspective(1500px) translate(0, -3.5rem) rotateX(180deg);
 
-    .leaf-content {
-      opacity: 1 !important;
-
-      .leaf-title {
-        font: $font-mobile-b20-semibold;
-      }
-      .leaf-buttons {
-        font: $font-mobile-b12-light;
-      }
-      .show-cs-button {
-        font: $font-mobile-b14-regular;
+    &.firstUnfold {
+      animation: firstUnfold3Anime 1s forwards;
+    }
+    @keyframes firstUnfold3Anime {
+      100% {
+        transform: perspective(1500px) translate(3.5rem, -3.5rem)
+          rotateX(180deg) rotateY(-180deg);
       }
     }
-    img {
-      filter: brightness(60%) !important;
+
+    &.secondUnfold {
+      animation: secondUnfold3Anime 1s forwards;
+    }
+    @keyframes secondUnfold3Anime {
+      0% {
+        transform: perspective(1500px) translate(3.5rem, -3.5rem)
+          rotateX(180deg) rotateY(-180deg);
+      }
+      100% {
+        transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg)
+          rotateY(-180deg);
+      }
+    }
+
+    &.thirdUnfold {
+      animation: thirdUnfold3Anime 1s forwards;
+    }
+    @keyframes thirdUnfold3Anime {
+      0% {
+        transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg)
+          rotateY(-180deg);
+      }
+      100% {
+        transform: perspective(1500px) translate(0, 0) rotateX(0)
+          rotateY(-360deg);
+      }
+    }
+
+    
+
+    @keyframes unfold3Anime {
+      0% {
+      }
+      33% {
+        transform: perspective(1500px) translate(3.5rem, -3.5rem)
+          rotateX(180deg) rotateY(-180deg);
+      }
+
+      49% {
+      }
+
+      66% {
+        transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg)
+          rotateY(-180deg);
+      }
+
+      100% {
+        transform: perspective(1500px) translate(0, 0) rotateX(0)
+          rotateY(-360deg);
+      }
     }
   }
 
-  .greenLeaf {
-    padding: 1rem 3rem;
-    justify-content: center;
+  .leaf-item.unfold4 {
+    position: relative;
+    transform-origin: top left;
+    transform: perspective(1500px) translate(-3.5rem, -3.5rem) rotateX(180deg)
+      rotateY(-180deg);
 
-    .leaf-content {
-      .leaf-title {
-        display: block;
+    &.firstUnfold {
+      animation: firstUnfold4Anime 1s forwards;
+    }
+    &.secondUnfold {
+      animation: secondUnfold4Anime 1s forwards;
+    }
 
-        width: 70%;
-        margin-right: auto;
+    @keyframes firstUnfold4Anime {
+      100% {
+        z-index: 3;
+        transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg);
+      }
+    }
+    @keyframes secondUnfold4Anime {
+      0% {
+        z-index: 3;
+        transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg);
+      }
+      50%{
+        z-index: -1;
+      }
+      100% {
+        z-index: -1;
+        transform: translate(0, 0) rotateX(0deg) rotateY(0deg);
+      }
+    }
+  }
+  // &.isShown {
+  //   animation: unfold4Anime 2s forwards;
 
-        font: $font-mobile-b19-medium;
-        .title-number {
-          font: $font-mobile-b19-medium;
-        }
-      }
-      .leaf-desc {
-        font: $font-mobile-b15-regular;
-      }
-      .leaf-buttons {
-        display: none;
-      }
+  // }
+  @keyframes unfold4Anime {
+    0% {
+    }
+
+    50% {
+      z-index: 3;
+      transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg);
+    }
+    75% {
+      z-index: -1;
+    }
+    100% {
+      z-index: -1;
+      transform: translate(0, 0) rotateX(0deg) rotateY(0deg);
     }
   }
 }

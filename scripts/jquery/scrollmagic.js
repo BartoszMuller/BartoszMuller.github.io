@@ -11,7 +11,7 @@ $(document).ready(() => {
       });
       var sceneIn = new ScrollMagic.Scene({
         triggerElement: this,
-        triggerHook: 0.8
+        triggerHook: 0.85
       })
         // .addIndicators({
         //   name: this.className,

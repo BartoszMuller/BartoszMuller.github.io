@@ -13,7 +13,7 @@
     gap: 0rem;
 
     .hero-title {
-      font: $font-h1-regular
+      font: $font-h1-regular;
     }
     .hero-desc {
       max-width: 705px;
@@ -261,157 +261,13 @@
     z-index: 1;
   }
 
-  .leaf-item{
+  .leaf-item {
     transform-style: preserve-3d;
-    .left-content{
+    .left-content {
       transform-style: preserve-3d;
     }
   }
 
-  .leaf-item.unfold2 {
-    position: relative;
-    transform-origin: top left;
-    transform: perspective(1500px) translate(-3.5rem, 0) rotateY(-180deg);
-    z-index: 3;
-
-    .leaf-img{
-    }
-    // &::after {
-    //   content: "";
-    //   position: absolute;
-    //   top: 0;
-    //   right: 0;
-    //   bottom: 0;
-    //   left: 0;
-    //   z-index: 1;
-    //   width: 100%;
-    //   height: 100%;
-    //   opacity: 1;
-    //   border-radius: inherit;
-    //   background: #6ef083;
-    //   backdrop-filter: blur(8px);
-    //   transition: all 2s;
-    // }
-
-    &.isShown {
-      animation: unfold2Anime 1s forwards;
-      &::after {
-        // opacity: 0;
-      }
-    }
-    @keyframes unfold2Anime {
-      50% {
-        z-index: 0;
-       
-      }
-      100% {
-        z-index: 0;
-        transform: translate(0, 0) rotateX(0deg) rotateY(0deg);
-      }
-    }
-  }
-
-  .leaf-item.unfold3 {
-    position: relative;
-
-    transform-style: preserve-3d;
-    transform-origin: top right;
-    transform: perspective(1500px) translate(0, -3.5rem) rotateX(180deg);
-
-    // &::after{
-    //   content: '';
-    //   position: absolute;
-    //   top: 0;
-    //   right: 0;
-    //   bottom: 0;
-    //   left: 0;
-
-    //   width: 100%;
-    //   height: 100%;
-
-    //   backface-visibility: hidden;
-    //   background: $color-green-700;
-    //   z-index: 0;
-
-    // }
-
-    // &::after {
-    //   content: "";
-    //   position: absolute;
-    //   top: 0;
-    //   right: 0;
-    //   bottom: 0;
-    //   left: 0;
-    //   z-index: 1;
-    //   width: 100%;
-    //   height: 100%;
-    //   opacity: 1;
-    //   border-radius: inherit;
-    //   background: #6ef083;
-    //   backdrop-filter: blur(8px);
-    //   transition: all 2s;
-    // }
-
-    &.isShown {
-      animation: unfold3Anime 3s forwards;
-      &::after {
-        // opacity: 0;
-      }
-    }
-    @keyframes unfold3Anime {
-      0% {
-      }
-      33% {
-        transform: perspective(1500px) translate(3.5rem, -3.5rem)
-          rotateX(180deg) rotateY(-180deg);
-      }
-
-      49% {
-      }
-
-      66% {
-        transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg)
-          rotateY(-180deg);
-      }
-
-      100% {
-        transform: perspective(1500px) translate(0, 0) rotateX(0)
-          rotateY(-360deg);
-      }
-    }
-  }
-
-  .leaf-item.unfold4 {
-    position: relative;
-    transform-origin: top left;
-    transform: perspective(1500px) translate(-3.5rem, -3.5rem) rotateX(180deg)
-      rotateY(-180deg);
-
-    
-
-    &.isShown {
-      animation: unfold4Anime 2s forwards;
-      &::after {
-        
-      }
-    }
-    @keyframes unfold4Anime {
-      0% {
-      }
-
-      50% {
-        z-index: 3;
-        transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg);
-      }
-      75% {
-        z-index: -1;
-      }
-      100% {
-        z-index: -1;
-        transform: translate(0, 0) rotateX(0deg) rotateY(0deg);
-      }
-    }
-  }
 
   //   ////////// MOBILE CASE STUDY //////////
 
@@ -503,7 +359,7 @@
     padding: 6.5rem 7.5rem;
     font: $font-h4-medium;
 
-    .circle-selected{
+    .circle-selected {
       stroke-dashoffset: 0;
       stroke-dasharray: 0;
     }
@@ -656,7 +512,7 @@
       rotate: 90deg;
     }
   }
-  .isHidden .line1 {
+  .isFold .line1 {
     rotate: 0deg;
   }
 
@@ -700,9 +556,19 @@
             }
           }
         }
-        .unfold-button {
-          display: block;
-        }
+      }
+
+      .foldable-content {
+        overflow: hidden;
+        transition: height 0.75s ease-in-out, padding 0.75s ease-in-out;
+      }
+      .isFold .foldable-content {
+        height: 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+      }
+      .unfold-button {
+        display: block;
       }
     }
   }
@@ -895,7 +761,7 @@
         transform: translate(30px, 30px) scale(0);
       }
     }
-    .value-item:hover .value-icon-1{
+    .value-item:hover .value-icon-1 {
       > * {
       }
       .circle {
@@ -931,7 +797,7 @@
         transition: all 0.8s;
       }
     }
-    .value-item:hover .value-icon-3{
+    .value-item:hover .value-icon-3 {
       .rect {
         transform: scaleX(1.36);
       }
@@ -953,7 +819,7 @@
         transition: all 0.8s;
       }
     }
-    .value-item:hover .value-icon-4{
+    .value-item:hover .value-icon-4 {
       .circle-1 {
         translate: 12% 24%;
       }
@@ -1018,7 +884,7 @@
         transform: translate(-36%, -36%) scale(1);
       }
     }
-    .value-item:hover .value-icon-6{
+    .value-item:hover .value-icon-6 {
       .heart-1 {
         transform: scale(1.2);
       }
@@ -1050,109 +916,108 @@
 
       // Klientocentrycznosc
 
-    .value-item.isCurrentWindow .value-icon-1 {
-      > * {
-      }
-      .circle {
-      }
-      .dot1 {
-        transform: translate(-37px, -37px) scale(2.2);
-      }
-      .dot2 {
-        transform: translate(0, 0) scale(1);
-      }
-    }
-
-    // Partnerstwo
-
-    .value-item.isCurrentWindow .value-icon-2 {
-      .dot1 {
-        transform: translate(46%);
-      }
-      .dot2 {
-        transform: translateX(-46%);
-      }
-    }
-
-    // Elastyczność
-
-    .value-item:hover .value-icon-3,
-    .value-item.isCurrentWindow .value-icon-3 {
-      .rect {
-        transform: scaleX(1.36);
-      }
-      .dashes1 {
-        transform: translateX(100%) scaleX(-1);
-        fill: $color-gray-400;
-      }
-      .dashes2 {
-        transform: translateX(100%) scaleX(-1);
-      }
-    }
-
-    // Wszechstronność
-
-    .value-item.isCurrentWindow .value-icon-4 {
-      .circle-1 {
-        translate: 12% 24%;
-      }
-      .circle-2 {
-        translate: -4% 16%;
-      }
-      .circle-3 {
-        translate: -19% 8%;
-      }
-      .circle-4 {
-        translate: -4% -2%;
-      }
-      .circle-5 {
-        translate: -21% 42%;
-      }
-      .circle-6 {
-        translate: 11% 9%;
-      }
-      .circle-7 {
-        translate: -21% 23%;
-      }
-      .circle-8 {
-        translate: -6% 16%;
-      }
-      .circle-9 {
-        translate: 9% 9%;
-      }
-    }
-
-    // Transparentność
-
-    .value-item.isCurrentWindow .value-icon-5 {
-      .circle-1 {
-        fill: transparent;
+      .value-item.isCurrentWindow .value-icon-1 {
+        > * {
+        }
+        .circle {
+        }
+        .dot1 {
+          transform: translate(-37px, -37px) scale(2.2);
+        }
+        .dot2 {
+          transform: translate(0, 0) scale(1);
+        }
       }
 
-      .dashes-2,
-      .dashes-1 {
-        fill: $color-green-700;
-        transform: translate(-60%, -59%) scale(1.4);
-      }
-    }
+      // Partnerstwo
 
-    // Pasja
+      .value-item.isCurrentWindow .value-icon-2 {
+        .dot1 {
+          transform: translate(46%);
+        }
+        .dot2 {
+          transform: translateX(-46%);
+        }
+      }
 
-    .value-item.isCurrentWindow .value-icon-6 {
-      .heart-1 {
-        transform: scale(1.2);
-      }
-      .heart-2 {
-        transform: scale(1.2);
-      }
-      .heart-3 {
-        transform: translate(25%, -90%) scale(1);
-      }
-      .heart-4 {
-        transform: translate(-98%, -28%) scale(1.1);
-      }
-    }
+      // Elastyczność
 
+      .value-item:hover .value-icon-3,
+      .value-item.isCurrentWindow .value-icon-3 {
+        .rect {
+          transform: scaleX(1.36);
+        }
+        .dashes1 {
+          transform: translateX(100%) scaleX(-1);
+          fill: $color-gray-400;
+        }
+        .dashes2 {
+          transform: translateX(100%) scaleX(-1);
+        }
+      }
+
+      // Wszechstronność
+
+      .value-item.isCurrentWindow .value-icon-4 {
+        .circle-1 {
+          translate: 12% 24%;
+        }
+        .circle-2 {
+          translate: -4% 16%;
+        }
+        .circle-3 {
+          translate: -19% 8%;
+        }
+        .circle-4 {
+          translate: -4% -2%;
+        }
+        .circle-5 {
+          translate: -21% 42%;
+        }
+        .circle-6 {
+          translate: 11% 9%;
+        }
+        .circle-7 {
+          translate: -21% 23%;
+        }
+        .circle-8 {
+          translate: -6% 16%;
+        }
+        .circle-9 {
+          translate: 9% 9%;
+        }
+      }
+
+      // Transparentność
+
+      .value-item.isCurrentWindow .value-icon-5 {
+        .circle-1 {
+          fill: transparent;
+        }
+
+        .dashes-2,
+        .dashes-1 {
+          fill: $color-green-700;
+          transform: translate(-60%, -59%) scale(1.4);
+        }
+      }
+
+      // Pasja
+
+      .value-item.isCurrentWindow .value-icon-6 {
+        .heart-1 {
+          transform: scale(1.2);
+        }
+        .heart-2 {
+          transform: scale(1.2);
+        }
+        .heart-3 {
+          transform: translate(25%, -90%) scale(1);
+        }
+        .heart-4 {
+          transform: translate(-98%, -28%) scale(1.1);
+        }
+      }
     }
   }
 }
