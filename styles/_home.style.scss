@@ -199,7 +199,6 @@
 
 #home-caseStudy {
   position: relative;
-  min-height: 100vh;
   overflow: hidden;
 
   background: $color-gray-500;
@@ -216,8 +215,8 @@
       width: 30%;
 
       path {
-        stroke-dasharray: 100;
-        stroke-dashoffset: 100;
+        stroke-dasharray: 101;
+        stroke-dashoffset: 101;
         transition: all 7s;
       }
     }
@@ -229,8 +228,8 @@
 
       width: 3rem;
       path {
-        stroke-dasharray: 100;
-        stroke-dashoffset: -100;
+        stroke-dasharray: 101;
+        stroke-dashoffset: -101;
         transition: stroke-dashoffset 8s;
       }
     }
@@ -243,8 +242,8 @@
       width: 4rem;
 
       path {
-        stroke-dasharray: 100;
-        stroke-dashoffset: 100;
+        stroke-dasharray: 101;
+        stroke-dashoffset: 101;
         transition: stroke-dashoffset 5s;
       }
     }

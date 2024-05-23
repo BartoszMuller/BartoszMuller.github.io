@@ -477,7 +477,7 @@
       transform: translate(0) scale(0.8);
     }
   }
-  .value-item:hover .value-icon-3{
+  .value-item:hover .value-icon-3 {
     .heart2 {
       transform: translate(-23%, -17%) scale(1.2);
     }
@@ -506,7 +506,7 @@
       transition: all 1.3s cubic-bezier(1, -0.18, 0.55, 2.09);
     }
   }
-  .value-item:hover .value-icon-4{
+  .value-item:hover .value-icon-4 {
     .circle1 {
       transform: scale(1.1);
     }
@@ -653,6 +653,9 @@
   @media only screen and (max-width: 767px) {
     padding: 4.6rem 0.75rem;
 
+    &::before {
+      display: none;
+    }
     .apply-steps {
       gap: 7.3rem;
       padding-inline: 1.38rem;

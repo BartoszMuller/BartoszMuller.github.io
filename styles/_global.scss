@@ -54,11 +54,11 @@ section {
   flex-direction: column;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
+#page-container {
+  display: block;
   color: $color-dark;
   width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -250,8 +250,8 @@ i.circle-selected-onHover {
   }
 
   path {
-    stroke-dasharray: 100;
-    stroke-dashoffset: 100;
+    stroke-dasharray: 101;
+    stroke-dashoffset: 101;
     transition: all 1s ease;
   }
 }
@@ -261,6 +261,8 @@ i.circle-selected-onHover {
 
 .primaryButton {
   all: unset;
+  box-sizing: border-box;
+  display: block;
 
   padding: 0.625rem 1.5rem;
 
@@ -353,9 +355,38 @@ i.circle-selected-onHover {
     font: inherit;
   }
 }
+
 ///
 ///// HERO SECTION
 ///
+
+#main-header {
+  z-index: $index-top;
+  opacity: 1 !important;
+  position: fixed;
+  align-items: center;
+  top: 0;
+
+  color: $color-white;
+  background: linear-gradient(
+    0deg,
+    transparent ,
+    transparent 50%,
+    $color-gray-900 75%,
+    $color-gray-900 100%
+  );
+  background-size: 100% 400%;
+  background-position: 100% 200%;;
+
+  transition: transform 0.3s, background-position 0.5s ease-in-out;
+
+  &.isHidden{
+    transform: translateY(-100%);
+  }
+  &.inMove{
+    background-position: 100% 135%;
+  }
+}
 
 .hero-section {
   position: relative;
@@ -366,9 +397,19 @@ i.circle-selected-onHover {
 
   color: $color-white;
   overflow: hidden;
+  animation: shrink 15s infinite alternate;
 
   // background: url("/assets/images/projectsHero-bg.jpg") center no-repeat fixed;
   // background-size: cover;
+}
+
+@keyframes shrink {
+  0% {
+    background-size: 110% 110%;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
 }
 .hero-background {
   position: absolute;
@@ -383,7 +424,8 @@ i.circle-selected-onHover {
   justify-content: space-between;
   align-items: center;
 
-  padding: 2rem;
+  width: 100%;
+  padding: 1.5rem 2rem;
 
   .logo {
     position: relative;
@@ -442,8 +484,8 @@ i.circle-selected-onHover {
   z-index: $index-above-menu;
 
   flex-shrink: 0;
-  padding: 1rem;
-  width: 3.5rem;
+  padding: 0.75rem;
+  width: 3rem;
   overflow: visible;
   cursor: pointer;
   transition: all 0.8s;
@@ -527,7 +569,7 @@ i.circle-selected-onHover {
   display: flex;
   flex-direction: column;
 
-  height: 100%;
+  height: 100svh;
   padding: 3.75rem 2.75rem 2.25rem;
 
   background: rgba(27, 27, 27, 0.653);
@@ -1256,8 +1298,8 @@ i.circle-selected-onHover {
   max-height: 88%;
   width: 20%;
 
-  stroke-dashoffset: 100;
-  stroke-dasharray: 100;
+  stroke-dashoffset: 101;
+  stroke-dasharray: 101;
 
   transition: all 3s;
   &.isShown {
@@ -1301,6 +1343,8 @@ i.circle-selected-onHover {
 
         input {
           all: unset;
+          box-sizing: border-box;
+          display: block;
 
           position: absolute;
           z-index: 0;
@@ -1358,6 +1402,8 @@ i.circle-selected-onHover {
   }
   .contactForm-input {
     all: unset;
+    box-sizing: border-box;
+    display: block;
 
     width: 100%;
     padding: 0.75rem;
@@ -1399,7 +1445,7 @@ i.circle-selected-onHover {
     position: relative;
 
     max-width: 710px;
-    height: 1.6rem;
+    height: 2.5rem;
 
     resize: vertical;
 
@@ -1537,7 +1583,8 @@ i.circle-selected-onHover {
   a {
     position: relative;
     display: block;
-    transition: transform 0.35s ease-in-out, padding-left 0.35s ease-in-out, margin-left 0.35s ease-in-out,;
+    transition: transform 0.35s ease-in-out, padding-left 0.35s ease-in-out,
+      margin-left 0.35s ease-in-out;
 
     &::after {
       content: "";
@@ -1554,7 +1601,8 @@ i.circle-selected-onHover {
       background: $color-dark;
       border-radius: 50px;
       transform: scaleY(0);
-      transition: height 0.35s ease-in-out, transform 0.35s ease-in-out, scale 0.35s ease-in-out;
+      transition: height 0.35s ease-in-out, transform 0.35s ease-in-out,
+        scale 0.35s ease-in-out;
     }
     &:hover {
       padding-left: 0.75rem;
@@ -1720,8 +1768,8 @@ i.circle-selected-onHover {
 }
 svg.onFirstTimeView {
   path {
-    stroke-dasharray: 100;
-    stroke-dashoffset: 100;
+    stroke-dasharray: 101;
+    stroke-dashoffset: 101;
 
     transition: all 5s;
   }

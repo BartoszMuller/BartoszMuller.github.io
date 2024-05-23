@@ -2,7 +2,7 @@ $(document).ready(() => {
   var controller = new ScrollMagic.Controller();
 
   $("section > *, footer > *")
-    .not(".hero-background, .hero-header, .hero-bottom, .hero-animations")
+    .not(".hero-background, .hero-header, .hero-bottom, .hero-animations, .footer-bottom, .contactPopup-section")
     .each(function () {
       var tweenIn = gsap.from(this, {
         opacity: 0,
@@ -23,7 +23,7 @@ $(document).ready(() => {
         .addTo(controller);
     });
 
-  $("section").each(function () {
+  $("section").not(".contactPopup-section").each(function () {
 
     var tweenOut = gsap.to(this, {
       opacity: 0,

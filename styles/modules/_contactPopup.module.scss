@@ -1,0 +1,60 @@
+.contactPopup-section {
+  position: fixed;
+  top:0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(28, 28, 28, 0.448);
+  backdrop-filter: blur(6px);
+
+  opacity: 0;
+  z-index: -1;
+  
+  overflow-y: scroll;
+  transition: opacity 0.2s ease-in-out;
+  color: $color-dark;
+
+  &.isOpen{
+    opacity: 1;
+    z-index: $index-popup;
+  }
+
+
+  .contactPopup-content {
+    padding: 2.75rem;
+    border-radius: 0.625rem;
+    background: $color-white;
+  }
+
+  .contactForm-title{
+    width: 100%;
+    max-width: unset;
+    margin-bottom: 4rem;
+
+  }
+  .contactPopup-closeButton{
+    box-sizing: content-box;
+
+    height: 1rem;
+    padding: 1rem;
+    margin-left: auto;
+    margin-bottom: 1rem;
+    
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .contactPopup-content {
+      padding: 1rem;
+     
+    }
+  }
+}

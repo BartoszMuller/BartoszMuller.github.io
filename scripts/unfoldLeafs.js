@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const onScrollLeaf3 = () => {
       const elementOffset = leafs[0].getBoundingClientRect();
       const viewPoint = window.innerHeight / 1.5;
-      console.log(elementOffset, viewPoint)
 
       if (elementOffset.top <= viewPoint && elementOffset.bottom >= viewPoint / 2) {
         leafs.forEach((leaf) => leaf.classList.add('thirdUnfold'))
