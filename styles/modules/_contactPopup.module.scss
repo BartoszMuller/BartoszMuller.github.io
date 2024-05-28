@@ -1,4 +1,5 @@
 .contactPopup-section {
+  pointer-events: none;
   position: fixed;
   top:0;
   right: 0;
@@ -24,6 +25,7 @@
 
   &.isOpen{
     opacity: 1;
+    pointer-events: unset;
     z-index: $index-popup;
   }
 

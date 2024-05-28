@@ -30,11 +30,148 @@
   <body>
     
     <div id="page-container">
-      <header class="hero-header" id="main-header">
+      <section id="contactPopup" class="contactForm-section contactPopup-section">
+        <div class="contactPopup-content">
+          <img
+            class="contactPopup-closeButton"
+            src="/assets/icons/closeButton.svg"
+            alt="Close contactPopu button"
+          />
+          <h2 class="contactForm-title">
+            Chcielibyśmy razem zbudować coś niesamowitego.<br />
+            Zrealizujmy to. Skontaktuj się.
+          </h2>
+          <form class="contactForm-content section-container">
+            <div class="contactForm-topics">
+              <label class="title">Interesuje mnie</label>
+              <div class="topics-options">
+                <div class="topic-option">
+                  <input
+                    type="checkbox"
+                    id="contactForm-analiza"
+                    name="contactForm-topic-option"
+                    value="contactForm-analiza"
+                  /><label for="contactForm-analiza"
+                    >Analiza
+                    <svg
+                      preserveAspectRatio="none"
+                      viewBox="0 0 168 45"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M45 0.5H167.497C167.229 24.8463 147.41 44.5 123 44.5H0.502751C0.770785 20.1537 20.5902 0.5 45 0.5Z"
+                        stroke="black"
+                      />
+                    </svg>
+                  </label>
+                </div>
+                <div class="topic-option">
+                  <input
+                    type="checkbox"
+                    id="contactForm-projektowanie"
+                    name="contactForm-topic-option"
+                    value="contactForm-projektowanie"
+                  /><label for="contactForm-projektowanie"
+                    >Projektowanie
+                    <svg
+                      preserveAspectRatio="none"
+                      viewBox="0 0 168 45"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M45 0.5H167.497C167.229 24.8463 147.41 44.5 123 44.5H0.502751C0.770785 20.1537 20.5902 0.5 45 0.5Z"
+                        stroke="black"
+                      />
+                    </svg>
+                  </label>
+                </div>
+  
+                <div class="topic-option">
+                  <input
+                    type="checkbox"
+                    id="contactForm-wdrozenie"
+                    name="contactForm-topic-option"
+                    value="contactForm-wdrozenie"
+                  /><label for="contactForm-wdrozenie"
+                    >Wdrożenie
+                    <svg
+                      preserveAspectRatio="none"
+                      viewBox="0 0 168 45"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M45 0.5H167.497C167.229 24.8463 147.41 44.5 123 44.5H0.502751C0.770785 20.1537 20.5902 0.5 45 0.5Z"
+                        stroke="black"
+                      />
+                    </svg>
+                  </label>
+                </div>
+                <div class="topic-option">
+                  <input
+                    type="checkbox"
+                    id="contactForm-innytemat"
+                    name="contactForm-topic-option"
+                    value="contactForm-innytemat"
+                  /><label for="contactForm-innytemat"
+                    >Inny temat
+                    <svg
+                      preserveAspectRatio="none"
+                      viewBox="0 0 168 45"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M45 0.5H167.497C167.229 24.8463 147.41 44.5 123 44.5H0.502751C0.770785 20.1537 20.5902 0.5 45 0.5Z"
+                        stroke="black"
+                      />
+                    </svg>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <input
+              class="contactForm-input contactInput-fullname"
+              name="fullname"
+              placeholder="Imię i nazwisko*"
+            />
+            <input
+              class="contactForm-input contactInput-company"
+              name="company"
+              placeholder="Nazwa firmy"
+            />
+            <input
+              class="contactForm-input contactInput-email"
+              name="email"
+              placeholder="Adres email*"
+            />
+            <input
+              class="contactForm-input contactInput-phone"
+              name="phone"
+              placeholder="Telefon"
+            />
+            <div class="contactForm-input-wrapper">
+              <textarea
+                class="contactForm-input contactInput-content autoresize"
+                name="content"
+                placeholder="Treść*"
+                maxlength="500"
+                wrap="soft"
+              ></textarea>
+            </div>
+            <button class="contactForm-submit primaryButton" type="submit">
+              Zapytaj o projekt
+            </button>
+          </form>
+        </div>
+      </section>
+      <header class="main-header" id="main-header">
         <a href="/" class="logo"
           ><img src="/assets/logos/logo-otree.svg" alt="Otree logo"
         /></a>
-        <nav class="hero-nav">
+        <nav class="header-nav">
           <ul class="nav-items hideOnMobile">
             <li class="nav-item">
               <a href="/realizacje.html"
@@ -50,7 +187,7 @@
               <a href="/o-nas.html"><span class="hover-line">O nas</span></a>
             </li>
             <li class="nav-item">
-              <a href="#" class="primaryButton contactPopup-openButton"
+              <a class="primaryButton contactPopup-openButton"
                 >Zapytaj o projekt</a
               >
             </li>
@@ -144,143 +281,7 @@
             </div>
           </div>
         </nav>
-        <section id="contactPopup" class="contactForm-section contactPopup-section">
-          <div class="contactPopup-content">
-            <img
-              class="contactPopup-closeButton"
-              src="/assets/icons/closeButton.svg"
-              alt="Close contactPopu button"
-            />
-            <h2 class="contactForm-title">
-              Chcielibyśmy razem zbudować coś niesamowitego.<br />
-              Zrealizujmy to. Skontaktuj się.
-            </h2>
-            <form class="contactForm-content section-container">
-              <div class="contactForm-topics">
-                <label class="title">Interesuje mnie</label>
-                <div class="topics-options">
-                  <div class="topic-option">
-                    <input
-                      type="checkbox"
-                      id="contactForm-analiza"
-                      name="contactForm-topic-option"
-                      value="contactForm-analiza"
-                    /><label for="contactForm-analiza"
-                      >Analiza
-                      <svg
-                        preserveAspectRatio="none"
-                        viewBox="0 0 168 45"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M45 0.5H167.497C167.229 24.8463 147.41 44.5 123 44.5H0.502751C0.770785 20.1537 20.5902 0.5 45 0.5Z"
-                          stroke="black"
-                        />
-                      </svg>
-                    </label>
-                  </div>
-                  <div class="topic-option">
-                    <input
-                      type="checkbox"
-                      id="contactForm-projektowanie"
-                      name="contactForm-topic-option"
-                      value="contactForm-projektowanie"
-                    /><label for="contactForm-projektowanie"
-                      >Projektowanie
-                      <svg
-                        preserveAspectRatio="none"
-                        viewBox="0 0 168 45"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M45 0.5H167.497C167.229 24.8463 147.41 44.5 123 44.5H0.502751C0.770785 20.1537 20.5902 0.5 45 0.5Z"
-                          stroke="black"
-                        />
-                      </svg>
-                    </label>
-                  </div>
-    
-                  <div class="topic-option">
-                    <input
-                      type="checkbox"
-                      id="contactForm-wdrozenie"
-                      name="contactForm-topic-option"
-                      value="contactForm-wdrozenie"
-                    /><label for="contactForm-wdrozenie"
-                      >Wdrożenie
-                      <svg
-                        preserveAspectRatio="none"
-                        viewBox="0 0 168 45"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M45 0.5H167.497C167.229 24.8463 147.41 44.5 123 44.5H0.502751C0.770785 20.1537 20.5902 0.5 45 0.5Z"
-                          stroke="black"
-                        />
-                      </svg>
-                    </label>
-                  </div>
-                  <div class="topic-option">
-                    <input
-                      type="checkbox"
-                      id="contactForm-innytemat"
-                      name="contactForm-topic-option"
-                      value="contactForm-innytemat"
-                    /><label for="contactForm-innytemat"
-                      >Inny temat
-                      <svg
-                        preserveAspectRatio="none"
-                        viewBox="0 0 168 45"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M45 0.5H167.497C167.229 24.8463 147.41 44.5 123 44.5H0.502751C0.770785 20.1537 20.5902 0.5 45 0.5Z"
-                          stroke="black"
-                        />
-                      </svg>
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <input
-                class="contactForm-input contactInput-fullname"
-                name="fullname"
-                placeholder="Imię i nazwisko*"
-              />
-              <input
-                class="contactForm-input contactInput-company"
-                name="company"
-                placeholder="Nazwa firmy"
-              />
-              <input
-                class="contactForm-input contactInput-email"
-                name="email"
-                placeholder="Adres email*"
-              />
-              <input
-                class="contactForm-input contactInput-phone"
-                name="phone"
-                placeholder="Telefon"
-              />
-              <div class="contactForm-input-wrapper">
-                <textarea
-                  class="contactForm-input contactInput-content autoresize"
-                  name="content"
-                  placeholder="Treść*"
-                  maxlength="500"
-                  wrap="soft"
-                ></textarea>
-              </div>
-              <button class="contactForm-submit primaryButton" type="submit">
-                Zapytaj o projekt
-              </button>
-            </form>
-          </div>
-        </section>
+        
       </header>
       <section id="home-hero" class="hero-section">
         <img

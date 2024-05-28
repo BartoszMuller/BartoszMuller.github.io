@@ -1,15 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
- 
- const pageContainer = document.getElementById("page-container");
- const disableScroll = (event) => {
-    pageContainer.style.position = 'fixed';
-    pageContainer.style.top = wndows.scrollY + "px";
-  }
+  let pageScrollY = 0;
+  let isScrollDisable = false;
 
-  const enableScroll = () => {
-    pageContainer.style.position = 'fixed';
-    pageContainer.style.top = wndows.scrollY + "px";
-  }
+  const pageContainer = document.getElementById("page-container");
+
   // MENU & HEADER STICKY
   const header = document.getElementById("main-header");
 
@@ -19,14 +13,26 @@ document.addEventListener("DOMContentLoaded", function () {
   menuButton.addEventListener("click", () => {
     menuButton.classList.toggle("isClicked");
     menuNav.classList.toggle("isOpen");
-    header.classList.toggle("isOpen");
+    // header.classList.toggle("isHidden");
+
+    if (isScrollDisable) {
+      enableScroll();
+      document.addEventListener("scroll", headerStickyHandler);
+
+      isScrollDisable = false;
+    } else {
+      document.removeEventListener("scroll", headerStickyHandler);
+      disableScroll();
+      
+      isScrollDisable = true;
+    }
   });
 
   let prevScrollY = 0;
   const headerStickyHandler = () => {
     const scrollY = window.scrollY;
 
-    if (scrollY > prevScrollY && !header.classList.contains("isOpen")) {
+    if (scrollY > prevScrollY && !header?.classList.contains("isOpen")) {
       header.classList.add("isHidden", "inMove");
     } else if (scrollY === 0) {
       header.classList.remove("inMove");
@@ -41,27 +47,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // CONTACT POPUP
 
-  
+  const disableScroll = (event) => {
+    pageScrollY = window.scrollY;
+    pageContainer.style.position = "fixed";
+    pageContainer.style.height = "calc( 100svh + " + pageScrollY + "px)";
+    pageContainer.style.bottom = 0;
+  };
+
+  const enableScroll = () => {
+    pageContainer.style.position = "unset";
+    pageContainer.style.height = "unset";
+    document.documentElement.style.scrollBehavior = "auto";
+    window.scrollTo(0, pageScrollY);
+    document.documentElement.style.scrollBehavior = "smooth";
+  };
+
   const contactPopup = document.getElementById("contactPopup");
 
   const contactOpenButtons = [
     ...document.getElementsByClassName("contactPopup-openButton"),
   ];
-  const contactCloseButton = contactPopup.querySelector(
+  const contactCloseButton = contactPopup?.querySelector(
     ".contactPopup-closeButton"
   );
-
-  
 
   contactOpenButtons?.forEach((currentButton) => {
     currentButton.addEventListener("click", () => {
       contactPopup.classList.add("isOpen");
+      disableScroll();
 
       // pageContainer.addEventListener("wheel", disableScroll);
     });
   });
-  contactCloseButton.addEventListener("click", () => {
+  contactCloseButton?.addEventListener("click", () => {
     contactPopup.classList.remove("isOpen");
+    enableScroll();
     // pageContainer.removeEventListener("wheel", disableScroll);
   });
 

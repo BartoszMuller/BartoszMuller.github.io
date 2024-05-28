@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (elementOffset.top <= viewPoint && elementOffset.bottom >= viewPoint * 0.4) {
         leafs.forEach((leaf) => leaf.classList.add('firstUnfold'))
         window.removeEventListener("scroll", onScrollLeaf1);
-        setTimeout(() => window.addEventListener("scroll", onScrollLeaf2), 1500) ;
+        setTimeout(() => window.addEventListener("scroll", onScrollLeaf2), 1000) ;
         leafs.shift();
       }
     };
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (elementOffset.top <= viewPoint && elementOffset.bottom >= viewPoint / 2) {
         leafs.forEach((leaf) => leaf.classList.add('secondUnfold'))
         window.removeEventListener("scroll", onScrollLeaf2);
-        setTimeout(() => window.addEventListener("scroll", onScrollLeaf3), 1500) ;
+        setTimeout(() => window.addEventListener("scroll", onScrollLeaf3), 1000) ;
       }
     };
 
