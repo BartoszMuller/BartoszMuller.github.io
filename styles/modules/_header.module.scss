@@ -1,10 +1,27 @@
 .main-header {
+  position: fixed;
+  top: 0;
+  z-index: $index-header;
+  opacity: 1;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   width: 100%;
   padding: 1.5rem 2rem;
+
+  color: $color-white;
+  background: transparent;
+
+  transition: top 0.3s, background 0.5s ease-in-out;
+
+  &.isHidden {
+    top: -6rem;
+  }
+  &.inMove {
+    background: $color-gray-900;
+  }
 
   .logo {
     position: relative;
@@ -140,7 +157,7 @@
   }
 
   .menu-nav {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     z-index: $index-menu;

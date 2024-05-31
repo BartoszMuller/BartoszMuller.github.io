@@ -2,7 +2,7 @@
   .leaf-item.unfold2 {
     position: relative;
     transform-origin: top left;
-    transform: perspective(1500px) translate(-3.5rem, 0) rotateY(-180deg);
+    transform: perspective(2500px) translate(-3.5rem, 0) rotateY(-180deg);
     z-index: 3;
 
     &.firstUnfold {
@@ -24,14 +24,14 @@
 
     transform-style: preserve-3d;
     transform-origin: top right;
-    transform: perspective(1500px) translate(0, -3.5rem) rotateX(180deg);
+    transform: perspective(2500px) translate(0, -3.5rem) rotateX(180deg);
 
     &.firstUnfold {
       animation: firstUnfold3Anime 1s forwards;
     }
     @keyframes firstUnfold3Anime {
       100% {
-        transform: perspective(1500px) translate(3.5rem, -3.5rem)
+        transform: perspective(2500px) translate(3.5rem, -3.5rem)
           rotateX(180deg) rotateY(-180deg);
       }
     }
@@ -41,11 +41,11 @@
     }
     @keyframes secondUnfold3Anime {
       0% {
-        transform: perspective(1500px) translate(3.5rem, -3.5rem)
+        transform: perspective(2500px) translate(3.5rem, -3.5rem)
           rotateX(180deg) rotateY(-180deg);
       }
       100% {
-        transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg)
+        transform: perspective(2500px) translate(3.5rem, 0rem) rotateX(0deg)
           rotateY(-180deg);
       }
     }
@@ -55,22 +55,20 @@
     }
     @keyframes thirdUnfold3Anime {
       0% {
-        transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg)
+        transform: perspective(2500px) translate(3.5rem, 0rem) rotateX(0deg)
           rotateY(-180deg);
       }
       100% {
-        transform: perspective(1500px) translate(0, 0) rotateX(0)
+        transform: perspective(2500px) translate(0, 0) rotateX(0)
           rotateY(-360deg);
       }
     }
-
-    
 
     @keyframes unfold3Anime {
       0% {
       }
       33% {
-        transform: perspective(1500px) translate(3.5rem, -3.5rem)
+        transform: perspective(2500px) translate(3.5rem, -3.5rem)
           rotateX(180deg) rotateY(-180deg);
       }
 
@@ -78,12 +76,12 @@
       }
 
       66% {
-        transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg)
+        transform: perspective(2500px) translate(3.5rem, 0rem) rotateX(0deg)
           rotateY(-180deg);
       }
 
       100% {
-        transform: perspective(1500px) translate(0, 0) rotateX(0)
+        transform: perspective(2500px) translate(0, 0) rotateX(0)
           rotateY(-360deg);
       }
     }
@@ -92,7 +90,7 @@
   .leaf-item.unfold4 {
     position: relative;
     transform-origin: top left;
-    transform: perspective(1500px) translate(-3.5rem, -3.5rem) rotateX(180deg)
+    transform: perspective(2500px) translate(-3.5rem, -3.5rem) rotateX(180deg)
       rotateY(-180deg);
 
     &.firstUnfold {
@@ -113,7 +111,7 @@
         z-index: 3;
         transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg);
       }
-      50%{
+      50% {
         z-index: -1;
       }
       100% {
@@ -144,13 +142,17 @@
   }
 }
 
-
+//
+///
+///// MOBILE ANIMATIONS
+///
+//
 
 @media only screen and (max-width: 767px) {
   .leaf-item.unfold2 {
     position: relative;
     transform-origin: top left;
-    transform: perspective(1500px) translateY(-0.5rem) rotateX(-180deg);
+    transform: perspective(2500px) translateY(-0.5rem) rotateX(-180deg);
     z-index: 3;
 
     &.firstUnfold {
@@ -171,102 +173,118 @@
     position: relative;
 
     transform-style: preserve-3d;
-    transform-origin: top right;
-    transform: perspective(1500px) translateY(calc(-1rem - 200%)) rotateX(-360deg);
+    transform-origin: bottom right;
+    transform: perspective(2500px) translateY(calc(-1rem - 200%)) rotateX(-0deg);
+    z-index: 1;
 
     &.firstUnfold {
       animation: firstUnfold3Anime 1s forwards;
     }
     @keyframes firstUnfold3Anime {
+      50% {
+        z-index: 3;
+      }
       100% {
-        transform: perspective(1500px) translateY(calc(-0.5rem - 100%))
+        z-index: 3;
+        transform: perspective(2500px) translateY(calc(-0.5rem - 200%))
           rotateX(-180deg);
       }
     }
 
     &.secondUnfold {
+      transform-origin: top;
       animation: secondUnfold3Anime 1s forwards;
     }
     @keyframes secondUnfold3Anime {
       0% {
-        transform: perspective(1500px) translate(3.5rem, -3.5rem)
-          rotateX(180deg) rotateY(-180deg);
+        z-index: 3;
+        transform: perspective(2500px) translateY(calc(-0.5rem))
+          rotateX(-180deg);
+      }
+      50% {
+        z-index: 0;
       }
       100% {
-        transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg)
-          rotateY(-180deg);
+        z-index: 0;
+
+        transform: perspective(2500px) translateY(0) rotateX(-360deg);
       }
     }
 
-    &.thirdUnfold {
-      animation: thirdUnfold3Anime 1s forwards;
-    }
-    @keyframes thirdUnfold3Anime {
-      0% {
-        transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg)
-          rotateY(-180deg);
-      }
-      100% {
-        transform: perspective(1500px) translate(0, 0) rotateX(0)
-          rotateY(-360deg);
-      }
-    }
-
-    
-
-    @keyframes unfold3Anime {
-      0% {
-      }
-      33% {
-        transform: perspective(1500px) translate(3.5rem, -3.5rem)
-          rotateX(180deg) rotateY(-180deg);
-      }
-
-      49% {
-      }
-
-      66% {
-        transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg)
-          rotateY(-180deg);
-      }
-
-      100% {
-        transform: perspective(1500px) translate(0, 0) rotateX(0)
-          rotateY(-360deg);
-      }
-    }
+    // &.thirdUnfold {
+    //   animation: thirdUnfold3Anime 1s forwards;
+    // }
+    // @keyframes thirdUnfold3Anime {
+    //   0% {
+    //     transform: perspective(2500px) translate(3.5rem, 0rem) rotateX(0deg)
+    //       rotateY(-180deg);
+    //   }
+    //   100% {
+    //     transform: perspective(2500px) translate(0, 0) rotateX(0)
+    //       rotateY(-360deg);
+    //   }
+    // }
   }
 
   .leaf-item.unfold4 {
     position: relative;
-    transform-origin: top left;
-    transform: perspective(1500px) translate(-3.5rem, -3.5rem) rotateX(180deg)
-      rotateY(-180deg);
+    transform-origin: top;
+    transform: perspective(2500px) translateY(calc(-1.5rem - 200%))
+      rotateX(180deg);
+    z-index: 1;
 
     &.firstUnfold {
       animation: firstUnfold4Anime 1s forwards;
     }
+
     &.secondUnfold {
+      visibility: visible;
+      transform-origin: bottom;
       animation: secondUnfold4Anime 1s forwards;
     }
-
+    &.thirdUnfold {
+      visibility: visible;
+      transform-origin: top;
+      animation: thirdUnfold4Anime 1s forwards;
+    }
     @keyframes firstUnfold4Anime {
+      50% {
+        z-index: 0;
+      }
       100% {
-        z-index: 3;
-        transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg);
+        z-index: 0;
+        transform: perspective(2500px) translateY(calc(-1rem - 200%))
+          rotateX(0deg);
       }
     }
+
     @keyframes secondUnfold4Anime {
       0% {
-        z-index: 3;
-        transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg);
+        z-index: 0;
+        transform: perspective(2500px) translateY(calc(-1rem - 200%))
+          rotateX(0deg);
       }
-      50%{
-        z-index: -1;
+      49% {
+        z-index: 0;
+      }
+      50% {
+        z-index: 0;
       }
       100% {
-        z-index: -1;
-        transform: translate(0, 0) rotateX(0deg) rotateY(0deg);
+        z-index: 0;
+        transform: perspective(2500px) translateY(calc(-0.5rem - 200%))
+          rotateX(-180deg);
+      }
+    }
+    @keyframes thirdUnfold4Anime {
+      0% {
+        z-index: 3;
+        transform: perspective(2500px) translateY(-0.5rem) rotateX(180deg);
+      }
+      100% {
+        transform-origin: top;
+        z-index: 3;
+        transform: perspective(2500px) translateY(0) rotateX(0deg);
       }
     }
   }
@@ -274,20 +292,4 @@
   //   animation: unfold4Anime 2s forwards;
 
   // }
-  @keyframes unfold4Anime {
-    0% {
-    }
-
-    50% {
-      z-index: 3;
-      transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg);
-    }
-    75% {
-      z-index: -1;
-    }
-    100% {
-      z-index: -1;
-      transform: translate(0, 0) rotateX(0deg) rotateY(0deg);
-    }
-  }
 }

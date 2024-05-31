@@ -229,41 +229,28 @@ i.circle-selected-onHover {
     opacity: 0.5;
     font: inherit; }
 
-#main-header {
-  z-index: 4;
-  opacity: 1 !important;
-  position: fixed;
-  align-items: center;
-  top: 0;
-  color: #ffffff;
-  background: transparent;
-  transition: transform 0.3s, background 0.5s ease-in-out; }
-  #main-header.isHidden {
-    transform: translateY(-100%); }
-  #main-header.inMove {
-    background: #252525; }
-
 .hero-section {
   position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100svh;
   color: #ffffff;
-  overflow: hidden;
-  animation: shrink 15s infinite alternate; }
+  overflow: hidden; }
 
-@keyframes shrink {
-  0% {
-    background-size: 110% 110%; }
-  100% {
-    background-size: 100% 100%; } }
 .hero-background {
   position: absolute;
   z-index: -3;
   width: 100%;
   height: 100%;
-  object-fit: cover; }
+  object-fit: cover;
+  transform-origin: center;
+  animation: zoominBg 60s infinite alternate linear; }
 
+@keyframes zoominBg {
+  0% {
+    transform: scale(1); }
+  100% {
+    transform: scale(1.2); } }
 .hero-content {
   display: flex;
   flex-direction: column;
@@ -676,20 +663,21 @@ i.circle-selected-onHover {
       .contactForm-content .contactForm-topics .topics-options .topic-option {
         position: relative;
         display: flex;
-        flex-wrap: wrap;
-        height: 2rem; }
+        flex-wrap: wrap; }
         .contactForm-content .contactForm-topics .topics-options .topic-option input {
           all: unset;
           box-sizing: border-box;
-          display: block;
           position: absolute;
-          z-index: 0;
+          z-index: 3;
+          display: block;
           width: 100%;
+          height: 100%;
           margin: auto;
           border-top-left-radius: 50px;
           border-bottom-right-radius: 50px;
           color: #ffffff;
-          transition: border 0.5s; }
+          transition: border 0.5s;
+          cursor: pointer; }
           .contactForm-content .contactForm-topics .topics-options .topic-option input:checked + label {
             color: #ffffff;
             background: #ff5e21; }
@@ -713,7 +701,6 @@ i.circle-selected-onHover {
             height: 100%;
             top: 0;
             left: 0;
-            transition: all 0.2s;
             stroke-dasharray: 4;
             stroke-dashoffset: 0; }
   .contactForm-content .contactForm-input {
@@ -2807,7 +2794,7 @@ body {
         padding: 2.5rem 0.75rem;
         min-width: 64%;
         height: 100svh;
-        max-height: 750px; }
+        max-height: 575px; }
         #home-workType .workType-content .line-right {
           display: none; }
         #home-workType .workType-content .workType-title {
@@ -3137,7 +3124,7 @@ body {
   .leaf-item.unfold2 {
     position: relative;
     transform-origin: top left;
-    transform: perspective(1500px) translate(-3.5rem, 0) rotateY(-180deg);
+    transform: perspective(2500px) translate(-3.5rem, 0) rotateY(-180deg);
     z-index: 3; }
     .leaf-item.unfold2.firstUnfold {
       animation: unfold2Anime 1s forwards; }
@@ -3151,37 +3138,37 @@ body {
     position: relative;
     transform-style: preserve-3d;
     transform-origin: top right;
-    transform: perspective(1500px) translate(0, -3.5rem) rotateX(180deg); }
+    transform: perspective(2500px) translate(0, -3.5rem) rotateX(180deg); }
     .leaf-item.unfold3.firstUnfold {
       animation: firstUnfold3Anime 1s forwards; }
   @keyframes firstUnfold3Anime {
     100% {
-      transform: perspective(1500px) translate(3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg); } }
+      transform: perspective(2500px) translate(3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg); } }
     .leaf-item.unfold3.secondUnfold {
       animation: secondUnfold3Anime 1s forwards; }
   @keyframes secondUnfold3Anime {
     0% {
-      transform: perspective(1500px) translate(3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg); }
+      transform: perspective(2500px) translate(3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg); }
     100% {
-      transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg) rotateY(-180deg); } }
+      transform: perspective(2500px) translate(3.5rem, 0rem) rotateX(0deg) rotateY(-180deg); } }
     .leaf-item.unfold3.thirdUnfold {
       animation: thirdUnfold3Anime 1s forwards; }
   @keyframes thirdUnfold3Anime {
     0% {
-      transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg) rotateY(-180deg); }
+      transform: perspective(2500px) translate(3.5rem, 0rem) rotateX(0deg) rotateY(-180deg); }
     100% {
-      transform: perspective(1500px) translate(0, 0) rotateX(0) rotateY(-360deg); } }
+      transform: perspective(2500px) translate(0, 0) rotateX(0) rotateY(-360deg); } }
   @keyframes unfold3Anime {
     33% {
-      transform: perspective(1500px) translate(3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg); }
+      transform: perspective(2500px) translate(3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg); }
     66% {
-      transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg) rotateY(-180deg); }
+      transform: perspective(2500px) translate(3.5rem, 0rem) rotateX(0deg) rotateY(-180deg); }
     100% {
-      transform: perspective(1500px) translate(0, 0) rotateX(0) rotateY(-360deg); } }
+      transform: perspective(2500px) translate(0, 0) rotateX(0) rotateY(-360deg); } }
   .leaf-item.unfold4 {
     position: relative;
     transform-origin: top left;
-    transform: perspective(1500px) translate(-3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg); }
+    transform: perspective(2500px) translate(-3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg); }
     .leaf-item.unfold4.firstUnfold {
       animation: firstUnfold4Anime 1s forwards; }
     .leaf-item.unfold4.secondUnfold {
@@ -3212,7 +3199,7 @@ body {
   .leaf-item.unfold2 {
     position: relative;
     transform-origin: top left;
-    transform: perspective(1500px) translateY(-0.5rem) rotateX(-180deg);
+    transform: perspective(2500px) translateY(-0.5rem) rotateX(-180deg);
     z-index: 3; }
     .leaf-item.unfold2.firstUnfold {
       animation: unfold2Anime 1s forwards; }
@@ -3225,64 +3212,69 @@ body {
   .leaf-item.unfold3 {
     position: relative;
     transform-style: preserve-3d;
-    transform-origin: top right;
-    transform: perspective(1500px) translateY(calc(-1rem - 200%)) rotateX(-360deg); }
+    transform-origin: bottom right;
+    transform: perspective(2500px) translateY(calc(-1rem - 200%)) rotateX(0deg);
+    z-index: 1; }
     .leaf-item.unfold3.firstUnfold {
       animation: firstUnfold3Anime 1s forwards; }
   @keyframes firstUnfold3Anime {
+    50% {
+      z-index: 3; }
     100% {
-      transform: perspective(1500px) translateY(calc(-0.5rem - 100%)) rotateX(-180deg); } }
+      z-index: 3;
+      transform: perspective(2500px) translateY(calc(-0.5rem - 200%)) rotateX(-180deg); } }
     .leaf-item.unfold3.secondUnfold {
+      transform-origin: top;
       animation: secondUnfold3Anime 1s forwards; }
   @keyframes secondUnfold3Anime {
     0% {
-      transform: perspective(1500px) translate(3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg); }
+      z-index: 3;
+      transform: perspective(2500px) translateY(calc(-0.5rem)) rotateX(-180deg); }
+    50% {
+      z-index: 0; }
     100% {
-      transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg) rotateY(-180deg); } }
-    .leaf-item.unfold3.thirdUnfold {
-      animation: thirdUnfold3Anime 1s forwards; }
-  @keyframes thirdUnfold3Anime {
-    0% {
-      transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg) rotateY(-180deg); }
-    100% {
-      transform: perspective(1500px) translate(0, 0) rotateX(0) rotateY(-360deg); } }
-  @keyframes unfold3Anime {
-    33% {
-      transform: perspective(1500px) translate(3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg); }
-    66% {
-      transform: perspective(1500px) translate(3.5rem, 0rem) rotateX(0deg) rotateY(-180deg); }
-    100% {
-      transform: perspective(1500px) translate(0, 0) rotateX(0) rotateY(-360deg); } }
+      z-index: 0;
+      transform: perspective(2500px) translateY(0) rotateX(-360deg); } }
   .leaf-item.unfold4 {
     position: relative;
-    transform-origin: top left;
-    transform: perspective(1500px) translate(-3.5rem, -3.5rem) rotateX(180deg) rotateY(-180deg); }
+    transform-origin: top;
+    transform: perspective(2500px) translateY(calc(-1.5rem - 200%)) rotateX(180deg);
+    z-index: 1; }
     .leaf-item.unfold4.firstUnfold {
       animation: firstUnfold4Anime 1s forwards; }
     .leaf-item.unfold4.secondUnfold {
+      visibility: visible;
+      transform-origin: bottom;
       animation: secondUnfold4Anime 1s forwards; }
+    .leaf-item.unfold4.thirdUnfold {
+      visibility: visible;
+      transform-origin: top;
+      animation: thirdUnfold4Anime 1s forwards; }
   @keyframes firstUnfold4Anime {
+    50% {
+      z-index: 0; }
     100% {
-      z-index: 3;
-      transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg); } }
+      z-index: 0;
+      transform: perspective(2500px) translateY(calc(-1rem - 200%)) rotateX(0deg); } }
   @keyframes secondUnfold4Anime {
     0% {
-      z-index: 3;
-      transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg); }
+      z-index: 0;
+      transform: perspective(2500px) translateY(calc(-1rem - 200%)) rotateX(0deg); }
+    49% {
+      z-index: 0; }
     50% {
-      z-index: -1; }
+      z-index: 0; }
     100% {
-      z-index: -1;
-      transform: translate(0, 0) rotateX(0deg) rotateY(0deg); } }
-  @keyframes unfold4Anime {
-    50% {
+      z-index: 0;
+      transform: perspective(2500px) translateY(calc(-0.5rem - 200%)) rotateX(-180deg); } }
+  @keyframes thirdUnfold4Anime {
+    0% {
       z-index: 3;
-      transform: translate(0, -3.5rem) rotateX(180deg) rotateY(0deg); }
-    75% {
-      z-index: -1; }
+      transform: perspective(2500px) translateY(-0.5rem) rotateX(180deg); }
     100% {
-      z-index: -1;
-      transform: translate(0, 0) rotateX(0deg) rotateY(0deg); } } }
+      transform-origin: top;
+      z-index: 3;
+      transform: perspective(2500px) translateY(0) rotateX(0deg); } } }
 .contactPopup-section {
   pointer-events: none;
   position: fixed;
@@ -3326,11 +3318,22 @@ body {
       padding: 1rem; } }
 
 .main-header {
+  position: fixed;
+  top: 0;
+  z-index: 4;
+  opacity: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 1.5rem 2rem; }
+  padding: 1.5rem 2rem;
+  color: #ffffff;
+  background: transparent;
+  transition: top 0.3s, background 0.5s ease-in-out; }
+  .main-header.isHidden {
+    top: -6rem; }
+  .main-header.inMove {
+    background: #252525; }
   .main-header .logo {
     position: relative;
     flex-shrink: 0;
@@ -3414,7 +3417,7 @@ body {
       .main-header .menu-icon.isClicked .rec3 {
         transform: translate(-12%, -16%) rotate(-45deg) scale(0.6); }
   .main-header .menu-nav {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     z-index: 5;

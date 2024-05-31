@@ -2,50 +2,11 @@ document.addEventListener("DOMContentLoaded", function () {
   let pageScrollY = 0;
   let isScrollDisable = false;
 
-  const pageContainer = document.getElementById("page-container");
-
-  // MENU & HEADER STICKY
-  const header = document.getElementById("main-header");
-
-  const menuButton = document.getElementById("menu-button");
-  const menuNav = document.getElementById("menu-nav");
-
-  menuButton.addEventListener("click", () => {
-    menuButton.classList.toggle("isClicked");
-    menuNav.classList.toggle("isOpen");
-    // header.classList.toggle("isHidden");
-
-    if (isScrollDisable) {
-      enableScroll();
-      document.addEventListener("scroll", headerStickyHandler);
-
-      isScrollDisable = false;
-    } else {
-      document.removeEventListener("scroll", headerStickyHandler);
-      disableScroll();
-      
-      isScrollDisable = true;
-    }
-  });
-
-  let prevScrollY = 0;
-  const headerStickyHandler = () => {
-    const scrollY = window.scrollY;
-
-    if (scrollY > prevScrollY && !header?.classList.contains("isOpen")) {
-      header.classList.add("isHidden", "inMove");
-    } else if (scrollY === 0) {
-      header.classList.remove("inMove");
-    } else {
-      header.classList.remove("isHidden");
-    }
-
-    prevScrollY = scrollY;
+  const isMobile = () => {
+    return window.innerWidth <= 768;
   };
 
-  document.addEventListener("scroll", headerStickyHandler);
-
-  // CONTACT POPUP
+  const pageContainer = document.getElementById("page-container");
 
   const disableScroll = (event) => {
     pageScrollY = window.scrollY;
@@ -62,6 +23,50 @@ document.addEventListener("DOMContentLoaded", function () {
     document.documentElement.style.scrollBehavior = "smooth";
   };
 
+  // MENU & HEADER STICKY
+  const header = document.getElementById("main-header");
+
+  const menuButton = document.getElementById("menu-button");
+  const menuNav = document.getElementById("menu-nav");
+
+  menuButton?.addEventListener("click", () => {
+    menuButton?.classList.toggle("isClicked");
+    menuNav?.classList.toggle("isOpen");
+    setTimeout(() => window.scrollTo(0, window.scrollY), 1);
+    // header.classList.toggle("isHidden");
+
+    if (isScrollDisable || !isMobile()) {
+      enableScroll();
+      document.addEventListener("scroll", headerStickyHandler);
+
+      isScrollDisable = false;
+    } else {
+      document.removeEventListener("scroll", headerStickyHandler);
+      disableScroll();
+
+      isScrollDisable = true;
+    }
+  });
+
+  let prevScrollY = 0;
+  const headerStickyHandler = () => {
+    const scrollY = window.scrollY;
+
+    if (scrollY > prevScrollY && !menuNav?.classList.contains("isOpen")) {
+      header.classList.add("isHidden", "inMove");
+    } else if (scrollY === 0) {
+      header?.classList.remove("inMove");
+    } else {
+      header?.classList.remove("isHidden");
+    }
+
+    prevScrollY = scrollY;
+  };
+
+  document.addEventListener("scroll", headerStickyHandler);
+
+  // CONTACT POPUP
+
   const contactPopup = document.getElementById("contactPopup");
 
   const contactOpenButtons = [
@@ -72,17 +77,16 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   contactOpenButtons?.forEach((currentButton) => {
-    currentButton.addEventListener("click", () => {
-      contactPopup.classList.add("isOpen");
+    currentButton?.addEventListener("click", () => {
+      contactPopup?.classList.add("isOpen");
       disableScroll();
-
-      // pageContainer.addEventListener("wheel", disableScroll);
     });
   });
   contactCloseButton?.addEventListener("click", () => {
-    contactPopup.classList.remove("isOpen");
-    enableScroll();
-    // pageContainer.removeEventListener("wheel", disableScroll);
+    contactPopup?.classList.remove("isOpen");
+    if (!menuNav?.classList.contains("isOpen")) {
+      enableScroll();
+    }
   });
 
   // UNFOLD CONTENT
@@ -90,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ...document.querySelectorAll(".foldable-item, .foldable-items > *"),
   ];
 
-  elementsToFold.forEach((currentElement) => {
+  elementsToFold?.forEach((currentElement) => {
     const content = currentElement.querySelector(".foldable-content");
     const button = currentElement.querySelector(".unfold-button");
     const contentHeight = content.clientHeight + "px";
