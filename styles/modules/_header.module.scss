@@ -186,13 +186,19 @@
   .menu-nav-items {
     display: flex;
     flex-direction: column;
-    flex-basis: 0;
+    flex-grow: 1;
 
     padding: 3.4rem 0;
   }
   .menu-nav-item {
     display: flex;
+    align-items: center;
+    flex-grow: 1;
+
     width: max-content;
+    max-height: 4rem;
+    padding: 1rem;
+    padding-right: 0;
     margin-left: auto;
 
     font: $font-b17-regular;
@@ -202,10 +208,6 @@
 
     &:hover {
       color: $color-green-700;
-    }
-
-    a {
-      padding: 1rem 0;
     }
   }
   .menu-nav-button {
@@ -278,5 +280,29 @@
   }
   .menu-nav-title {
     margin-top: 1.6rem;
+  }
+
+  @media screen and (max-width: 767px) {
+    .menu-nav {
+      width: 100%;
+      padding: 3.75rem 1.5rem 1rem 0.875rem;
+
+      &.isOpen {
+        right: 0;
+        top: 0;
+
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    .menu-nav-item {
+      font: $font-b17-regular;
+      a {
+        padding: 1.125rem 0;
+      }
+    }
+    .menu-nav-links {
+      gap: 2rem;
+    }
   }
 }

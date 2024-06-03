@@ -3,16 +3,20 @@ document.addEventListener("DOMContentLoaded", function () {
   let isScrollDisable = false;
 
   const isMobile = () => {
-    return window.innerWidth <= 768;
+    return window.innerWidth <= 767;
   };
 
   const pageContainer = document.getElementById("page-container");
 
-  const disableScroll = (event) => {
+  const disableScroll = () => {
+    document.removeEventListener("scroll", headerStickyHandler);
+    
     pageScrollY = window.scrollY;
     pageContainer.style.position = "fixed";
     pageContainer.style.height = "calc( 100svh + " + pageScrollY + "px)";
     pageContainer.style.bottom = 0;
+
+    isScrollDisable = true;
   };
 
   const enableScroll = () => {
@@ -21,6 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
     document.documentElement.style.scrollBehavior = "auto";
     window.scrollTo(0, pageScrollY);
     document.documentElement.style.scrollBehavior = "smooth";
+
+    document.addEventListener("scroll", headerStickyHandler);
+
+    isScrollDisable = false;
   };
 
   // MENU & HEADER STICKY
@@ -33,18 +41,9 @@ document.addEventListener("DOMContentLoaded", function () {
     menuButton?.classList.toggle("isClicked");
     menuNav?.classList.toggle("isOpen");
     setTimeout(() => window.scrollTo(0, window.scrollY), 1);
-    // header.classList.toggle("isHidden");
 
-    if (isScrollDisable || !isMobile()) {
-      enableScroll();
-      document.addEventListener("scroll", headerStickyHandler);
-
-      isScrollDisable = false;
-    } else {
-      document.removeEventListener("scroll", headerStickyHandler);
-      disableScroll();
-
-      isScrollDisable = true;
+    if (isMobile()) {
+      isScrollDisable ? enableScroll() : disableScroll();
     }
   });
 
@@ -52,8 +51,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const headerStickyHandler = () => {
     const scrollY = window.scrollY;
 
-    if (scrollY > prevScrollY && !menuNav?.classList.contains("isOpen")) {
-      header.classList.add("isHidden", "inMove");
+    if (scrollY > prevScrollY) {
+      !menuNav?.classList.contains("isOpen")
+        ? header?.classList.add("isHidden", "inMove")
+        : header?.classList.add("inMove");
     } else if (scrollY === 0) {
       header?.classList.remove("inMove");
     } else {
@@ -78,13 +79,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   contactOpenButtons?.forEach((currentButton) => {
     currentButton?.addEventListener("click", () => {
+      !isScrollDisable && disableScroll();
       contactPopup?.classList.add("isOpen");
-      disableScroll();
     });
   });
   contactCloseButton?.addEventListener("click", () => {
     contactPopup?.classList.remove("isOpen");
-    if (!menuNav?.classList.contains("isOpen")) {
+    if (!isMobile() || !menuNav?.classList.contains("isOpen")) {
       enableScroll();
     }
   });

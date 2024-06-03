@@ -103,4 +103,18 @@ $index-above-menu: 6;
 $index-popup: 7;
 $index-top: 10;
 
+// MEDIA
+$phone-breakpoint: 767px;
+
+@mixin onMobile {
+  @media screen and (max-width: #{$phones}) {
+      @content;
+  }
+}
+
+@mixin notOnMobile {
+  @media screen and (min-width: #{$phone-breakpoint + 1px}) {
+      @content;
+  }
+}
 

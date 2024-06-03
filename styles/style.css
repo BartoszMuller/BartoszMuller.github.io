@@ -323,24 +323,7 @@ i.circle-selected-onHover {
     .hero-section .hero-content .hero-subtitle {
       font: italic 300 17px "Poppins"; }
   .hero-section .hero-bottom {
-    margin-right: 0; }
-
-  .menu-nav {
-    width: 100%;
-    padding: 3.75rem 1.5rem 1rem 0.875rem; }
-    .menu-nav.isOpen {
-      right: 0;
-      top: 0;
-      opacity: 1;
-      transform: translateX(0); }
-
-  .menu-nav-item {
-    font: 400 17px/29px "Poppins"; }
-    .menu-nav-item a {
-      padding: 1.125rem 0; }
-
-  .menu-nav-links {
-    gap: 2rem; } }
+    margin-right: 0; } }
 .leafs-section-container {
   padding: 3.75rem 12rem; }
 
@@ -3438,11 +3421,16 @@ body {
   .main-header .menu-nav-items {
     display: flex;
     flex-direction: column;
-    flex-basis: 0;
+    flex-grow: 1;
     padding: 3.4rem 0; }
   .main-header .menu-nav-item {
     display: flex;
+    align-items: center;
+    flex-grow: 1;
     width: max-content;
+    max-height: 4rem;
+    padding: 1rem;
+    padding-right: 0;
     margin-left: auto;
     font: 400 17px/29px "Poppins";
     cursor: pointer;
@@ -3450,8 +3438,6 @@ body {
     color: #ffffff; }
     .main-header .menu-nav-item:hover {
       color: #6ef083; }
-    .main-header .menu-nav-item a {
-      padding: 1rem 0; }
   .main-header .menu-nav-button {
     display: flex;
     margin-left: auto; }
@@ -3496,5 +3482,20 @@ body {
       width: 1.75rem; }
   .main-header .menu-nav-title {
     margin-top: 1.6rem; }
+  @media screen and (max-width: 767px) {
+    .main-header .menu-nav {
+      width: 100%;
+      padding: 3.75rem 1.5rem 1rem 0.875rem; }
+      .main-header .menu-nav.isOpen {
+        right: 0;
+        top: 0;
+        opacity: 1;
+        transform: translateX(0); }
+    .main-header .menu-nav-item {
+      font: 400 17px/29px "Poppins"; }
+      .main-header .menu-nav-item a {
+        padding: 1.125rem 0; }
+    .main-header .menu-nav-links {
+      gap: 2rem; } }
 
 /*# sourceMappingURL=style.css.map */
