@@ -615,6 +615,7 @@ i.circle-selected-onHover {
   left: 0;
   max-height: 88%;
   width: 20%;
+  max-width: 400px;
   stroke-dashoffset: 101;
   stroke-dasharray: 101;
   transition: all 3s; }

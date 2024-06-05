@@ -1,9 +1,10 @@
 $(document).ready(() => {
   var controller = new ScrollMagic.Controller();
 
+   // FADE IN SECTION CONTENT
   $("section > *, footer > *")
     .not(
-      ".onFirstTimeView, .hero-background, .hero-header, .hero-bottom, .hero-animations, .footer-bottom, .contactPopup-section"
+      ".clientsQuotes-content, .onFirstTimeView, .hero-background, .hero-header, .hero-bottom, .hero-animations, .footer-bottom, .contactPopup-section"
     )
     .each(function () {
       var tweenIn = gsap.from(this, {
@@ -25,6 +26,28 @@ $(document).ready(() => {
         .addTo(controller);
     });
 
+    // FADE IN SECTION CONTENT WITHOUT TRANSLATE
+  $(".clientsQuotes-content")
+  .each(function () {
+    var tweenIn = gsap.from(this, {
+      opacity: 0,
+      duration: 0.75,
+    });
+    var sceneIn = new ScrollMagic.Scene({
+      triggerElement: this,
+      triggerHook: 0.85,
+    })
+      // .addIndicators({
+      //   name: this.className,
+      //   colorTrigger: "black",
+      //   colorStart: "pink",
+      //   colorEnd: "red",
+      // })
+      .setTween(tweenIn)
+      .addTo(controller);
+  });
+
+  // FADE OUT SECTION
   $("section")
     .not(".contactPopup-section")
     .each(function () {
