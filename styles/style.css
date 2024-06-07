@@ -34,6 +34,10 @@ h2 {
 @media only screen and (max-width: 767px) {
   h2 {
     font: 500 24px "Poppins"; } }
+.scrollMagicHook {
+  height: 0;
+  visibility: hidden; }
+
 section {
   display: flex;
   flex-direction: column; }
@@ -1165,29 +1169,29 @@ body {
     flex-direction: column;
     gap: 0.5rem;
     margin-top: 1.5rem; }
-  #blogPost-post .article-section-container {
+  #blogPost-post .article-sections-container {
     width: 1050px; }
-  #blogPost-post .article-section {
+  #blogPost-post .article-sections {
     display: flex;
     flex-direction: column;
     gap: 4rem;
     width: 100%;
     font: 400 18px/30px "Poppins"; }
-    #blogPost-post .article-section:last-child {
+    #blogPost-post .article-sections:last-child {
       padding-bottom: 12.5rem; }
-    #blogPost-post .article-section.gray {
+    #blogPost-post .article-sections.gray {
       background: #e3e5e2; }
-    #blogPost-post .article-section.summary {
+    #blogPost-post .article-sections.summary {
       background: #ff5e21;
       color: #ffffff; }
-      #blogPost-post .article-section.summary section {
+      #blogPost-post .article-sections.summary section {
         padding-top: 5.25rem; }
-        #blogPost-post .article-section.summary section > *:first-child {
+        #blogPost-post .article-sections.summary section > *:first-child {
           margin-top: 0; }
-      #blogPost-post .article-section.summary h2 {
+      #blogPost-post .article-sections.summary h2 {
         position: relative;
         font-weight: 600; }
-        #blogPost-post .article-section.summary h2::before {
+        #blogPost-post .article-sections.summary h2::before {
           content: "";
           position: absolute;
           left: 0;
@@ -1197,40 +1201,40 @@ body {
           background: #6ef083;
           border-top-left-radius: 5px;
           border-bottom-right-radius: 5px; }
-      #blogPost-post .article-section.summary p {
+      #blogPost-post .article-sections.summary p {
         font: 500 18px/30px "Poppins"; }
-      #blogPost-post .article-section.summary .sources {
+      #blogPost-post .article-sections.summary .sources {
         display: flex;
         flex-direction: column;
         gap: 1rem;
         margin-top: 5.5rem;
         padding-top: 2rem;
         border-top: 1px solid #ffffff; }
-        #blogPost-post .article-section.summary .sources .sources-title {
+        #blogPost-post .article-sections.summary .sources .sources-title {
           font: 500 24px "Poppins"; }
-      #blogPost-post .article-section.summary .sources-list {
+      #blogPost-post .article-sections.summary .sources-list {
         font: 300 18px/30px "Poppins";
         margin: 0; }
-        #blogPost-post .article-section.summary .sources-list li {
+        #blogPost-post .article-sections.summary .sources-list li {
           list-style-type: none; }
-    #blogPost-post .article-section p:not(:first-child) {
+    #blogPost-post .article-sections p:not(:first-child) {
       margin-top: 2.37rem; }
-    #blogPost-post .article-section h2 {
+    #blogPost-post .article-sections h2 {
       margin-bottom: 1.5rem;
       font: 500 24px "Poppins"; }
-    #blogPost-post .article-section .light {
+    #blogPost-post .article-sections .light {
       font: 300 18px/30px "Poppins"; }
-    #blogPost-post .article-section strong {
+    #blogPost-post .article-sections strong {
       font-weight: 600; }
-    #blogPost-post .article-section ol {
+    #blogPost-post .article-sections ol {
       display: flex;
       flex-direction: column;
       gap: 2.75rem;
       margin-top: 2.75rem;
       margin-left: 4rem; }
-      #blogPost-post .article-section ol > li {
+      #blogPost-post .article-sections ol > li {
         position: relative; }
-        #blogPost-post .article-section ol > li::before {
+        #blogPost-post .article-sections ol > li::before {
           content: counters(list-item,".") ".";
           position: absolute;
           left: -4rem;
@@ -1243,52 +1247,52 @@ body {
           border-radius: 50%;
           background: #1e1e1e;
           color: #ffffff; }
-    #blogPost-post .article-section ul {
+    #blogPost-post .article-sections ul {
       margin-left: 3em; }
-      #blogPost-post .article-section ul > li {
+      #blogPost-post .article-sections ul > li {
         list-style-type: disc; }
-        #blogPost-post .article-section ul > li::marker {
+        #blogPost-post .article-sections ul > li::marker {
           font-size: 0.8em; }
-    #blogPost-post .article-section section {
+    #blogPost-post .article-sections section {
       display: block;
       margin-left: 7.25rem;
       margin-bottom: 4rem;
       padding-top: 4rem; }
-      #blogPost-post .article-section section:not(:first-child) {
+      #blogPost-post .article-sections section:not(:first-child) {
         border-top: 1px solid #e3e5e2; }
-      #blogPost-post .article-section section.gray-section {
+      #blogPost-post .article-sections section.gray-section {
         background: #e3e5e2;
         margin-inline: 0;
         padding: 3.12rem 2.94rem 3.12rem 7.25rem; }
-        #blogPost-post .article-section section.gray-section + section {
+        #blogPost-post .article-sections section.gray-section + section {
           border-top: 0; }
-      #blogPost-post .article-section section.bottom-moved-img {
+      #blogPost-post .article-sections section.bottom-moved-img {
         position: relative;
         overflow: visible;
         padding-bottom: 8rem; }
-        #blogPost-post .article-section section.bottom-moved-img img {
+        #blogPost-post .article-sections section.bottom-moved-img img {
           position: absolute;
           bottom: -4.25rem;
           width: 10.5rem;
           height: 10.5rem; }
-    #blogPost-post .article-section .green-bar {
+    #blogPost-post .article-sections .green-bar {
       padding-left: 1rem;
       border-left: 1.25rem solid #6ef083; }
-    #blogPost-post .article-section .white-bg {
+    #blogPost-post .article-sections .white-bg {
       padding: 1.5rem;
       margin-right: 1.9rem;
       background: #ffffff; }
-      #blogPost-post .article-section .white-bg + .white-bg {
+      #blogPost-post .article-sections .white-bg + .white-bg {
         margin-top: 4rem; }
-    #blogPost-post .article-section .quote-big {
+    #blogPost-post .article-sections .quote-big {
       display: flex;
       align-items: center;
       gap: 2rem;
       padding: 1.5rem 2.5rem;
       font: 600 24px/37px "Poppins"; }
-      #blogPost-post .article-section .quote-big::before {
+      #blogPost-post .article-sections .quote-big::before {
         content: url("/assets/icons/quote-big.svg"); }
-    #blogPost-post .article-section .header-big {
+    #blogPost-post .article-sections .header-big {
       font-weight: 600;
       margin-bottom: 4rem; }
   @media only screen and (max-width: 767px) {

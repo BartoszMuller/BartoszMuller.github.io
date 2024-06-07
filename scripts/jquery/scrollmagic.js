@@ -51,13 +51,20 @@ $(document).ready(() => {
   $("section")
     .not(".contactPopup-section")
     .each(function () {
+      console.log(this, this.nextElementSibling )
       var tweenOut = gsap.to(this, {
         opacity: 0,
         duration: 0.5,
       });
 
+      var triggerPoint = this.nextElementSibling;
+
+    if (!triggerPoint) {
+      triggerPoint = $('<div class="scrollMagicHook"></div>').insertAfter(this)[0];
+    }
+
       var sceneOut = new ScrollMagic.Scene({
-        triggerElement: this.nextElementSibling,
+        triggerElement: triggerPoint,
         triggerHook: 0.16,
       })
         // .addIndicators({

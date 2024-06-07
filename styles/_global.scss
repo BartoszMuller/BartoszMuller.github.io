@@ -48,7 +48,10 @@ h2 {
 // p {
 //   letter-spacing: 0.02em;
 // }
-
+.scrollMagicHook{
+  height: 0;
+  visibility: hidden;
+}
 section {
   display: flex;
   flex-direction: column;
