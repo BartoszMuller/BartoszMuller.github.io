@@ -1,0 +1,84 @@
+.contact {
+  position: relative;
+
+  display: flex;
+  gap: 1.5rem;
+
+  padding: 5rem 0;
+
+  overflow: hidden;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 52rem;
+    margin: auto;
+  }
+  &__plugImg {
+    position: absolute;
+    left: -3rem;
+    rotate: 15deg;
+    opacity: 0.3;
+  }
+  &__socketImg {
+    position: absolute;
+    top: 1.5rem;
+    right: 0;
+
+    display: block;
+
+    width: auto;
+    height: 37%;
+    transform: translateX(33%);
+  }
+  &__header {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+  }
+  &__text {
+    margin-bottom: 2.5rem;
+  }
+  &__form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.75rem;
+    row-gap: 1.25rem;
+    .form {
+      &__input {
+        width: 45%;
+        flex-grow: 1;
+        height: 2.25rem;
+        font-size: 1rem;
+        padding: 0.75em 0.25em;
+
+        border-bottom: 0.0625rem solid $gray-light-color;
+      }
+      &__name {
+      }
+      &__phone {
+      }
+      &__email {
+      }
+      &__phone,
+      &__email {
+        // width: 40%;
+        // margin-left: auto;
+      }
+      &__subject {
+      }
+      &__textarea {
+        width: 100%;
+        min-height: 5rem;
+      }
+      &__button {
+        font-size: 1rem;
+        border: none;
+        padding: 0.7em 1.8em;
+      }
+    }
+  }
+}

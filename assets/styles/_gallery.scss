@@ -1,0 +1,93 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+
+    background: $primary-color;
+  }
+  &__header {
+    margin-bottom: 26vh;
+  }
+  &__text {
+    margin-top: auto;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  &__btn {
+    width: max-content;
+    padding: 0.5em 1.5em;
+    border: 1px solid $secondary-color;
+    border-radius: 50px;
+
+    text-transform: uppercase;
+    font-size: 0.9375rem;
+    font-weight: 400;
+  }
+  &__images {
+    display: grid;
+    gap: 1.375rem;
+    grid-auto-rows: 0.165fr;
+    grid-auto-columns: 0.143fr;
+    grid-template-areas:
+      "img1 img1 img1 img3 img3 img3 img3"
+      "img1 img1 img1 img3 img3 img3 img3"
+      "img1 img1 img1 img4 img4 img5 img5"
+      "img2 img2 img2 img4 img4 img5 img5"
+      "img2 img2 img2 img6 img6 img7 img7"
+      "img2 img2 img2 img6 img6 img7 img7";
+
+    padding: 1.5rem;
+    height: auto;
+
+    background: $gray-bg;
+
+    .image {
+      max-width: 100%;
+      max-height: 100%;
+      min-height: 100%;
+      width: 100%;
+      background: #1b1b1b;
+
+      object-fit: cover;
+      object-position: center center;
+      &--1 {
+        grid-area: img1;
+      }
+      &--2 {
+        grid-area: img2;
+      }
+      &--3 {
+        grid-area: img3;
+      }
+      &--4 {
+        grid-area: img4;
+      }
+      &--5 {
+        grid-area: img5;
+      }
+      &--6 {
+        grid-area: img6;
+      }
+      &--7 {
+        grid-area: img7;
+      }
+    }
+  }
+}
+@include phones {
+  .gallery {
+    background: $gray-bg;
+    &__images {
+      display: flex;
+      gap: 0;
+      height: 60vh;
+      max-height: 115vw;
+      min-height: 15rem;
+    }
+  }
+}

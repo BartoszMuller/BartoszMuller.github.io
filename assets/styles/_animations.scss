@@ -1,0 +1,130 @@
+@mixin lightOn {
+  fill: $primary-color;
+  stroke: $primary-color;
+}
+@mixin lightHalfOn {
+  fill: #ffd147ab;
+  stroke: #fde291;
+}
+
+@mixin lightOff {
+  fill: transparent;
+  stroke: $white-color;
+}
+
+@mixin lightOnBg {
+  background-color: $white-color;
+}
+@mixin lightHalfOnBg {
+  background-color: #969696;
+}
+
+@mixin lightOffBg {
+  background-color: $secondary-color;
+}
+
+@keyframes animeBgLight {
+  0% {
+    // @include lightOffBg;
+  }
+  24% {
+    @include lightHalfOnBg;
+  }
+  26% {
+    @include lightOffBg;
+  }
+  28% {
+    @include lightOffBg;
+  }
+  30% {
+    @include lightHalfOnBg;
+  }
+  32% {
+    @include lightHalfOnBg;
+  }
+  34% {
+    @include lightOffBg;
+  }
+  38% {
+    @include lightOffBg;
+  }
+  40% {
+    @include lightHalfOnBg;
+  }
+  44% {
+    @include lightHalfOnBg;
+  }
+  46% {
+    @include lightOffBg;
+  }
+  52% {
+    @include lightOffBg;
+  }
+  54% {
+    @include lightHalfOnBg;
+  }
+  100% {
+    @include lightOnBg;
+  }
+}
+
+@keyframes animeBulbLight {
+  0% {
+    @include lightOff;
+  }
+  24% {
+    @include lightHalfOn;
+  }
+  26% {
+    @include lightOff;
+  }
+  28% {
+    @include lightOff;
+  }
+  30% {
+    @include lightHalfOn;
+  }
+  32% {
+    @include lightHalfOn;
+  }
+  34% {
+    @include lightOff;
+  }
+  38% {
+    @include lightOff;
+  }
+  40% {
+    @include lightHalfOn;
+  }
+  44% {
+    @include lightHalfOn;
+  }
+  46% {
+    @include lightOff;
+  }
+  52% {
+    @include lightOff;
+  }
+  54% {
+    @include lightHalfOn;
+  }
+  100% {
+    @include lightOn;
+  }
+}
+
+@mixin lightBgAnimation {
+  animation: animeBgLight 2.4s 3s forwards;
+}
+@mixin lightAnimation {
+  animation: animeBulbLight 2.4s 3s forwards;
+}
+
+@keyframes toOpacity1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,44 @@
+.footer {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  background: #3f3f3f;
+  padding: 6rem 4rem 12rem;
+
+  color: $white-color;
+  font-family: "Poppins";
+
+  &__background {
+    position: absolute;
+    bottom: -50px;
+    opacity: 0.5;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+  }
+  &__content {
+    position: relative;
+    z-index: 2;
+  }
+  &__header {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+  .footer-info {
+    text-transform: uppercase;
+    display: block;
+
+    a,
+    p {
+      display: block;
+    }
+    p {
+      font-style: normal;
+    }
+    &__mail {
+      margin-bottom: 1rem;
+    }
+  }
+}

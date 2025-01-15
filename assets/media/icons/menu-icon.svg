@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="menu-button"
+class="header__menuIcon" viewBox="0 0 390 300" fill="none">
+  <g class="menu-icon__lineTop">
+    <path class="menu-icon__line1" d="M45 45H104.649" stroke="#1B1B1B" stroke-width="32"
+      stroke-linecap="round" />
+  </g>
+
+  <path class="menu-icon__line2" d="M176.578 45L344.999 45" stroke="#1B1B1B" stroke-width="32"
+    stroke-linecap="round" />
+
+  <path class="menu-icon__line3" d="M45 150.493L344.999 150.493" stroke="#1B1B1B" stroke-width="32"
+    stroke-linecap="round" />
+  <g class="menu-icon__lineBottom">
+    <path class="menu-icon__line4" d="M45 255H213.421" stroke="#1B1B1B" stroke-width="32"
+      stroke-linecap="round" />
+    <path class="menu-icon__line5" d="M285.351 255H345" stroke="#1B1B1B" stroke-width="32"
+      stroke-linecap="round" />
+  </g>
+</svg>

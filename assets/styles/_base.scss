@@ -1,0 +1,133 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  all: unset;
+  box-sizing: border-box;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Koho";
+  scroll-behavior: smooth;
+  letter-spacing: 0.02em;
+  color: $secondary-color;
+  
+  @media (max-width: 360px) {
+    font-size: calc(3.5vw + 0.2rem);
+  }
+  @media (min-width: 500px) and (max-width: $phone-breakpoint) {
+    font-size: calc(1vw + 0.5rem);
+  }
+  @media (min-width: 850px) and (max-width: 1360px) {
+    font-size: calc(0.5vw + 0.6rem);
+  }
+}
+h1,
+h2,
+h3 {
+  font-family: "Poppins";
+}
+h2 {
+  font-size: 2.125rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+
+  text-transform: uppercase;
+}
+
+body {
+  @include customScrollbar;
+}
+
+#main-container {
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+}
+.section {
+  min-height: 90svh;
+  &__header {
+    margin-bottom: 2rem;
+  }
+  &__firstContent {
+    flex-grow: 20;
+    width: 25rem;
+    padding: 6rem 5%;
+  }
+  &__secondContent {
+    width: 58%;
+    flex-grow: 1;
+    min-width: 52rem;
+  }
+}
+
+.scrollLock {
+  position: fixed;
+  bottom: 0;
+  z-index: $index-menu;
+
+  overflow: hidden;
+}
+
+.custom-scrollbar {
+  @include customScrollbar;
+}
+
+.button {
+  cursor: pointer;
+
+  padding: 0.4em 1em;
+  font-family: "Poppins";
+
+  text-transform: uppercase;
+  font-size: 1.15rem;
+  font-weight: 500;
+  border-radius: 5em;
+  background-color: $primary-color;
+
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border 0.3s ease-in-out;
+
+  &:hover {
+    color: $white-color;
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+  }
+}
+
+@include phones {
+  .section {
+    min-height: unset;
+    &__firstContent {
+      padding: 3rem 1.5rem;
+    }
+    &__secondContent {
+      min-width: unset;
+    }
+  }
+  .button {
+    font-size: 1.0625rem;
+  }
+}

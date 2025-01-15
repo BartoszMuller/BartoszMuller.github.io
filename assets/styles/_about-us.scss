@@ -1,0 +1,99 @@
+.aboutUs {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: $secondary-color;
+  min-height: 90vh;
+  margin-top: -0.125rem;
+
+  &.isShown {
+    .bulb-center {
+      animation: flicker forwards 2s;
+    }
+    @keyframes flicker {
+      0% {
+        box-shadow: 0px 0px 4px 4px $white-color;
+      }
+      10% {
+      }
+      20% {
+      }
+      30% {
+      }
+      40% {
+      }
+      100% {
+        box-shadow: 0px 0px 10px 10px $white-color;
+      }
+    }
+  }
+
+  &__container {
+    display: block;
+    max-width: 30rem;
+    margin-left: 1rem;
+    margin-right: 56%;
+    padding: 3rem 1rem 6rem;
+  }
+  &__header {
+    margin-bottom: 2rem;
+  }
+  &__text {
+    font-size: 1.125rem;
+    font-weight: 500;
+  }
+  &__bulb {
+    position: absolute;
+    right: 0;
+    bottom: 30%;
+
+    width: 43%;
+    max-width: 40rem;
+  }
+  .bulb {
+    &__yellow-line {
+      stroke-dashoffset: -100;
+      stroke-dasharray: 100;
+
+      transition: stroke-dashoffset 2.75s ease-in-out;
+    }
+    &__head {
+      transition: all 1s;
+    }
+    &__lights {
+      opacity: 0;
+      transition: all 1s;
+    }
+  }
+
+  &.isShown {
+    @include lightBgAnimation;
+
+    .bulb {
+      &__yellow-line {
+        stroke-dashoffset: 0;
+      }
+      &__head {
+        @include lightAnimation;
+      }
+      &__lights {
+        animation: toOpacity1 1.5s 4.3s forwards;
+      }
+    }
+  }
+
+  @include phones {
+    & {
+      padding-top: 13rem;
+      justify-content: center;
+    }
+    &__container {
+      margin: auto;
+    }
+    &__bulb {
+      width: 16rem;
+      top: -10rem;
+    }
+  }
+}
