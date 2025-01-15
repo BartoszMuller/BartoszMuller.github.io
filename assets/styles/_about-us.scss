@@ -72,7 +72,7 @@
 
     .bulb {
       &__yellow-line {
-        stroke-dashoffset: 0;
+        stroke-dashoffset: -0.1;
       }
       &__head {
         @include lightAnimation;
