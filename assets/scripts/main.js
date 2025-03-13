@@ -1,4 +1,5 @@
 import fadeInAnimation from "./fade_in_animation.js";
+import lightGalleryInit from "./light_gallery_init.js";
 import onFirstTimeSection from "./on_first_time_section.js";
 import onFirstTimeView from "./on_first_time_view.js";
 import currentSection from "./on_window_currency.js";
@@ -13,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   currentSection();
   onFirstTimeView();
   swiperInit();
+  lightGalleryInit();
 
   const setHomeisShown = () => {
     const home = document.getElementById("home");

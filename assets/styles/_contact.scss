@@ -17,13 +17,15 @@
   &__plugImg {
     position: absolute;
     left: -3rem;
+    bottom: 0;
     rotate: 15deg;
-    opacity: 0.3;
+    opacity: 0.15;
   }
   &__socketImg {
     position: absolute;
     top: 1.5rem;
     right: 0;
+    z-index: -1;
 
     display: block;
 
@@ -47,37 +49,50 @@
     flex-wrap: wrap;
     gap: 1.75rem;
     row-gap: 1.25rem;
+  }
+  .form {
+    &__input {
+      width: 45%;
+      flex-grow: 1;
+      height: 2.25rem;
+      font-size: 1rem;
+      padding: 0.75em 0.25em;
+
+      border-bottom: 0.0625rem solid $gray-light-color;
+    }
+    &__name {
+    }
+    &__phone {
+    }
+    &__email {
+    }
+    &__phone,
+    &__email {
+      // width: 40%;
+      // margin-left: auto;
+    }
+    &__subject {
+    }
+    &__textarea {
+      width: 100%;
+      min-height: 5rem;
+    }
+    &__button {
+      font-size: 1rem;
+      border: none;
+      padding: 0.7em 1.8em;
+    }
+  }
+
+  @include phones {
+    &__plugImg{
+      left: -6.5rem;
+      bottom: -6rem;
+     
+    }
     .form {
       &__input {
-        width: 45%;
-        flex-grow: 1;
-        height: 2.25rem;
-        font-size: 1rem;
-        padding: 0.75em 0.25em;
-
-        border-bottom: 0.0625rem solid $gray-light-color;
-      }
-      &__name {
-      }
-      &__phone {
-      }
-      &__email {
-      }
-      &__phone,
-      &__email {
-        // width: 40%;
-        // margin-left: auto;
-      }
-      &__subject {
-      }
-      &__textarea {
         width: 100%;
-        min-height: 5rem;
-      }
-      &__button {
-        font-size: 1rem;
-        border: none;
-        padding: 0.7em 1.8em;
       }
     }
   }

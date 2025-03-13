@@ -17,6 +17,13 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.umd.js"></script>
 
     <link rel="stylesheet" href="./assets/styles/styles.css" />
   </head>
@@ -238,7 +245,7 @@
         </svg>
       </section>
 
-      <section class="gallery section" id="galeria">
+      <!-- <section class="gallery section" id="galeria">
         <div class="gallery__content section__firstContent">
           <h2 class="gallery__header section__header">
             NASZ ZESPÓŁ PODCZAS PRACY
@@ -248,7 +255,9 @@
           </p>
           <a href="#" class="gallery__btn button">Sprawdź</a>
         </div>
-        <div class="gallery__images swiper-wrapper section__secondContent fadeInElements">
+        <div
+          class="gallery__images swiper-wrapper section__secondContent fadeInElements"
+        >
           <img
             src="/assets/media/images/graf5.jpg"
             alt=""
@@ -286,8 +295,52 @@
             class="swiper-slide image image--7"
           />
         </div>
-      </section>
+      </section> -->
 
+      <section class="gallery section" id="galeria">
+        <div class="gallery__content section__firstContent">
+          <h2 class="gallery__header section__header">
+            NASZ ZESPÓŁ PODCZAS PRACY
+          </h2>
+          <p class="gallery__text">
+            Zobacz pełną galerie ze zdjęciami naszych innych projektów.
+          </p>
+          <a href="#" id="openGallery" class="gallery__btn button">Sprawdź</a>
+        </div>
+        
+        <div id="lightgallery" class="gallery__images swiper-wrapper section__secondContent">
+          <a href="/assets/media/images/graf5.jpg" class="swiper-slide image image--1">
+            <img src="/assets/media/images/graf5.jpg" alt="Zdjęcie galerii 1"/>
+          </a>
+          <a href="/assets/media/images/graf7.jpg" class="swiper-slide image image--2">
+            <img src="/assets/media/images/graf7.jpg" alt="Zdjęcie galerii 2"/>
+          </a>
+          <a href="/assets/media/images/graf6.jpg" class="swiper-slide image image--3">
+            <img src="/assets/media/images/graf6.jpg" alt="Zdjęcie galerii 3"/>
+          </a>
+          <a href="/assets/media/images/graf8.jpg" class="swiper-slide image image--4">
+            <img src="/assets/media/images/graf8.jpg" alt="Zdjęcie galerii 4"/>
+          </a>
+          <a href="/assets/media/images/graf4.jpg" class="swiper-slide image image--5">
+            <img src="/assets/media/images/graf4.jpg" alt="Zdjęcie galerii 5"/>
+          </a>
+          <a href="/assets/media/images/graf3.jpg" class="swiper-slide image image--6">
+            <img src="/assets/media/images/graf3.jpg" alt="Zdjęcie galerii 6"/>
+          </a>
+          <a href="/assets/media/images/graf6.jpg" class="swiper-slide image image--7">
+            <img src="/assets/media/images/graf6.jpg" alt="Zdjęcie galerii 7"/>
+          </a>
+        </div>
+      </section>
+      <script>
+        lightGallery(document.getElementById('lightgallery'), {
+          plugins: [lgZoom, lgThumbnail],
+          speed: 500,
+        });
+      </script>
+      
+
+      
       <section class="offer section" id="oferta">
         <div class="offer__content">
           <h2 class="offer__header section__header">OFERTA</h2>
@@ -603,13 +656,13 @@
             <input
               class="form__input form__phone"
               type="text"
-              name="phone-number"
+              name="phone"
               placeholder="Nr telefonu"
             />
             <input
               class="form__input form__name"
               type="text"
-              name="first-name"
+              name="fullname"
               placeholder="Imię i nazwisko"
             />
             <input
